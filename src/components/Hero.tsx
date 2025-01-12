@@ -1,5 +1,6 @@
 import { LanguageSelector } from './LanguageSelector';
-import { useState } from 'react';
+
+type Language = 'ru' | 'en' | 'sv';
 
 const translations = {
   ru: {
@@ -16,16 +17,17 @@ const translations = {
   }
 };
 
-type Language = 'ru' | 'en' | 'sv';
+interface HeroProps {
+  currentLang: Language;
+  onLanguageChange: (lang: Language) => void;
+}
 
-export const Hero = () => {
-  const [currentLang, setCurrentLang] = useState<Language>('ru');
-
+export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
   return (
     <div className="relative min-h-[80vh] flex items-center justify-center bg-background">
       <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
       <div className="absolute top-4 right-4">
-        <LanguageSelector onLanguageChange={setCurrentLang} />
+        <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
       </div>
       <div className="text-center space-y-6 fade-in">
         <img 

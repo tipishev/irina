@@ -1,5 +1,4 @@
 import { Palette, Camera, Brush } from 'lucide-react';
-import { useState } from 'react';
 
 const translations = {
   ru: {
@@ -66,9 +65,11 @@ const translations = {
 
 type Language = 'ru' | 'en' | 'sv';
 
-export const Services = () => {
-  const [currentLang, setCurrentLang] = useState<Language>('ru');
+interface ServicesProps {
+  currentLang: Language;
+}
 
+export const Services = ({ currentLang }: ServicesProps) => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
