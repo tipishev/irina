@@ -1,16 +1,30 @@
-# Welcome to your Lovable project
+# Irina Zay Art Studio Website
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/f2fe0b39-4b9f-4993-b982-629b4acf383e
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-## How can I edit this code?
+This is the official website for Irina Zay Art Studio, featuring:
+- Multilingual support (Russian, English, Swedish)
+- Art class information
+- Photography and makeup services
+- Portfolio gallery
+- Class schedules
+- Contact information
 
-There are several ways of editing your application.
+## Tech Stack
+
+This project is built with React, Vite, TypeScript, and Tailwind CSS, featuring:
+- Responsive design
+- Internationalization
+- Modern animations
+- Clean, maintainable code structure
+
+For more information about editing and deploying this project, see the sections below:
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f2fe0b39-4b9f-4993-b982-629b4acf383e) and start prompting.
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -50,19 +64,9 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/f2fe0b39-4b9f-4993-b982-629b4acf383e) and click on Share -> Publish.
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
 ## I want to use a custom domain - is that possible?
 
