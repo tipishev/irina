@@ -6,14 +6,17 @@ const translations = {
   ru: {
     title: "Художественная Школа",
     subtitle: "Давайте создадим шедевр!",
+    contact: "Не пишите, звоните мне на 073-517-3330"
   },
   en: {
     title: "Art Studio",
     subtitle: "Let's create a masterpiece!",
+    contact: "Don't message, call me at 073-517-3330"
   },
   sv: {
     title: "Konststudio",
     subtitle: "Låt oss skapa ett mästerverk!",
+    contact: "Skriv inte, ring mig på 073-517-3330"
   }
 };
 
@@ -43,6 +46,9 @@ export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
         </h2>
         <p className="text-xl text-secondary/60">
           {translations[currentLang].subtitle}
+        </p>
+        <p className="text-lg font-medium text-primary">
+          {translations[currentLang].contact}
         </p>
       </div>
       <div className="absolute bottom-0 right-0 w-full h-2 bg-primary" />
