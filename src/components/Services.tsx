@@ -70,7 +70,7 @@ export const Services = () => {
   const [currentLang, setCurrentLang] = useState<Language>('ru');
 
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">
           {translations[currentLang].title}
@@ -79,7 +79,7 @@ export const Services = () => {
           {translations[currentLang].services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in"
+              className="bg-white p-6 rounded-lg border-2 border-primary hover:border-secondary transition-colors duration-300 fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <service.icon className="w-12 h-12 text-primary mb-4" />

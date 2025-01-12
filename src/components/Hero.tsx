@@ -22,7 +22,8 @@ export const Hero = () => {
   const [currentLang, setCurrentLang] = useState<Language>('ru');
 
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-primary/20 to-background">
+    <div className="relative min-h-[80vh] flex items-center justify-center bg-background">
+      <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
       <div className="absolute top-4 right-4">
         <LanguageSelector onLanguageChange={setCurrentLang} />
       </div>
@@ -30,7 +31,7 @@ export const Hero = () => {
         <img 
           src="/lovable-uploads/02923936-d2ca-433e-89b5-cb827bb35ea0.png" 
           alt="Irina Zay Art Studio Logo" 
-          className="w-32 h-32 mx-auto rounded-full"
+          className="w-32 h-32 mx-auto rounded-full border-4 border-primary"
         />
         <h1 className="text-4xl md:text-6xl font-bold text-secondary">
           Irina Zay
@@ -42,6 +43,7 @@ export const Hero = () => {
           {translations[currentLang].subtitle}
         </p>
       </div>
+      <div className="absolute bottom-0 right-0 w-full h-2 bg-primary" />
     </div>
   );
 };
