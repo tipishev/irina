@@ -1,4 +1,5 @@
 import { Palette, Camera, Brush } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const translations = {
   ru: {
@@ -7,19 +8,23 @@ const translations = {
       {
         title: "Художественные Классы",
         description: "Обучение рисунку, живописи и керамике для всех возрастов",
-        icon: Palette
+        icon: Palette,
+        link: "/portfolio/art"
       },
       {
         title: "Фотография",
         description: "Профессиональная фотосъемка и фотоуроки",
-        icon: Camera
+        icon: Camera,
+        link: "/portfolio/photography"
       },
       {
         title: "Макияж",
         description: "Уроки макияжа и профессиональный мейкап",
-        icon: Brush
+        icon: Brush,
+        link: "/portfolio/makeup"
       }
-    ]
+    ],
+    viewPortfolio: "Смотреть портфолио"
   },
   en: {
     title: "Our Services",
@@ -27,19 +32,23 @@ const translations = {
       {
         title: "Art Classes",
         description: "Drawing, painting, and ceramics lessons for all ages",
-        icon: Palette
+        icon: Palette,
+        link: "/portfolio/art"
       },
       {
         title: "Photography",
         description: "Professional photography and photo lessons",
-        icon: Camera
+        icon: Camera,
+        link: "/portfolio/photography"
       },
       {
         title: "Makeup",
         description: "Makeup lessons and professional makeup services",
-        icon: Brush
+        icon: Brush,
+        link: "/portfolio/makeup"
       }
-    ]
+    ],
+    viewPortfolio: "View Portfolio"
   },
   sv: {
     title: "Våra Tjänster",
@@ -47,19 +56,23 @@ const translations = {
       {
         title: "Konstklasser",
         description: "Tecknings-, målnings- och keramiklektioner för alla åldrar",
-        icon: Palette
+        icon: Palette,
+        link: "/portfolio/art"
       },
       {
         title: "Fotografi",
         description: "Professionell fotografering och fotolektioner",
-        icon: Camera
+        icon: Camera,
+        link: "/portfolio/photography"
       },
       {
         title: "Makeup",
         description: "Makeuplektioner och professionella makeuptjänster",
-        icon: Brush
+        icon: Brush,
+        link: "/portfolio/makeup"
       }
-    ]
+    ],
+    viewPortfolio: "Visa Portfolio"
   }
 };
 
@@ -87,9 +100,15 @@ export const Services = ({ currentLang }: ServicesProps) => {
               <h3 className="text-xl font-bold mb-2 text-secondary">
                 {service.title}
               </h3>
-              <p className="text-secondary/60">
+              <p className="text-secondary/60 mb-4">
                 {service.description}
               </p>
+              <Link 
+                to={service.link}
+                className="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors"
+              >
+                {translations[currentLang].viewPortfolio}
+              </Link>
             </div>
           ))}
         </div>
