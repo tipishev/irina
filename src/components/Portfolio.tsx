@@ -12,12 +12,25 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 
 interface Category {
   id: string;
-  name: string;
+  name: {
+    ru: string;
+    en: string;
+    sv: string;
+  };
+  description: {
+    ru: string;
+    en: string;
+    sv: string;
+  };
   images: string[];
 }
 
 interface PortfolioProps {
-  title: string;
+  title: {
+    ru: string;
+    en: string;
+    sv: string;
+  };
   categories: Category[];
 }
 
@@ -33,7 +46,7 @@ export const Portfolio = ({ title, categories }: PortfolioProps) => {
             to="/" 
             className="text-primary hover:text-primary/80 transition-colors"
           >
-            ← Back to Home
+            {currentLang === 'ru' ? '← Назад' : currentLang === 'sv' ? '← Tillbaka' : '← Back'}
           </Link>
           <LanguageSelector 
             currentLang={currentLang} 
@@ -41,7 +54,7 @@ export const Portfolio = ({ title, categories }: PortfolioProps) => {
           />
         </div>
         
-        <h1 className="text-4xl font-bold text-center mb-12">{title}</h1>
+        <h1 className="text-4xl font-bold text-center mb-12">{title[currentLang]}</h1>
         
         <div className="max-w-4xl mx-auto">
           <Carousel className="mb-8">
@@ -51,7 +64,7 @@ export const Portfolio = ({ title, categories }: PortfolioProps) => {
                   <div className="aspect-video w-full overflow-hidden rounded-lg">
                     <img
                       src={image}
-                      alt={`${activeCategory.name} ${index + 1}`}
+                      alt={`${activeCategory.name[currentLang]} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -61,6 +74,10 @@ export const Portfolio = ({ title, categories }: PortfolioProps) => {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
+
+          <p className="text-center text-muted-foreground mb-8">
+            {activeCategory.description[currentLang]}
+          </p>
 
           <div className="flex justify-center gap-4">
             {categories.map((category) => (
@@ -74,7 +91,7 @@ export const Portfolio = ({ title, categories }: PortfolioProps) => {
                     : "bg-muted hover:bg-primary/10"
                 )}
               >
-                {category.name}
+                {category.name[currentLang]}
               </button>
             ))}
           </div>

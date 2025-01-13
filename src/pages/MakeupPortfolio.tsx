@@ -3,7 +3,16 @@ import { Portfolio } from "@/components/Portfolio";
 const categories = [
   {
     id: "bridal",
-    name: "Bridal",
+    name: {
+      ru: "Свадебный",
+      en: "Bridal",
+      sv: "Brudmakeup"
+    },
+    description: {
+      ru: "Безупречный макияж для вашего особенного дня",
+      en: "Flawless makeup for your special day",
+      sv: "Perfekt makeup för din speciella dag"
+    },
     images: [
       "https://images.unsplash.com/photo-1519699047748-de8e457a634e",
       "https://images.unsplash.com/photo-1534088568595-a066f410bcda",
@@ -12,7 +21,16 @@ const categories = [
   },
   {
     id: "evening",
-    name: "Evening",
+    name: {
+      ru: "Вечерний",
+      en: "Evening",
+      sv: "Kvällsmakeup"
+    },
+    description: {
+      ru: "Яркий и элегантный макияж для особых случаев",
+      en: "Bold and elegant makeup for special occasions",
+      sv: "Djärv och elegant makeup för speciella tillfällen"
+    },
     images: [
       "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937",
       "https://images.unsplash.com/photo-1526045478516-99145907023c",
@@ -21,7 +39,16 @@ const categories = [
   },
   {
     id: "natural",
-    name: "Natural",
+    name: {
+      ru: "Натуральный",
+      en: "Natural",
+      sv: "Naturlig"
+    },
+    description: {
+      ru: "Легкий и естественный макияж на каждый день",
+      en: "Light and natural everyday makeup",
+      sv: "Lätt och naturlig vardagsmakeup"
+    },
     images: [
       "https://images.unsplash.com/photo-1503236823255-94609f598e71",
       "https://images.unsplash.com/photo-1522337094846-8a818192de1f",
@@ -30,8 +57,14 @@ const categories = [
   }
 ];
 
+const title = {
+  ru: "Портфолио визажиста",
+  en: "Makeup Portfolio",
+  sv: "Makeupportfolio"
+};
+
 const MakeupPortfolio = () => {
-  return <Portfolio title="Makeup Portfolio" categories={categories} />;
+  return <Portfolio title={title} categories={categories} />;
 };
 
 export default MakeupPortfolio;
