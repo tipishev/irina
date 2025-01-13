@@ -34,9 +34,9 @@ export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
       </div>
       <div className="text-center space-y-6 fade-in">
         <img 
-          src="/lovable-uploads/02923936-d2ca-433e-89b5-cb827bb35ea0.png" 
+          src="/lovable-uploads/cf4fd44e-ba36-4c37-86d9-77faf779f3c4.png" 
           alt="Irina Zay Art Studio Logo" 
-          className="w-32 h-32 mx-auto rounded-full border-4 border-primary"
+          className="w-48 h-48 mx-auto"
         />
         <h1 className="text-4xl md:text-6xl font-bold text-secondary">
           Irina Zay
