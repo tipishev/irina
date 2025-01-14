@@ -9,7 +9,8 @@ const translations = {
         title: "Художественные Классы",
         description: "Обучение рисунку, живописи и керамике для всех возрастов",
         icon: Palette,
-        link: "/portfolio/art"
+        link: "/portfolio/art",
+        rulesButton: "Правила студии"
       },
       {
         title: "Фотография",
@@ -33,7 +34,8 @@ const translations = {
         title: "Art Classes",
         description: "Drawing, painting, and ceramics lessons for all ages",
         icon: Palette,
-        link: "/portfolio/art"
+        link: "/portfolio/art",
+        rulesButton: "Studio Rules"
       },
       {
         title: "Photography",
@@ -57,7 +59,8 @@ const translations = {
         title: "Konstklasser",
         description: "Tecknings-, målnings- och keramiklektioner för alla åldrar",
         icon: Palette,
-        link: "/portfolio/art"
+        link: "/portfolio/art",
+        rulesButton: "Studioregler"
       },
       {
         title: "Fotografi",
@@ -103,12 +106,22 @@ export const Services = ({ currentLang }: ServicesProps) => {
               <p className="text-secondary/60 mb-4">
                 {service.description}
               </p>
-              <Link 
-                to={service.link}
-                className="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors"
-              >
-                {translations[currentLang].viewPortfolio}
-              </Link>
+              <div className="space-y-2">
+                <Link 
+                  to={service.link}
+                  className="inline-block w-full px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors text-center"
+                >
+                  {translations[currentLang].viewPortfolio}
+                </Link>
+                {service.rulesButton && (
+                  <Link 
+                    to="/studio-rules"
+                    className="inline-block w-full px-4 py-2 bg-secondary text-white rounded hover:bg-secondary/90 transition-colors text-center"
+                  >
+                    {service.rulesButton}
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>
