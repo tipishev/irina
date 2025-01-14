@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const translations = {
   ru: {
-    title: "Наши Услуги",
+    title: "Мои Услуги",
     services: [
       {
         title: "Художественные Классы",
@@ -27,7 +27,7 @@ const translations = {
     viewPortfolio: "Смотреть портфолио"
   },
   en: {
-    title: "Our Services",
+    title: "My Services",
     services: [
       {
         title: "Art Classes",
@@ -51,7 +51,7 @@ const translations = {
     viewPortfolio: "View Portfolio"
   },
   sv: {
-    title: "Våra Tjänster",
+    title: "Mina Tjänster",
     services: [
       {
         title: "Konstklasser",
