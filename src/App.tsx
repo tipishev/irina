@@ -3,6 +3,7 @@ import Index from "./pages/Index";
 import ArtPortfolio from "./pages/ArtPortfolio";
 import PhotographyPortfolio from "./pages/PhotographyPortfolio";
 import MakeupPortfolio from "./pages/MakeupPortfolio";
+import StudioRules from "./pages/StudioRules";
 import { useEffect, useState } from "react";
 
 type Language = 'ru' | 'en' | 'sv';
@@ -65,6 +66,14 @@ function App() {
             <MakeupPortfolio 
               currentLang={currentLang} 
               onLanguageChange={handleLanguageChange}
+            />
+          } 
+        />
+        <Route 
+          path="/studio-rules" 
+          element={
+            <StudioRules 
+              currentLang={currentLang} 
             />
           } 
         />
