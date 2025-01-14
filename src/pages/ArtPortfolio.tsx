@@ -1,5 +1,12 @@
 import { Portfolio } from "@/components/Portfolio";
 
+type Language = 'ru' | 'en' | 'sv';
+
+interface ArtPortfolioProps {
+  currentLang: Language;
+  onLanguageChange: (lang: Language) => void;
+}
+
 const categories = [
   {
     id: "paintings",
@@ -63,8 +70,13 @@ const title = {
   sv: "Konstportfolio"
 };
 
-const ArtPortfolio = () => {
-  return <Portfolio title={title} categories={categories} />;
+const ArtPortfolio = ({ currentLang, onLanguageChange }: ArtPortfolioProps) => {
+  return <Portfolio 
+    title={title} 
+    categories={categories} 
+    currentLang={currentLang}
+    onLanguageChange={onLanguageChange}
+  />;
 };
 
 export default ArtPortfolio;

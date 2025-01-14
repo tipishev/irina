@@ -1,19 +1,75 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Index from './pages/Index';
-import PhotographyPortfolio from './pages/PhotographyPortfolio';
-import ArtPortfolio from './pages/ArtPortfolio';
-import MakeupPortfolio from './pages/MakeupPortfolio';
+import { Routes, Route, useSearchParams, useNavigate } from "react-router-dom";
+import Index from "./pages/Index";
+import ArtPortfolio from "./pages/ArtPortfolio";
+import PhotographyPortfolio from "./pages/PhotographyPortfolio";
+import MakeupPortfolio from "./pages/MakeupPortfolio";
+import { useEffect, useState } from "react";
+
+type Language = 'ru' | 'en' | 'sv';
 
 function App() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const [currentLang, setCurrentLang] = useState<Language>(() => {
+    const langParam = searchParams.get('lang');
+    return (langParam as Language) || 'ru';
+  });
+
+  const handleLanguageChange = (lang: Language) => {
+    setCurrentLang(lang);
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set('lang', lang);
+    navigate(`${window.location.pathname}?${newSearchParams.toString()}`);
+  };
+
+  useEffect(() => {
+    const langParam = searchParams.get('lang');
+    if (langParam && ['ru', 'en', 'sv'].includes(langParam)) {
+      setCurrentLang(langParam as Language);
+    }
+  }, [searchParams]);
+
   return (
-    <Router>
+    <div className="App">
       <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/portfolio/photography" element={<PhotographyPortfolio />} />
-        <Route path="/portfolio/art" element={<ArtPortfolio />} />
-        <Route path="/portfolio/makeup" element={<MakeupPortfolio />} />
+        <Route 
+          path="/" 
+          element={
+            <Index 
+              currentLang={currentLang} 
+              onLanguageChange={handleLanguageChange} 
+            />
+          } 
+        />
+        <Route 
+          path="/portfolio/art" 
+          element={
+            <ArtPortfolio 
+              currentLang={currentLang} 
+              onLanguageChange={handleLanguageChange}
+            />
+          } 
+        />
+        <Route 
+          path="/portfolio/photography" 
+          element={
+            <PhotographyPortfolio 
+              currentLang={currentLang} 
+              onLanguageChange={handleLanguageChange}
+            />
+          } 
+        />
+        <Route 
+          path="/portfolio/makeup" 
+          element={
+            <MakeupPortfolio 
+              currentLang={currentLang} 
+              onLanguageChange={handleLanguageChange}
+            />
+          } 
+        />
       </Routes>
-    </Router>
+    </div>
   );
 }
 

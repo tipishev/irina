@@ -1,5 +1,12 @@
 import { Portfolio } from "@/components/Portfolio";
 
+type Language = 'ru' | 'en' | 'sv';
+
+interface PhotographyPortfolioProps {
+  currentLang: Language;
+  onLanguageChange: (lang: Language) => void;
+}
+
 const categories = [
   {
     id: "wedding",
@@ -63,8 +70,13 @@ const title = {
   sv: "Fotografi Portfolio"
 };
 
-const PhotographyPortfolio = () => {
-  return <Portfolio title={title} categories={categories} />;
+const PhotographyPortfolio = ({ currentLang, onLanguageChange }: PhotographyPortfolioProps) => {
+  return <Portfolio 
+    title={title} 
+    categories={categories} 
+    currentLang={currentLang}
+    onLanguageChange={onLanguageChange}
+  />;
 };
 
 export default PhotographyPortfolio;

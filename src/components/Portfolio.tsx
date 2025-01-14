@@ -10,6 +10,8 @@ import {
 import { cn } from "@/lib/utils";
 import { LanguageSelector } from "@/components/LanguageSelector";
 
+type Language = 'ru' | 'en' | 'sv';
+
 interface Category {
   id: string;
   name: {
@@ -32,11 +34,12 @@ interface PortfolioProps {
     sv: string;
   };
   categories: Category[];
+  currentLang: Language;
+  onLanguageChange: (lang: Language) => void;
 }
 
-export const Portfolio = ({ title, categories }: PortfolioProps) => {
+export const Portfolio = ({ title, categories, currentLang, onLanguageChange }: PortfolioProps) => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
-  const [currentLang, setCurrentLang] = useState<'ru' | 'en' | 'sv'>('ru');
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,7 +53,7 @@ export const Portfolio = ({ title, categories }: PortfolioProps) => {
           </Link>
           <LanguageSelector 
             currentLang={currentLang} 
-            onLanguageChange={setCurrentLang} 
+            onLanguageChange={onLanguageChange} 
           />
         </div>
         

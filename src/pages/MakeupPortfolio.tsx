@@ -1,5 +1,12 @@
 import { Portfolio } from "@/components/Portfolio";
 
+type Language = 'ru' | 'en' | 'sv';
+
+interface MakeupPortfolioProps {
+  currentLang: Language;
+  onLanguageChange: (lang: Language) => void;
+}
+
 const categories = [
   {
     id: "bridal",
@@ -63,8 +70,13 @@ const title = {
   sv: "Makeupportfolio"
 };
 
-const MakeupPortfolio = () => {
-  return <Portfolio title={title} categories={categories} />;
+const MakeupPortfolio = ({ currentLang, onLanguageChange }: MakeupPortfolioProps) => {
+  return <Portfolio 
+    title={title} 
+    categories={categories} 
+    currentLang={currentLang}
+    onLanguageChange={onLanguageChange}
+  />;
 };
 
 export default MakeupPortfolio;
