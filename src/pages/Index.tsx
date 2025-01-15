@@ -1,6 +1,5 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { Schedule } from "@/components/Schedule";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -42,7 +41,6 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
         </div>
       </div>
       <Services currentLang={currentLang} />
-      <Schedule currentLang={currentLang} />
     </div>
   );
 };

@@ -10,7 +10,8 @@ const translations = {
         description: "Обучение рисунку, живописи и керамике для всех возрастов",
         icon: Palette,
         link: "/portfolio/art",
-        rulesButton: "Правила студии"
+        rulesButton: "Правила студии",
+        scheduleButton: "Расписание"
       },
       {
         title: "Фотография",
@@ -35,7 +36,8 @@ const translations = {
         description: "Drawing, painting, and ceramics lessons for all ages",
         icon: Palette,
         link: "/portfolio/art",
-        rulesButton: "Studio Rules"
+        rulesButton: "Studio Rules",
+        scheduleButton: "Schedule"
       },
       {
         title: "Photography",
@@ -60,7 +62,8 @@ const translations = {
         description: "Tecknings-, målnings- och keramiklektioner för alla åldrar",
         icon: Palette,
         link: "/portfolio/art",
-        rulesButton: "Studioregler"
+        rulesButton: "Studioregler",
+        scheduleButton: "Schema"
       },
       {
         title: "Fotografi",
@@ -119,6 +122,14 @@ export const Services = ({ currentLang }: ServicesProps) => {
                     className="inline-block w-full px-4 py-2 bg-white text-black border-2 border-black rounded hover:bg-gray-50 transition-colors text-center"
                   >
                     {service.rulesButton}
+                  </Link>
+                )}
+                {service.scheduleButton && (
+                  <Link 
+                    to="/art-schedule"
+                    className="inline-block w-full px-4 py-2 bg-white text-black border-2 border-black rounded hover:bg-gray-50 transition-colors text-center"
+                  >
+                    {service.scheduleButton}
                   </Link>
                 )}
               </div>
