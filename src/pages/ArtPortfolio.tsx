@@ -20,7 +20,10 @@ const artCategories = [
       en: "Collection of oil and acrylic paintings",
       sv: "Samling av olje- och akrylmålningar"
     },
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: [
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d"
+    ]
   },
   {
     id: "drawings",
@@ -34,7 +37,10 @@ const artCategories = [
       en: "Pencil and charcoal drawings",
       sv: "Blyerts- och kolteckningar"
     },
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: [
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f"
+    ]
   }
 ];
 

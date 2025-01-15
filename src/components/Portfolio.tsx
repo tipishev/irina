@@ -8,7 +8,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import { LanguageSelector } from "@/components/LanguageSelector";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -38,24 +37,18 @@ interface PortfolioProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-export const Portfolio = ({ title, categories, currentLang, onLanguageChange }: PortfolioProps) => {
+export const Portfolio = ({ title, categories, currentLang }: PortfolioProps) => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <Link 
-            to="/" 
-            className="text-primary hover:text-primary/80 transition-colors"
-          >
-            {currentLang === 'ru' ? '← Назад' : currentLang === 'sv' ? '← Tillbaka' : '← Back'}
-          </Link>
-          <LanguageSelector 
-            currentLang={currentLang} 
-            onLanguageChange={onLanguageChange} 
-          />
-        </div>
+        <Link 
+          to="/" 
+          className="text-primary hover:text-primary/80 transition-colors"
+        >
+          {currentLang === 'ru' ? '← Назад' : currentLang === 'sv' ? '← Tillbaka' : '← Back'}
+        </Link>
         
         <h1 className="text-4xl font-bold text-center mb-12">{title[currentLang]}</h1>
         

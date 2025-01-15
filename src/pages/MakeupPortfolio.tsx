@@ -20,7 +20,10 @@ const makeupCategories = [
       en: "Professional bridal makeup",
       sv: "Professionell brudsmink"
     },
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: [
+      "https://images.unsplash.com/photo-1457972729786-0411a3b2b626",
+      "https://images.unsplash.com/photo-1457972729786-0411a3b2b626"
+    ]
   },
   {
     id: "evening",
@@ -34,7 +37,10 @@ const makeupCategories = [
       en: "Evening and special occasion makeup",
       sv: "Kväll- och festsmink"
     },
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: [
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796",
+      "https://images.unsplash.com/photo-1512496015851-a90fb38ba796"
+    ]
   }
 ];
 

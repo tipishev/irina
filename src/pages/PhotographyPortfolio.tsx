@@ -20,7 +20,10 @@ const photographyCategories = [
       en: "Professional portrait photography",
       sv: "Professionell porträttfotografi"
     },
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: [
+      "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604",
+      "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604"
+    ]
   },
   {
     id: "landscape",
@@ -34,7 +37,10 @@ const photographyCategories = [
       en: "Natural and urban landscapes",
       sv: "Natur- och stadslandskap"
     },
-    images: ["/placeholder.svg", "/placeholder.svg"]
+    images: [
+      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
+      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+    ]
   }
 ];
 
