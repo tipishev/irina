@@ -116,7 +116,7 @@ export const Services = ({ currentLang }: ServicesProps) => {
                 {service.rulesButton && (
                   <Link 
                     to="/studio-rules"
-                    className="inline-block w-full px-4 py-2 bg-secondary text-white rounded hover:bg-secondary/90 transition-colors text-center"
+                    className="inline-block w-full px-4 py-2 bg-white text-black border-2 border-black rounded hover:bg-gray-50 transition-colors text-center"
                   >
                     {service.rulesButton}
                   </Link>
