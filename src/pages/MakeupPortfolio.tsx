@@ -7,11 +7,49 @@ interface MakeupPortfolioProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-const MakeupPortfolio = ({ currentLang }: MakeupPortfolioProps) => {
+const makeupCategories = [
+  {
+    id: "bridal",
+    name: {
+      ru: "Свадебный макияж",
+      en: "Bridal Makeup",
+      sv: "Brudsmink"
+    },
+    description: {
+      ru: "Профессиональный свадебный макияж",
+      en: "Professional bridal makeup",
+      sv: "Professionell brudsmink"
+    },
+    images: ["/placeholder.svg", "/placeholder.svg"]
+  },
+  {
+    id: "evening",
+    name: {
+      ru: "Вечерний макияж",
+      en: "Evening Makeup",
+      sv: "Kvällsmink"
+    },
+    description: {
+      ru: "Вечерний и праздничный макияж",
+      en: "Evening and special occasion makeup",
+      sv: "Kväll- och festsmink"
+    },
+    images: ["/placeholder.svg", "/placeholder.svg"]
+  }
+];
+
+const MakeupPortfolio = ({ currentLang, onLanguageChange }: MakeupPortfolioProps) => {
   return (
-    <div className="min-h-screen">
-      <Portfolio currentLang={currentLang} category="makeup" />
-    </div>
+    <Portfolio 
+      title={{
+        ru: "Портфолио макияжа",
+        en: "Makeup Portfolio",
+        sv: "Sminkportfölj"
+      }}
+      categories={makeupCategories}
+      currentLang={currentLang}
+      onLanguageChange={onLanguageChange}
+    />
   );
 };
 
