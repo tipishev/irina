@@ -4,6 +4,7 @@ import ArtPortfolio from "./pages/ArtPortfolio";
 import PhotographyPortfolio from "./pages/PhotographyPortfolio";
 import MakeupPortfolio from "./pages/MakeupPortfolio";
 import StudioRules from "./pages/StudioRules";
+import ArtSchedule from "./pages/ArtSchedule";
 import { useEffect, useState } from "react";
 
 type Language = 'ru' | 'en' | 'sv';
@@ -74,6 +75,15 @@ function App() {
           element={
             <StudioRules 
               currentLang={currentLang} 
+            />
+          } 
+        />
+        <Route 
+          path="/art-schedule" 
+          element={
+            <ArtSchedule 
+              currentLang={currentLang}
+              onLanguageChange={handleLanguageChange}
             />
           } 
         />
