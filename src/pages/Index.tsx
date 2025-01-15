@@ -10,9 +10,9 @@ interface IndexProps {
 }
 
 const messageOfTheDay = {
-  ru: "Добро пожаловать! Сегодня отличный день для творчества! Присоединяйтесь к нашему летнему художественному лагерю для молодежи в возрасте от 8 до 12 лет. Занятия проходят с 7 июня по 17 августа. Давайте вместе создадим яркие воспоминания этим летом!",
-  en: "Welcome! Today is a great day for creativity! Join our Youth Summer Art Camp for ages 8-12, running from June 7 to August 17. Let's create colorful memories together this summer!",
-  sv: "Välkommen! Idag är en bra dag för kreativitet! Gå med i vårt konstsommarläger för ungdomar i åldrarna 8-12 år, från 7 juni till 17 augusti. Låt oss skapa färgglada minnen tillsammans denna sommar!"
+  ru: "Специальный мастер-класс ко Дню Святого Валентина! Присоединяйтесь к нашему творческому классу, где мы будем создавать уникальные подарки и украшения. Научитесь создавать романтические открытки, декоративные сердца и особенные сувениры для ваших любимых. Забронируйте место сейчас!",
+  en: "Valentine's Day Special Crafts Class! Join our creative workshop where we'll be making unique gifts and decorations. Learn to create romantic cards, decorative hearts, and special keepsakes for your loved ones. Book your spot now!",
+  sv: "Alla hjärtans dag specialklass! Delta i vår kreativa workshop där vi skapar unika presenter och dekorationer. Lär dig göra romantiska kort, dekorativa hjärtan och speciella minnessaker för dina nära och kära. Boka din plats nu!"
 };
 
 const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
@@ -21,11 +21,21 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
-          <img 
-            src="/lovable-uploads/f465f870-a74e-4dd1-a3d4-88287d317a81.png"
-            alt="Summer Art Camp Poster"
-            className="w-full md:w-1/3 rounded-lg shadow-lg"
-          />
+          <div className="w-full md:w-1/3 aspect-[3/4] bg-gradient-to-br from-pink-100 to-red-200 rounded-lg shadow-lg flex items-center justify-center p-6">
+            <div className="text-center space-y-4">
+              <div className="text-3xl font-bold text-red-600">❤️</div>
+              <div className="text-xl font-semibold text-red-800">
+                {currentLang === 'ru' ? 'День Святого Валентина' : 
+                 currentLang === 'sv' ? 'Alla hjärtans dag' : 
+                 "Valentine's Day"}
+              </div>
+              <div className="text-lg text-red-700">
+                {currentLang === 'ru' ? 'Творческий Мастер-класс' : 
+                 currentLang === 'sv' ? 'Kreativ Workshop' : 
+                 'Creative Workshop'}
+              </div>
+            </div>
+          </div>
           <p className="text-xl text-secondary italic flex-1 text-left leading-relaxed">
             {messageOfTheDay[currentLang]}
           </p>
