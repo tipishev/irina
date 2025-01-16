@@ -75,6 +75,7 @@ function App() {
           element={
             <StudioRules 
               currentLang={currentLang} 
+              onLanguageChange={handleLanguageChange}
             />
           } 
         />
