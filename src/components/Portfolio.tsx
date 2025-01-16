@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   Carousel,
   CarouselContent,
@@ -43,13 +42,6 @@ export const Portfolio = ({ title, categories, currentLang }: PortfolioProps) =>
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <Link 
-          to="/" 
-          className="text-primary hover:text-primary/80 transition-colors"
-        >
-          {currentLang === 'ru' ? '← Назад' : currentLang === 'sv' ? '← Tillbaka' : '← Back'}
-        </Link>
-        
         <h1 className="text-4xl font-bold text-center mb-12">{title[currentLang]}</h1>
         
         <div className="max-w-4xl mx-auto">
