@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -46,13 +47,17 @@ const translations = {
 
 interface StudioRulesProps {
   currentLang: Language;
+  onLanguageChange: (lang: Language) => void;
 }
 
-const StudioRules = ({ currentLang }: StudioRulesProps) => {
+const StudioRules = ({ currentLang, onLanguageChange }: StudioRulesProps) => {
   const { title, rules } = translations[currentLang];
   
   return (
     <div className="container mx-auto px-4 py-12">
+      <div className="absolute top-4 right-4">
+        <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
+      </div>
       <Card className="max-w-3xl mx-auto">
         <CardHeader>
           <CardTitle className="text-3xl text-center">{title}</CardTitle>
