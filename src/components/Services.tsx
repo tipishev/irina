@@ -11,7 +11,7 @@ const translations = {
         icon: Palette,
         link: "/portfolio/art",
         rulesButton: "Правила студии",
-        scheduleButton: "Расписание"
+        scheduleButton: "Расписание и стоимость"
       },
       {
         title: "Фотография",
@@ -37,7 +37,7 @@ const translations = {
         icon: Palette,
         link: "/portfolio/art",
         rulesButton: "Studio Rules",
-        scheduleButton: "Schedule"
+        scheduleButton: "Schedule and Prices"
       },
       {
         title: "Photography",
@@ -63,7 +63,7 @@ const translations = {
         icon: Palette,
         link: "/portfolio/art",
         rulesButton: "Studioregler",
-        scheduleButton: "Schema"
+        scheduleButton: "Schema och priser"
       },
       {
         title: "Fotografi",
@@ -116,20 +116,20 @@ export const Services = ({ currentLang }: ServicesProps) => {
                 >
                   {translations[currentLang].viewPortfolio}
                 </Link>
-                {service.rulesButton && (
-                  <Link 
-                    to="/studio-rules"
-                    className="inline-block w-full px-4 py-2 bg-white text-black border-2 border-black rounded hover:bg-gray-50 transition-colors text-center"
-                  >
-                    {service.rulesButton}
-                  </Link>
-                )}
                 {service.scheduleButton && (
                   <Link 
                     to="/art-schedule"
                     className="inline-block w-full px-4 py-2 bg-white text-black border-2 border-black rounded hover:bg-gray-50 transition-colors text-center"
                   >
                     {service.scheduleButton}
+                  </Link>
+                )}
+                {service.rulesButton && (
+                  <Link 
+                    to="/studio-rules"
+                    className="inline-block w-full px-4 py-2 bg-white text-black border-2 border-black rounded hover:bg-gray-50 transition-colors text-center"
+                  >
+                    {service.rulesButton}
                   </Link>
                 )}
               </div>

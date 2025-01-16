@@ -2,72 +2,91 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const translations = {
   ru: {
-    title: "Расписание Занятий",
+    title: "Расписание и стоимость",
     groups: {
-      beginners: "Начинающие",
-      intermediate: "Продолжающие",
-      advanced: "Продвинутые"
+      preschool: {
+        title: "🎨 Дошколята (5-6 лет)",
+        schedule: ["Вторник 16:00", "Среда 17:00"],
+        duration: "Продолжительность занятия: 1 час",
+        price: "Цена абонемента: 2000 крон (10 уроков)"
+      },
+      school: {
+        title: "🎨 Школьники (7-9 лет)",
+        schedule: ["Понедельник 17:00", "Вторник 17:00"],
+        duration: "Продолжительность занятия: 1,5 часа",
+        price: "Цена абонемента: 2300 крон (10 уроков)"
+      },
+      teens: {
+        title: "🎨 Подростки (10-15 лет)",
+        schedule: ["Среда 15:00", "Четверг 15:00 и 17:00"],
+        duration: "Продолжительность занятия: 1,5 часа",
+        price: "Цена абонемента: 2300 крон (10 уроков)"
+      }
     },
-    time: "Время",
-    days: {
-      monday: "Понедельник",
-      tuesday: "Вторник",
-      wednesday: "Среда",
-      thursday: "Четверг"
+    additional: {
+      title: "Дополнительно",
+      dropIn: "Разовое занятие (Drop-in): 250 крон (по записи, при наличии мест)",
+      trial: "Пробный урок (1 час): 150 крон",
+      discount: "Скидка: 10% при записи двух детей из одной семьи"
     }
   },
   en: {
-    title: "Class Schedule",
+    title: "Schedule and Prices",
     groups: {
-      beginners: "Beginners",
-      intermediate: "Intermediate",
-      advanced: "Advanced"
+      preschool: {
+        title: "🎨 Preschool (5-6 years)",
+        schedule: ["Tuesday 16:00", "Wednesday 17:00"],
+        duration: "Lesson duration: 1 hour",
+        price: "Subscription price: 2000 kr (10 lessons)"
+      },
+      school: {
+        title: "🎨 School children (7-9 years)",
+        schedule: ["Monday 17:00", "Tuesday 17:00"],
+        duration: "Lesson duration: 1.5 hours",
+        price: "Subscription price: 2300 kr (10 lessons)"
+      },
+      teens: {
+        title: "🎨 Teenagers (10-15 years)",
+        schedule: ["Wednesday 15:00", "Thursday 15:00 and 17:00"],
+        duration: "Lesson duration: 1.5 hours",
+        price: "Subscription price: 2300 kr (10 lessons)"
+      }
     },
-    time: "Time",
-    days: {
-      monday: "Monday",
-      tuesday: "Tuesday",
-      wednesday: "Wednesday",
-      thursday: "Thursday"
+    additional: {
+      title: "Additional Information",
+      dropIn: "Single lesson (Drop-in): 250 kr (by appointment, subject to availability)",
+      trial: "Trial lesson (1 hour): 150 kr",
+      discount: "Discount: 10% when enrolling two children from the same family"
     }
   },
   sv: {
-    title: "Lektionsschema",
+    title: "Schema och priser",
     groups: {
-      beginners: "Nybörjare",
-      intermediate: "Fortsättning",
-      advanced: "Avancerad"
+      preschool: {
+        title: "🎨 Förskola (5-6 år)",
+        schedule: ["Tisdag 16:00", "Onsdag 17:00"],
+        duration: "Lektionslängd: 1 timme",
+        price: "Prenumerationspris: 2000 kr (10 lektioner)"
+      },
+      school: {
+        title: "🎨 Skolbarn (7-9 år)",
+        schedule: ["Måndag 17:00", "Tisdag 17:00"],
+        duration: "Lektionslängd: 1,5 timmar",
+        price: "Prenumerationspris: 2300 kr (10 lektioner)"
+      },
+      teens: {
+        title: "🎨 Tonåringar (10-15 år)",
+        schedule: ["Onsdag 15:00", "Torsdag 15:00 och 17:00"],
+        duration: "Lektionslängd: 1,5 timmar",
+        price: "Prenumerationspris: 2300 kr (10 lektioner)"
+      }
     },
-    time: "Tid",
-    days: {
-      monday: "Måndag",
-      tuesday: "Tisdag",
-      wednesday: "Onsdag",
-      thursday: "Torsdag"
+    additional: {
+      title: "Ytterligare information",
+      dropIn: "Enstaka lektion (Drop-in): 250 kr (efter bokning, i mån av plats)",
+      trial: "Provlektion (1 timme): 150 kr",
+      discount: "Rabatt: 10% vid inskrivning av två barn från samma familj"
     }
-  }
-};
-
-const schedule = {
-  monday: {
-    beginners: "10:00 - 11:30",
-    intermediate: "12:00 - 13:30",
-    advanced: "14:00 - 15:30"
-  },
-  tuesday: {
-    beginners: "15:00 - 16:30",
-    intermediate: "17:00 - 18:30",
-    advanced: "19:00 - 20:30"
-  },
-  wednesday: {
-    beginners: "10:00 - 11:30",
-    intermediate: "12:00 - 13:30",
-    advanced: "14:00 - 15:30"
-  },
-  thursday: {
-    beginners: "15:00 - 16:30",
-    intermediate: "17:00 - 18:30",
-    advanced: "19:00 - 20:30"
   }
 };
 
@@ -84,25 +103,40 @@ export const Schedule = ({ currentLang }: ScheduleProps) => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary">
           {translations[currentLang].title}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Object.entries(translations[currentLang].days).map(([day, dayName]) => (
-            <Card key={day} className="fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Object.values(translations[currentLang].groups).map((group, index) => (
+            <Card key={index} className="fade-in">
               <CardHeader>
-                <CardTitle className="text-xl text-primary">{dayName}</CardTitle>
+                <CardTitle className="text-xl text-primary">{group.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {Object.entries(translations[currentLang].groups).map(([group, groupName]) => (
-                    <div key={group} className="flex justify-between items-center">
-                      <span className="font-medium text-secondary">{groupName}</span>
-                      <span className="text-secondary/60">{schedule[day as keyof typeof schedule][group as keyof typeof schedule.monday]}</span>
-                    </div>
-                  ))}
+                  <div className="space-y-2">
+                    {group.schedule.map((time, idx) => (
+                      <p key={idx} className="text-secondary">{time}</p>
+                    ))}
+                  </div>
+                  <p className="text-secondary/80">{group.duration}</p>
+                  <p className="text-secondary font-medium">{group.price}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+        <Card className="mt-8 fade-in">
+          <CardHeader>
+            <CardTitle className="text-xl text-primary">
+              {translations[currentLang].additional.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              <p className="text-secondary">{translations[currentLang].additional.dropIn}</p>
+              <p className="text-secondary">{translations[currentLang].additional.trial}</p>
+              <p className="text-secondary font-medium">{translations[currentLang].additional.discount}</p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
