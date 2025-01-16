@@ -1,5 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -8,32 +10,107 @@ interface IndexProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-const springAnnouncement = {
+const translations = {
   ru: {
-    title: "Весна 2025 — Расписание занятий",
-    schedule: {
-      preschool: "Дошколята (5-6 лет):\nВторник 16:00\nСреда 17:00\nПродолжительность: 1 час\nЦена: 2000 крон (10 уроков)",
-      school: "Школьники (7-9 лет):\nПонедельник 17:00\nВторник 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
-      teens: "Подростки (10-15 лет):\nСреда 15:00\nЧетверг 15:00 и 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
-      additional: "Разовое занятие: 250 крон\nПробный урок (1 час): 150 крон\nСкидка: 10% при записи двух детей"
+    scheduleLink: "Посмотреть расписание и цены",
+    materials: {
+      title: "Материалы",
+      content: "Базовые материалы (краски и бумагу) ученик приносит сам. Специальные материалы предоставляются студией."
+    },
+    techniques: {
+      title: "Программы и техники",
+      categories: {
+        drawing: {
+          title: "Рисунок и живопись",
+          items: ["Карандаш, уголь, пастель", "Акварель, гуашь"]
+        },
+        sculpture: {
+          title: "Скульптура",
+          items: ["Глина, папье-маше"]
+        },
+        graphics: {
+          title: "Графика",
+          items: ["Тушь, перо"]
+        },
+        decorative: {
+          title: "Декоративно-прикладное искусство",
+          items: [
+            "Эбру", "Монотипия", "Макраме", "Вышивка", "Акриловые заливки",
+            "Декупаж", "Бисероплетение", "Гобелен", "Мозаика", "Валяние",
+            "Вязание", "Квиллинг", "Роспись по стеклу", "Роспись по дереву",
+            "Народные промыслы", "Объемная термомозаика", "Макетирование",
+            "Линогравюра", "Ковроткачество"
+          ]
+        }
+      }
     }
   },
   en: {
-    title: "Spring 2025 — Class Schedule",
-    schedule: {
-      preschool: "Preschool (5-6 years):\nTuesday 16:00\nWednesday 17:00\nDuration: 1 hour\nPrice: 2000 kr (10 lessons)",
-      school: "School (7-9 years):\nMonday 17:00\nTuesday 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
-      teens: "Teens (10-15 years):\nWednesday 15:00\nThursday 15:00 and 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
-      additional: "Drop-in class: 250 kr\nTrial lesson (1 hour): 150 kr\nDiscount: 10% for two children from the same family"
+    scheduleLink: "View schedule and prices",
+    materials: {
+      title: "Materials",
+      content: "Students bring their own basic materials (paints and paper). Special materials are provided by the studio."
+    },
+    techniques: {
+      title: "Programs and Techniques",
+      categories: {
+        drawing: {
+          title: "Drawing and Painting",
+          items: ["Pencil, charcoal, pastel", "Watercolor, gouache"]
+        },
+        sculpture: {
+          title: "Sculpture",
+          items: ["Clay, papier-mâché"]
+        },
+        graphics: {
+          title: "Graphics",
+          items: ["Ink, pen"]
+        },
+        decorative: {
+          title: "Decorative Arts",
+          items: [
+            "Ebru", "Monotype", "Macramé", "Embroidery", "Acrylic pouring",
+            "Decoupage", "Beadwork", "Tapestry", "Mosaic", "Felting",
+            "Knitting", "Quilling", "Glass painting", "Wood painting",
+            "Folk crafts", "3D thermal mosaic", "Model making",
+            "Linocut", "Carpet weaving"
+          ]
+        }
+      }
     }
   },
   sv: {
-    title: "Våren 2025 — Klassschema",
-    schedule: {
-      preschool: "Förskola (5-6 år):\nTisdag 16:00\nOnsdag 17:00\nLängd: 1 timme\nPris: 2000 kr (10 lektioner)",
-      school: "Skola (7-9 år):\nMåndag 17:00\nTisdag 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
-      teens: "Tonåringar (10-15 år):\nOnsdag 15:00\nTorsdag 15:00 och 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
-      additional: "Drop-in-klass: 250 kr\nProvlektion (1 timme): 150 kr\nRabatt: 10% för två barn från samma familj"
+    scheduleLink: "Se schema och priser",
+    materials: {
+      title: "Material",
+      content: "Eleverna tar med sig grundläggande material (färger och papper). Specialmaterial tillhandahålls av studion."
+    },
+    techniques: {
+      title: "Program och tekniker",
+      categories: {
+        drawing: {
+          title: "Teckning och målning",
+          items: ["Penna, kol, pastell", "Akvarell, gouache"]
+        },
+        sculpture: {
+          title: "Skulptur",
+          items: ["Lera, papier-maché"]
+        },
+        graphics: {
+          title: "Grafik",
+          items: ["Bläck, penna"]
+        },
+        decorative: {
+          title: "Dekorativ konst",
+          items: [
+            "Ebru", "Monotypi", "Makramé", "Broderi", "Akrylgjutning",
+            "Decoupage", "Pärlarbete", "Gobeläng", "Mosaik", "Tovning",
+            "Stickning", "Quilling", "Glasmålning", "Trämålning",
+            "Folkkonst", "3D termisk mosaik", "Modellbygge",
+            "Linoleumtryck", "Mattvävning"
+          ]
+        }
+      }
     }
   }
 };
@@ -48,36 +125,44 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
   return (
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
-      <div className="container mx-auto px-4 py-12 space-y-8">
-        <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
-          <div className="w-full md:w-1/2">
-            <img
-              src="/lovable-uploads/3d5c7bb0-aa36-42ae-b1c8-6ab25d281a4a.png"
-              alt="Spring 2025 Art Classes"
-              className="w-full h-auto rounded-lg shadow-md"
-            />
-          </div>
-          <div className="w-full md:w-1/2 space-y-6">
+      <div className="container mx-auto px-4 py-12 space-y-12">
+        <div className="text-center">
+          <Link to="/art-schedule">
+            <Button variant="default" size="lg" className="mb-8">
+              {translations[currentLang].scheduleLink}
+            </Button>
+          </Link>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 space-y-8">
+          <div className="space-y-4">
             <h2 className="text-2xl font-bold text-secondary">
-              {springAnnouncement[currentLang].title}
+              {translations[currentLang].materials.title}
             </h2>
-            <div className="space-y-4 text-secondary/80">
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.preschool}
-              </pre>
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.school}
-              </pre>
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.teens}
-              </pre>
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.additional}
-              </pre>
+            <p className="text-secondary/80">
+              {translations[currentLang].materials.content}
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-secondary">
+              {translations[currentLang].techniques.title}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {Object.values(translations[currentLang].techniques.categories).map((category, index) => (
+                <div key={index} className="space-y-4">
+                  <h3 className="text-xl font-semibold text-primary">{category.title}</h3>
+                  <ul className="list-disc list-inside space-y-2 text-secondary/80">
+                    {category.items.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        
+
         <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
           <div className="w-full md:w-1/3 aspect-[3/4] bg-gradient-to-br from-pink-100 to-red-200 rounded-lg shadow-lg flex items-center justify-center p-6">
             <div className="text-center space-y-4">
