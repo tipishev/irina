@@ -13,7 +13,7 @@ const translations = {
   en: {
     title: "Art Studio",
     subtitle: "Let's create a masterpiece!",
-    contact: "Don't message, call me at",
+    contact: "",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   },
   sv: {
