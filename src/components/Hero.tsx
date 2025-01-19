@@ -6,17 +6,17 @@ type Language = 'ru' | 'en' | 'sv';
 const translations = {
   ru: {
     title: "Художественная Школа",
-    subtitle: "Давайте создадим шедевр!",
+    subtitle: "Давайте создадим шедевр вместе!",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   },
   en: {
     title: "Art Studio",
-    subtitle: "Let's create a masterpiece!",
+    subtitle: "Let's create a masterpiece together!",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   },
   sv: {
     title: "Konststudio",
-    subtitle: "Låt oss skapa ett mästerverk!",
+    subtitle: "Låt oss skapa ett mästerverk tillsammans!",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   }
 };
