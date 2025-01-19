@@ -7,7 +7,7 @@ const translations = {
   ru: {
     title: "Художественная Школа",
     subtitle: "Давайте создадим шедевр!",
-    contact: "",
+    contact: "Не пишите, звоните мне на",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   },
   en: {
@@ -19,7 +19,7 @@ const translations = {
   sv: {
     title: "Konststudio",
     subtitle: "Låt oss skapa ett mästerverk!",
-    contact: "",
+    contact: "Skriv inte, ring mig på",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   }
 };
@@ -40,7 +40,7 @@ export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
         <img 
           src="/lovable-uploads/cf4fd44e-ba36-4c37-86d9-77faf779f3c4.png" 
           alt="Irina Zay Art Studio Logo" 
-          className="w-64 h-64 mx-auto object-contain"
+          className="w-48 h-48 mx-auto object-contain"
         />
         <h1 className="text-4xl md:text-6xl font-bold text-secondary">
           Irina Zay
@@ -52,6 +52,7 @@ export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
           {translations[currentLang].subtitle}
         </p>
         <p className="text-lg font-medium">
+          {translations[currentLang].contact}{' '}
           <a 
             href="tel:073-517-3330" 
             className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
