@@ -28,7 +28,12 @@ interface HeroProps {
 
 export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center bg-background">
+    <div 
+      className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: 'url("/lovable-uploads/2ae5d0d8-61a3-4788-96c3-7b85618138c7.png")'
+      }}
+    >
       <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
       <div className="absolute top-4 right-4">
         <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
@@ -39,19 +44,19 @@ export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
           alt="Irina Zay Art Studio Logo" 
           className="w-64 h-64 mx-auto object-contain"
         />
-        <h1 className="text-4xl md:text-6xl font-bold text-secondary">
+        <h1 className="text-4xl md:text-6xl font-bold text-white">
           Irina Zay
         </h1>
-        <h2 className="text-2xl md:text-3xl text-secondary/80">
+        <h2 className="text-2xl md:text-3xl text-white/90">
           {translations[currentLang].title}
         </h2>
-        <p className="text-xl text-secondary/60">
+        <p className="text-xl text-white/80">
           {translations[currentLang].subtitle}
         </p>
         <p className="text-lg font-medium">
           <a 
             href="tel:073-517-3330" 
-            className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+            className="text-white hover:text-white/80 transition-colors inline-flex items-center gap-1"
           >
             073-517-3330 <Phone className="w-4 h-4" />
           </a>
