@@ -5,7 +5,7 @@ type Language = 'ru' | 'en' | 'sv';
 
 const translations = {
   ru: {
-    title: "Художественная Школа",
+    title: "Художественная Школаo",
     subtitle: "Давайте создадим шедевр!",
     address: "Stopvägen 38, 168 35 Bromma, Stockholm"
   },
@@ -34,7 +34,7 @@ export const Hero = ({ currentLang, onLanguageChange }: HeroProps) => {
         backgroundImage: 'url("/lovable-uploads/2ae5d0d8-61a3-4788-96c3-7b85618138c7.png")'
       }}
     >
-      <div className="absolute inset-0 bg-white/90" />
+      <div className="absolute inset-0 bg-white/50" />
       <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
       <div className="absolute top-4 right-4">
         <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
