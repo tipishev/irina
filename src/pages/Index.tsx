@@ -97,8 +97,8 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
           </div>
           <div className="w-full md:w-1/2">
             <img
-              src="/lovable-uploads/78a34196-bb43-4dff-ad67-1dc23495d89c.png"
-              alt="Irina in her art studio"
+              src="/lovable-uploads/cda4af1c-0fd8-4fd4-a32a-76bbdef97884.png"
+              alt="Art teacher in studio surrounded by colorful artwork"
               className="w-full h-auto rounded-lg shadow-md"
             />
           </div>
