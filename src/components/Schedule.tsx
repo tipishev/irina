@@ -137,6 +137,7 @@ export const Schedule = ({ currentLang }: ScheduleProps) => {
               <p className="text-secondary">{translations[currentLang].additional.dropIn}</p>
               <p className="text-secondary">{translations[currentLang].additional.trial}</p>
               <p className="text-secondary font-medium">{translations[currentLang].additional.discount}</p>
+              <p className="text-secondary">{translations[currentLang].additional.saturday}</p>
             </div>
           </CardContent>
         </Card>
