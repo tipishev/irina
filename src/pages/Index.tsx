@@ -52,27 +52,27 @@ const springAnnouncement = {
     title: "Весна 2025 — Расписание занятий",
     schedule: {
       preschool: "Дошколята (5-6 лет):\nВторник 16:00\nСреда 17:00\nПродолжительность: 1 час\nЦена: 2000 крон (10 уроков)",
-      school: "Школьники (7-9 лет):\nПонедельник 17:00\nВторник 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
+      school: "Школьники (7-9 лет):\nПонедельник 17:00\nВторник 15:00 и 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
       teens: "Подростки (10-15 лет):\nСреда 15:00\nЧетверг 15:00 и 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
-      additional: "Разовое занятие: 250 крон\nПробный урок (1 час): 150 крон\nСкидка: 10% при записи двух детей"
+      additional: "Разовое занятие: 250 крон\nПробный урок (1 час): 150 крон\nСкидка: 10% при записи двух детей\nСуббота: организация детских Арт классов (дней рождений) по записи, количество мест 10 максимум, цена договорная от 150-400 кр за ребенка в зависимости от материалов и сложности"
     }
   },
   en: {
     title: "Spring 2025 — Class Schedule",
     schedule: {
       preschool: "Preschool (5-6 years):\nTuesday 16:00\nWednesday 17:00\nDuration: 1 hour\nPrice: 2000 kr (10 lessons)",
-      school: "School (7-9 years):\nMonday 17:00\nTuesday 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
+      school: "School (7-9 years):\nMonday 17:00\nTuesday 15:00 and 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
       teens: "Teens (10-15 years):\nWednesday 15:00\nThursday 15:00 and 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
-      additional: "Drop-in class: 250 kr\nTrial lesson (1 hour): 150 kr\nDiscount: 10% for two children from the same family"
+      additional: "Drop-in class: 250 kr\nTrial lesson (1 hour): 150 kr\nDiscount: 10% for two children from the same family\nSaturday: Art classes and birthday parties available by appointment, maximum 10 places, price varies from 150-400 kr per child depending on materials and complexity"
     }
   },
   sv: {
     title: "Våren 2025 — Klassschema",
     schedule: {
       preschool: "Förskola (5-6 år):\nTisdag 16:00\nOnsdag 17:00\nLängd: 1 timme\nPris: 2000 kr (10 lektioner)",
-      school: "Skola (7-9 år):\nMåndag 17:00\nTisdag 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
+      school: "Skola (7-9 år):\nMåndag 17:00\nTisdag 15:00 och 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
       teens: "Tonåringar (10-15 år):\nOnsdag 15:00\nTorsdag 15:00 och 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
-      additional: "Drop-in-klass: 250 kr\nProvlektion (1 timme): 150 kr\nRabatt: 10% för två barn från samma familj"
+      additional: "Drop-in-klass: 250 kr\nProvlektion (1 timme): 150 kr\nRabatt: 10% för två barn från samma familj\nLördag: Konstklasser och födelsedagsfester tillgängliga efter bokning, max 10 platser, pris varierar från 150-400 kr per barn beroende på material och komplexitet"
     }
   }
 };
