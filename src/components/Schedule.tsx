@@ -12,7 +12,7 @@ const translations = {
       },
       school: {
         title: "🎨 Школьники (7-9 лет)",
-        schedule: ["Понедельник 17:00", "Вторник 17:00"],
+        schedule: ["Понедельник 17:00", "Вторник 15:00 и 17:00"],
         duration: "Продолжительность занятия: 1,5 часа",
         price: "Цена абонемента: 2300 крон (10 уроков)"
       },
@@ -27,7 +27,8 @@ const translations = {
       title: "Дополнительно",
       dropIn: "Разовое занятие (Drop-in): 250 крон (по записи, при наличии мест)",
       trial: "Пробный урок (1 час): 150 крон",
-      discount: "Скидка: 10% при записи двух детей из одной семьи"
+      discount: "Скидка: 10% при записи двух детей из одной семьи",
+      saturday: "Суббота: организация детских Арт классов (дней рождений) по записи. Максимум 10 мест, цена от 150 до 400 крон за ребенка в зависимости от материалов и сложности."
     }
   },
   en: {
@@ -41,7 +42,7 @@ const translations = {
       },
       school: {
         title: "🎨 School children (7-9 years)",
-        schedule: ["Monday 17:00", "Tuesday 17:00"],
+        schedule: ["Monday 17:00", "Tuesday 15:00 and 17:00"],
         duration: "Lesson duration: 1.5 hours",
         price: "Subscription price: 2300 kr (10 lessons)"
       },
@@ -56,7 +57,8 @@ const translations = {
       title: "Additional Information",
       dropIn: "Single lesson (Drop-in): 250 kr (by appointment, subject to availability)",
       trial: "Trial lesson (1 hour): 150 kr",
-      discount: "Discount: 10% when enrolling two children from the same family"
+      discount: "Discount: 10% when enrolling two children from the same family",
+      saturday: "Saturday: Art classes and birthday parties available by appointment. Maximum 10 participants, price ranges from 150 to 400 kr per child depending on materials and complexity."
     }
   },
   sv: {
@@ -70,7 +72,7 @@ const translations = {
       },
       school: {
         title: "🎨 Skolbarn (7-9 år)",
-        schedule: ["Måndag 17:00", "Tisdag 17:00"],
+        schedule: ["Måndag 17:00", "Tisdag 15:00 och 17:00"],
         duration: "Lektionslängd: 1,5 timmar",
         price: "Prenumerationspris: 2300 kr (10 lektioner)"
       },
@@ -85,7 +87,8 @@ const translations = {
       title: "Ytterligare information",
       dropIn: "Enstaka lektion (Drop-in): 250 kr (efter bokning, i mån av plats)",
       trial: "Provlektion (1 timme): 150 kr",
-      discount: "Rabatt: 10% vid inskrivning av två barn från samma familj"
+      discount: "Rabatt: 10% vid inskrivning av två barn från samma familj",
+      saturday: "Lördag: Konstklasser och födelsedagsfester tillgängliga efter bokning. Maximalt 10 deltagare, pris mellan 150-400 kr per barn beroende på material och komplexitet."
     }
   }
 };
