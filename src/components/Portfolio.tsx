@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import {
   Carousel,
@@ -7,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { LanguageSelector } from './LanguageSelector';
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -36,13 +38,19 @@ interface PortfolioProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-export const Portfolio = ({ title, categories, currentLang }: PortfolioProps) => {
+export const Portfolio = ({ title, categories, currentLang, onLanguageChange }: PortfolioProps) => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-12">{title[currentLang]}</h1>
+        <div className="flex justify-between items-center mb-12">
+          <h1 className="text-4xl font-bold">{title[currentLang]}</h1>
+          <LanguageSelector 
+            currentLang={currentLang}
+            onLanguageChange={onLanguageChange}
+          />
+        </div>
         
         <div className="max-w-4xl mx-auto">
           <Carousel className="mb-8">
@@ -67,7 +75,7 @@ export const Portfolio = ({ title, categories, currentLang }: PortfolioProps) =>
             {activeCategory.description[currentLang]}
           </p>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
                 key={category.id}

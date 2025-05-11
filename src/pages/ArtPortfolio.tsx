@@ -1,3 +1,4 @@
+
 import { Portfolio } from "@/components/Portfolio";
 
 type Language = 'ru' | 'en' | 'sv';
@@ -9,37 +10,79 @@ interface ArtPortfolioProps {
 
 const artCategories = [
   {
-    id: "paintings",
+    id: "painting",
     name: {
-      ru: "Картины",
-      en: "Paintings",
-      sv: "Målningar"
+      ru: "Живопись",
+      en: "Painting",
+      sv: "Målning"
     },
     description: {
-      ru: "Коллекция картин маслом и акрилом",
-      en: "Collection of oil and acrylic paintings",
-      sv: "Samling av olje- och akrylmålningar"
+      ru: "Красочные работы маслом и акрилом",
+      en: "Colorful works in oil and acrylic",
+      sv: "Färgglada verk i olja och akryl"
     },
     images: [
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5",
-      "https://images.unsplash.com/photo-1580136579312-94651dfd596d"
+      "/lovable-uploads/portfolio/kids_art/painting/1.jpg",
+      "/lovable-uploads/portfolio/kids_art/painting/2.jpg",
+      "/lovable-uploads/portfolio/kids_art/painting/3.jpg",
+      "/lovable-uploads/portfolio/kids_art/painting/4.jpg"
     ]
   },
   {
-    id: "drawings",
+    id: "drawing",
     name: {
       ru: "Рисунки",
-      en: "Drawings",
-      sv: "Teckningar"
+      en: "Drawing",
+      sv: "Teckning"
     },
     description: {
-      ru: "Карандашные и угольные рисунки",
-      en: "Pencil and charcoal drawings",
-      sv: "Blyerts- och kolteckningar"
+      ru: "Традиционные техники рисования карандашом и углем",
+      en: "Traditional drawing techniques with pencil and charcoal",
+      sv: "Traditionella teckningstekniker med penna och kol"
     },
     images: [
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f"
+      "/lovable-uploads/portfolio/kids_art/drawing/1.jpg",
+      "/lovable-uploads/portfolio/kids_art/drawing/2.jpg",
+      "/lovable-uploads/portfolio/kids_art/drawing/3.jpg",
+      "/lovable-uploads/portfolio/kids_art/drawing/4.jpg"
+    ]
+  },
+  {
+    id: "graphic",
+    name: {
+      ru: "Графика",
+      en: "Graphic Art",
+      sv: "Grafik"
+    },
+    description: {
+      ru: "Разнообразные графические техники и стили",
+      en: "Various graphic techniques and styles",
+      sv: "Olika grafiska tekniker och stilar"
+    },
+    images: [
+      "/lovable-uploads/portfolio/kids_art/graphic/1.jpg",
+      "/lovable-uploads/portfolio/kids_art/graphic/2.jpg",
+      "/lovable-uploads/portfolio/kids_art/graphic/3.jpg",
+      "/lovable-uploads/portfolio/kids_art/graphic/4.jpg"
+    ]
+  },
+  {
+    id: "craft",
+    name: {
+      ru: "Ремесла",
+      en: "Craft",
+      sv: "Hantverk"
+    },
+    description: {
+      ru: "Творческие поделки и ручная работа",
+      en: "Creative handicrafts and handmade projects",
+      sv: "Kreativa hantverk och handgjorda projekt"
+    },
+    images: [
+      "/lovable-uploads/portfolio/kids_art/craft/1.jpg",
+      "/lovable-uploads/portfolio/kids_art/craft/2.jpg",
+      "/lovable-uploads/portfolio/kids_art/craft/3.jpg",
+      "/lovable-uploads/portfolio/kids_art/craft/4.jpg"
     ]
   }
 ];
