@@ -8,6 +8,10 @@ interface ArtPortfolioProps {
   onLanguageChange: (lang: Language) => void;
 }
 
+// Path to the images folder
+const basePath = "/lovable-uploads/portfolio/kids_art";
+
+// Define the art categories with all available images
 const artCategories = [
   {
     id: "painting",
@@ -22,10 +26,27 @@ const artCategories = [
       sv: "Färgglada verk i olja och akryl"
     },
     images: [
-      "/lovable-uploads/portfolio/kids_art/painting/1.jpg",
-      "/lovable-uploads/portfolio/kids_art/painting/2.jpg",
-      "/lovable-uploads/portfolio/kids_art/painting/3.jpg",
-      "/lovable-uploads/portfolio/kids_art/painting/4.jpg"
+      `${basePath}/painting/photo_5839212574300817639_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817644_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817647_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817649_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817651_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817652_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817654_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817655_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817658_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817662_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817676_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817677_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817678_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817680_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817682_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817690_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817691_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817696_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817697_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817701_y.jpg`,
+      `${basePath}/painting/photo_5839212574300817707_y.jpg`
     ]
   },
   {
@@ -41,10 +62,10 @@ const artCategories = [
       sv: "Traditionella teckningstekniker med penna och kol"
     },
     images: [
-      "/lovable-uploads/portfolio/kids_art/drawing/1.jpg",
-      "/lovable-uploads/portfolio/kids_art/drawing/2.jpg",
-      "/lovable-uploads/portfolio/kids_art/drawing/3.jpg",
-      "/lovable-uploads/portfolio/kids_art/drawing/4.jpg"
+      `${basePath}/drawing/photo_5839212574300817671_y.jpg`,
+      `${basePath}/drawing/photo_5839212574300817672_y.jpg`,
+      `${basePath}/drawing/photo_5839212574300817688_y.jpg`,
+      `${basePath}/drawing/photo_5839212574300817689_y.jpg`
     ]
   },
   {
@@ -60,10 +81,17 @@ const artCategories = [
       sv: "Olika grafiska tekniker och stilar"
     },
     images: [
-      "/lovable-uploads/portfolio/kids_art/graphic/1.jpg",
-      "/lovable-uploads/portfolio/kids_art/graphic/2.jpg",
-      "/lovable-uploads/portfolio/kids_art/graphic/3.jpg",
-      "/lovable-uploads/portfolio/kids_art/graphic/4.jpg"
+      `${basePath}/graphic/photo_5839212574300817650_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817657_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817659_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817660_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817661_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817670_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817703_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817706_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817708_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817709_y.jpg`,
+      `${basePath}/graphic/photo_5839212574300817710_y.jpg`
     ]
   },
   {
@@ -79,10 +107,39 @@ const artCategories = [
       sv: "Kreativa hantverk och handgjorda projekt"
     },
     images: [
-      "/lovable-uploads/portfolio/kids_art/craft/1.jpg",
-      "/lovable-uploads/portfolio/kids_art/craft/2.jpg",
-      "/lovable-uploads/portfolio/kids_art/craft/3.jpg",
-      "/lovable-uploads/portfolio/kids_art/craft/4.jpg"
+      `${basePath}/craft/photo_5839212574300817645_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817653_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817656_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817663_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817664_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817665_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817666_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817667_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817668_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817669_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817673_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817674_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817675_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817679_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817681_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817683_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817684_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817685_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817686_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817687_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817692_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817693_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817694_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817695_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817698_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817699_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817700_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817702_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817704_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817705_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817711_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817712_y.jpg`,
+      `${basePath}/craft/photo_5839212574300817713_y.jpg`
     ]
   }
 ];
