@@ -9,6 +9,9 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { LanguageSelector } from './LanguageSelector';
+import { ZoomIn, X } from "lucide-react";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -40,6 +43,7 @@ interface PortfolioProps {
 
 export const Portfolio = ({ title, categories, currentLang, onLanguageChange }: PortfolioProps) => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-background">
@@ -57,12 +61,19 @@ export const Portfolio = ({ title, categories, currentLang, onLanguageChange }: 
             <CarouselContent>
               {activeCategory.images.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="aspect-video w-full overflow-hidden rounded-lg">
+                  <div className="relative flex items-center justify-center">
                     <img
                       src={image}
                       alt={`${activeCategory.name[currentLang]} ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="max-h-[70vh] max-w-full object-contain mx-auto"
                     />
+                    <button 
+                      className="absolute bottom-2 right-2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+                      onClick={() => setFullscreenImage(image)}
+                      aria-label="View full screen"
+                    >
+                      <ZoomIn size={18} />
+                    </button>
                   </div>
                 </CarouselItem>
               ))}
@@ -93,6 +104,23 @@ export const Portfolio = ({ title, categories, currentLang, onLanguageChange }: 
           </div>
         </div>
       </div>
+
+      <Dialog open={!!fullscreenImage} onOpenChange={(open) => !open && setFullscreenImage(null)}>
+        <DialogContent className="max-w-[95vw] h-[95vh] flex items-center justify-center p-0 bg-black border-none">
+          <DialogClose className="absolute top-4 right-4 z-10 rounded-full bg-black/50 text-white p-2 hover:bg-white/20 transition-colors">
+            <X size={24} />
+          </DialogClose>
+          <div className="w-full h-full flex items-center justify-center p-4">
+            {fullscreenImage && (
+              <img
+                src={fullscreenImage}
+                alt="Full screen view"
+                className="max-h-full max-w-full object-contain"
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
