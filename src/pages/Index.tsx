@@ -41,7 +41,7 @@ Jag tog examen från en konstskola med inriktning mot dekorativ och tillämpad k
 
 I min studio kombinerar jag professionalism och kreativitet. Vi studerar akademisk teckning, dekorativ och tillämpad konst och rysk kultur, med betoning på kulturella och historiska traditioner. Jag tror att innan man ägnar sig åt experimentell kreativitet är det viktigt att behärska teknik och grunder.
 
-Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag strävar efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
+Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag sträver efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
 
 I studion skapar jag en balanserad atmosfär där komfort och kreativitet kombineras med disciplin och ett strukturerat tillvägagångssätt.`
   }
@@ -77,11 +77,124 @@ const springAnnouncement = {
   }
 };
 
+const currentEvents = {
+  ru: {
+    title: "Текущие События",
+    artMarketTitle: "Приглашаем к участию в Children's Art Market",
+    artMarketContent: `Дорогие ученики и родители!
+
+В рамках культурного фестиваля KUL TUR в Бромме, наша студия проводит день открытых дверей. Одним из главных событий этого дня станет вернисаж-продажа детских художественных работ — Children's Art Market.
+
+Если вы хотите, чтобы работы вашего ребёнка были представлены на выставке, мы с радостью примем их для участия. Это прекрасная возможность почувствовать себя настоящим художником, поделиться творчеством и, возможно, найти благодарного покупателя.
+
+✅ Все средства от продажи детских работ полностью передаются авторам.
+Это наш способ поддержать первые творческие шаги юных художников.
+🎨 Для взрослых (друзей студии, мастеров декоративно-прикладного искусства):
+Мы приглашаем вас представить свои изделия на продажу в отдельной зоне.
+💰 Комиссия студии — 10% от продажи, остальное получает автор.
+Это поможет нам организовать мероприятие и поддержать студийные проекты.
+Работы можно приносить заранее или в день мероприятия до 10:30.
+Пожалуйста, подписывайте каждую работу (имя, возраст, цена).
+
+📍 Children's Art Market состоится 17 мая с 11:00 до 17:00 по адресу Stopvägen 38.
+
+Будем рады видеть вас среди участников и гостей!`,
+    festivalLink: "Подробнее о фестивале KUL TUR"
+  },
+  en: {
+    title: "Current Events",
+    artMarketTitle: "You're invited to participate in the Children's Art Market!",
+    artMarketContent: `Dear students, parents, and friends of the studio,
+
+As part of the KUL TUR festival in Bromma, our studio will host an Open House Day, and one of the highlights will be the Children's Art Market — an exhibition and sale of children's artworks.
+
+✨ Special spotlight on our young artists:
+We warmly welcome your children's artworks for display and sale.
+It's a wonderful opportunity to share their creativity and feel proud of being seen and appreciated.
+All proceeds from the sale of children's artworks go directly to the young artists.
+
+🎨 Studio friends and craft artists are also welcome to take part.
+A separate space will be provided for your handmade works.
+For adult participants, a 10% commission from each sale will go to the studio to support event organization. The rest goes to the artist.
+
+📦 Artworks can be brought in advance or on the day of the event before 10:30.
+Please label each item clearly with the artist's name, age (for children), and price.
+
+📍 Children's Art Market takes place on May 17th from 11:00 to 17:00 at Stopvägen 38.
+
+We look forward to seeing you — whether as a participant, guest, or art enthusiast.
+Let's make this day a celebration of inspiration, creativity, and joyful connection`,
+    festivalLink: "Learn more about the KUL TUR festival"
+  },
+  sv: {
+    title: "Aktuella Händelser",
+    artMarketTitle: "Du är inbjuden att delta i Children's Art Market!",
+    artMarketContent: `Kära elever, föräldrar och vänner till studion,
+
+Som en del av KUL TUR-festivalen i Bromma kommer vår studio att hålla öppet hus, och ett av höjdpunkterna blir Children's Art Market — en utställning och försäljning av barnens konstverk.
+
+✨ Särskilt fokus på våra unga konstnärer:
+Vi välkomnar varmt ditt barns konstverk för visning och försäljning.
+Det är ett underbart tillfälle att dela deras kreativitet och känna sig stolt över att bli sedd och uppskattad.
+Alla intäkter från försäljningen av barnens konstverk går direkt till de unga konstnärerna.
+
+🎨 Studiovänner och hantverkskonstnärer är också välkomna att delta.
+Ett separat utrymme kommer att tillhandahållas för dina handgjorda arbeten.
+För vuxna deltagare går 10% provision från varje försäljning till studion för att stödja evenemangsorganisationen. Resten går till konstnären.
+
+📦 Konstverk kan lämnas in i förväg eller på dagen för evenemanget före 10:30.
+Vänligen märk varje föremål tydligt med konstnärens namn, ålder (för barn) och pris.
+
+📍 Children's Art Market äger rum den 17 maj från 11:00 till 17:00 på Stopvägen 38.
+
+Vi ser fram emot att träffa dig — oavsett om du är deltagare, gäst eller konstentusiast.
+Låt oss göra denna dag till en firande av inspiration, kreativitet och glädjefull gemenskap.`,
+    festivalLink: "Läs mer om KUL TUR-festivalen"
+  }
+};
+
 const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
   return (
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
-      <div className="container mx-auto px-4 py-12 space-y-8">
+      <div className="container mx-auto px-4 py-12 space-y-16">
+        {/* Current Events Section */}
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-center text-secondary mb-10">
+            {currentEvents[currentLang].title}
+          </h2>
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/lovable-uploads/3483ccec-bd7f-4e71-a004-dfadb0a20552.png"
+                alt="Children Art Market Poster"
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+            <div className="w-full md:w-1/2 space-y-6">
+              <h3 className="text-2xl font-bold text-secondary">
+                {currentEvents[currentLang].artMarketTitle}
+              </h3>
+              <div className="text-secondary/80 space-y-4">
+                {currentEvents[currentLang].artMarketContent.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <a 
+                href="https://kulturbromma.se/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-primary font-medium hover:underline"
+              >
+                {currentEvents[currentLang].festivalLink}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* About Me Section */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
           <div className="w-full md:w-1/2 space-y-6">
             <h2 className="text-3xl font-bold text-secondary">
@@ -104,6 +217,7 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
           </div>
         </div>
         
+        {/* Spring Announcement Section */}
         <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
           <div className="w-full md:w-1/2">
             <img
