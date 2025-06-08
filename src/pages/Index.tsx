@@ -444,41 +444,50 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
           <h2 className="text-2xl font-bold text-center text-secondary mb-6">
             {soapCandles[currentLang].title}
           </h2>
-          <div className="space-y-6">
-            <p className="text-secondary/80 text-center">
-              {soapCandles[currentLang].subtitle}
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-secondary mb-3">Детали:</h4>
-                <div className="space-y-2 text-sm text-secondary/80">
-                  <p>{soapCandles[currentLang].details.location}</p>
-                  <p>{soapCandles[currentLang].details.date}</p>
-                  <p>{soapCandles[currentLang].details.time}</p>
-                  <p>{soapCandles[currentLang].details.address}</p>
-                  <p>{soapCandles[currentLang].details.price}</p>
-                  <p>{soapCandles[currentLang].details.age}</p>
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/lovable-uploads/920f07cd-3b2b-4d07-bfff-110162c90968.png"
+                alt="Soap and Candles Workshop"
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+            <div className="w-full md:w-1/2 space-y-6">
+              <p className="text-secondary/80">
+                {soapCandles[currentLang].subtitle}
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-secondary mb-3">Детали:</h4>
+                  <div className="space-y-2 text-sm text-secondary/80">
+                    <p>{soapCandles[currentLang].details.location}</p>
+                    <p>{soapCandles[currentLang].details.date}</p>
+                    <p>{soapCandles[currentLang].details.time}</p>
+                    <p>{soapCandles[currentLang].details.address}</p>
+                    <p>{soapCandles[currentLang].details.price}</p>
+                    <p>{soapCandles[currentLang].details.age}</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-secondary mb-3">
+                    {soapCandles[currentLang].activities.title}
+                  </h4>
+                  <div className="space-y-2 text-sm text-secondary/80">
+                    <p>{soapCandles[currentLang].activities.soap}</p>
+                    <p>{soapCandles[currentLang].activities.candles}</p>
+                    <p>{soapCandles[currentLang].activities.takeaway}</p>
+                    <p>{soapCandles[currentLang].activities.teacher}</p>
+                  </div>
                 </div>
               </div>
               
-              <div>
-                <h4 className="font-semibold text-secondary mb-3">
-                  {soapCandles[currentLang].activities.title}
-                </h4>
-                <div className="space-y-2 text-sm text-secondary/80">
-                  <p>{soapCandles[currentLang].activities.soap}</p>
-                  <p>{soapCandles[currentLang].activities.candles}</p>
-                  <p>{soapCandles[currentLang].activities.takeaway}</p>
-                  <p>{soapCandles[currentLang].activities.teacher}</p>
-                </div>
+              <div className="p-4 bg-primary/10 rounded-lg">
+                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
+                  {soapCandles[currentLang].registration}
+                </pre>
               </div>
-            </div>
-            
-            <div className="p-4 bg-primary/10 rounded-lg">
-              <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
-                {soapCandles[currentLang].registration}
-              </pre>
             </div>
           </div>
         </div>
