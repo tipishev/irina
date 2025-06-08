@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 
@@ -41,121 +42,255 @@ Jag tog examen från en konstskola med inriktning mot dekorativ och tillämpad k
 
 I min studio kombinerar jag professionalism och kreativitet. Vi studerar akademisk teckning, dekorativ och tillämpad konst och rysk kultur, med betoning på kulturella och historiska traditioner. Jag tror att innan man ägnar sig åt experimentell kreativitet är det viktigt att behärska teknik och grunder.
 
-Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag sträver efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
+Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag strävar efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
 
 I studion skapar jag en balanserad atmosfär där komfort och kreativitet kombineras med disciplin och ett strukturerat tillvägagångssätt.`
   }
 };
 
-const springAnnouncement = {
+const summerCourses = {
   ru: {
-    title: "Весна 2025 — Расписание занятий",
-    schedule: {
-      preschool: "Дошколята (5-6 лет):\nВторник 16:00\nСреда 17:00\nПродолжительность: 1 час\nЦена: 2000 крон (10 уроков)",
-      school: "Школьники (7-9 лет):\nПонедельник 17:00\nВторник 15:00 и 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
-      teens: "Подростки (10-15 лет):\nСреда 15:00\nЧетверг 15:00 и 17:00\nПродолжительность: 1,5 часа\nЦена: 2300 крон (10 уроков)",
-      additional: "Разовое занятие: 250 крон\nПробный урок (1 час): 150 крон\nСкидка: 10% при записи двух детей\nСуббота: организация детских Арт классов (дней рождений) по записи, количество мест 10 максимум, цена договорная от 150-400 кр за ребенка в зависимости от материалов и сложности"
-    }
+    title: "Летние творческие курсы 2025",
+    mainTitle: "🎨 Летние творческие курсы для детей и подростков в \"Irina Zay Art Studio\"!",
+    subtitle: "Подарите вашему ребёнку лето, полное вдохновения, красок и искусства!",
+    courses: {
+      pleinair: {
+        title: "🌿 Курс «Пленэр: Пейзажи и ботаника»",
+        dates: "📅 16–20 июня",
+        time: "🕙 с 10:00 до 13:00",
+        age: "👧 Возраст: 10+",
+        description: "🎨 Учимся писать пейзажи с натуры — леса, озёра, цветущие сады и даже домики — сразу цветом!",
+        materials: "🖌 Материалы: пастель, гуашь, акварель (приносите с собой, список выдаём при записи).",
+        location: "📍 Встреча в студии, затем прогулка на пленэр в окрестностях Броммы.",
+        price: "💰 Цена: 1750 kr за курс / 400 kr за 1 день",
+        note: "⚠️ Не забудьте проездной и защиту от комаров и клещей!"
+      },
+      sculpture: {
+        title: "🐚 Курс «Каркасная скульптура: Морские обитатели»",
+        dates: "📅 23–27 июня",
+        time: "🕚 с 11:00 до 13:00",
+        age: "👧 Возраст: 10+",
+        location: "📍 Адрес: Stopvägen 38, Bromma",
+        description: "Создаём интерьерный арт-объект от каркаса до готовой фигуры: лепка, гипс, акрил, лакировка.",
+        materials: "🎨 Все материалы включены!",
+        price: "💰 Цена: 1300 kr"
+      },
+      ceramics: {
+        title: "🐴 Курс по керамике «Народная игрушка»",
+        dates: "📅 30 июня – 4 июля",
+        time: "🕙 с 10:00 до 13:00",
+        age: "👧 Возраст: 7+",
+        description: "Создадим 5 уникальных игрушек в традиционных техниках: дымковская, каргопольская и филимоновская.",
+        materials: "🧱 Работа с глиной + обжиг (всё включено)",
+        price: "💰 Цена: 1700kr / Drop-in 350 kr",
+        note: "⚠️ Готовые работы будут готовы к выдаче осенью (после просушки и обжига)."
+      }
+    },
+    registration: "📞 Запись только по предоплате\nТелефон для регистрации: 073-517 33 30\n🌟 Количество мест ограничено — бронируйте заранее!\nСоздаём лето, полное творчества! ✨"
   },
   en: {
-    title: "Spring 2025 — Class Schedule",
-    schedule: {
-      preschool: "Preschool (5-6 years):\nTuesday 16:00\nWednesday 17:00\nDuration: 1 hour\nPrice: 2000 kr (10 lessons)",
-      school: "School (7-9 years):\nMonday 17:00\nTuesday 15:00 and 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
-      teens: "Teens (10-15 years):\nWednesday 15:00\nThursday 15:00 and 17:00\nDuration: 1.5 hours\nPrice: 2300 kr (10 lessons)",
-      additional: "Drop-in class: 250 kr\nTrial lesson (1 hour): 150 kr\nDiscount: 10% for two children from the same family\nSaturday: Art classes and birthday parties available by appointment, maximum 10 places, price varies from 150-400 kr per child depending on materials and complexity"
-    }
+    title: "Summer Creative Courses 2025",
+    mainTitle: "🎨 Summer creative courses for children and teenagers at \"Irina Zay Art Studio\"!",
+    subtitle: "Give your child a summer full of inspiration, colors and art!",
+    courses: {
+      pleinair: {
+        title: "🌿 Course \"Plein Air: Landscapes and Botany\"",
+        dates: "📅 June 16–20",
+        time: "🕙 10:00 to 13:00",
+        age: "👧 Age: 10+",
+        description: "🎨 Learn to paint landscapes from nature — forests, lakes, blooming gardens and even houses — directly with color!",
+        materials: "🖌 Materials: pastels, gouache, watercolor (bring your own, list provided upon registration).",
+        location: "📍 Meeting at the studio, then walk to plein air locations around Bromma.",
+        price: "💰 Price: 1750 kr per course / 400 kr per day",
+        note: "⚠️ Don't forget travel pass and protection from mosquitoes and ticks!"
+      },
+      sculpture: {
+        title: "🐚 Course \"Frame Sculpture: Marine Life\"",
+        dates: "📅 June 23–27",
+        time: "🕚 11:00 to 13:00",
+        age: "👧 Age: 10+",
+        location: "📍 Address: Stopvägen 38, Bromma",
+        description: "Create interior art objects from frame to finished figure: sculpting, plaster, acrylic, varnishing.",
+        materials: "🎨 All materials included!",
+        price: "💰 Price: 1300 kr"
+      },
+      ceramics: {
+        title: "🐴 Ceramics Course \"Folk Toy\"",
+        dates: "📅 June 30 – July 4",
+        time: "🕙 10:00 to 13:00",
+        age: "👧 Age: 7+",
+        description: "Create 5 unique toys in traditional techniques: Dymkovo, Kargopol and Filimonovo.",
+        materials: "🧱 Clay work + firing (everything included)",
+        price: "💰 Price: 1700kr / Drop-in 350 kr",
+        note: "⚠️ Finished works will be ready for pickup in autumn (after drying and firing)."
+      }
+    },
+    registration: "📞 Registration only with prepayment\nRegistration phone: 073-517 33 30\n🌟 Limited seats — book in advance!\nCreating a summer full of creativity! ✨"
   },
   sv: {
-    title: "Våren 2025 — Klasschema",
-    schedule: {
-      preschool: "Förskola (5-6 år):\nTisdag 16:00\nOnsdag 17:00\nLängd: 1 timme\nPris: 2000 kr (10 lektioner)",
-      school: "Skola (7-9 år):\nMåndag 17:00\nTisdag 15:00 och 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
-      teens: "Tonåringar (10-15 år):\nOnsdag 15:00\nTorsdag 15:00 och 17:00\nLängd: 1,5 timmar\nPris: 2300 kr (10 lektioner)",
-      additional: "Drop-in-klass: 250 kr\nProvlektion (1 timme): 150 kr\nRabatt: 10% för två barn från samma familj\nLördag: Konstklasser och födelsedagsfester tillgängliga efter bokning, max 10 platser, pris varierar från 150-400 kr per barn beroende på material och komplexitet"
-    }
+    title: "Sommarkreativa kurser 2025",
+    mainTitle: "🎨 Sommarkreativa kurser för barn och tonåringar på \"Irina Zay Art Studio\"!",
+    subtitle: "Ge ditt barn en sommar full av inspiration, färger och konst!",
+    courses: {
+      pleinair: {
+        title: "🌿 Kurs \"Plein Air: Landskap och botanik\"",
+        dates: "📅 16–20 juni",
+        time: "🕙 10:00 till 13:00",
+        age: "👧 Ålder: 10+",
+        description: "🎨 Lär dig måla landskap från naturen — skogar, sjöar, blommande trädgårdar och till och med hus — direkt med färg!",
+        materials: "🖌 Material: pastell, gouache, akvarell (ta med egna, lista ges vid registrering).",
+        location: "📍 Träff i studion, sedan promenad till plein air-platser runt Bromma.",
+        price: "💰 Pris: 1750 kr per kurs / 400 kr per dag",
+        note: "⚠️ Glöm inte resekort och skydd mot myggor och fästingar!"
+      },
+      sculpture: {
+        title: "🐚 Kurs \"Ramskulptur: Havsliv\"",
+        dates: "📅 23–27 juni",
+        time: "🕚 11:00 till 13:00",
+        age: "👧 Ålder: 10+",
+        location: "📍 Adress: Stopvägen 38, Bromma",
+        description: "Skapa interiörkonstobjekt från ram till färdig figur: skulptering, gips, akryl, lackering.",
+        materials: "🎨 Allt material ingår!",
+        price: "💰 Pris: 1300 kr"
+      },
+      ceramics: {
+        title: "🐴 Keramikkurs \"Folkleksak\"",
+        dates: "📅 30 juni – 4 juli",
+        time: "🕙 10:00 till 13:00",
+        age: "👧 Ålder: 7+",
+        description: "Skapa 5 unika leksaker i traditionella tekniker: Dymkovo, Kargopol och Filimonovo.",
+        materials: "🧱 Lerarbete + bränning (allt ingår)",
+        price: "💰 Pris: 1700kr / Drop-in 350 kr",
+        note: "⚠️ Färdiga verk kommer att vara redo för upphämtning på hösten (efter torkning och bränning)."
+      }
+    },
+    registration: "📞 Anmälan endast med förskottsbetalning\nRegistreringstelefon: 073-517 33 30\n🌟 Begränsat antal platser — boka i förväg!\nSkapar en sommar full av kreativitet! ✨"
   }
 };
 
-const currentEvents = {
+const autumnCourse = {
   ru: {
-    title: "Текущие События",
-    artMarketTitle: "Приглашаем к участию в Children's Art Market",
-    artMarketContent: `Дорогие ученики и родители!
-
-В рамках культурного фестиваля KUL TUR в Бромме, наша студия проводит день открытых дверей. Одним из главных событий этого дня станет вернисаж-продажа детских художественных работ — Children's Art Market.
-
-Если вы хотите, чтобы работы вашего ребёнка были представлены на выставке, мы с радостью примем их для участия. Это прекрасная возможность почувствовать себя настоящим художником, поделиться творчеством и, возможно, найти благодарного покупателя.
-
-✅ Все средства от продажи детских работ полностью передаются авторам.
-
-Это наш способ поддержать первые творческие шаги юных художников.
-
-🎨 Для взрослых (друзей студии, мастеров декоративно-прикладного искусства):
-
-Мы приглашаем вас представить свои изделия на продажу в отдельной зоне.
-
-💰 Комиссия студии — 10% от продажи, остальное получает автор.
-
-Это поможет нам организовать мероприятие и поддержать студийные проекты.
-
-Работы можно приносить заранее или в день мероприятия до 10:30.
-Пожалуйста, подписывайте каждую работу (имя, возраст, цена).
-
-📍 Children's Art Market состоится 17 мая с 11:00 до 17:00 по адресу Stopvägen 38.
-
-Будем рады видеть вас среди участников и гостей!`,
-    festivalLink: "Подробнее о фестивале KUL TUR"
+    title: "🎨 Курс рисования для подростков \"Создадим шедевр вместе\"",
+    subtitle: "в школе Estety от Irina Zay Art Studio",
+    announcement: "🍁 Открыта запись на осенний курс 2025! 🍁",
+    motto: "Художник живёт в каждом из нас — давайте пробудим его вместе!",
+    schedule: {
+      dates: "📅 Даты проведения курса:\nНачало — 31 августа\nПоследнее занятие — 23 ноября\nКаникулы — 26 октября по 2 ноября",
+      pleinair: "🎨 Пленэр на свежем воздухе — 7 сентября в 10:30 (2,5 часа, входит в курс как бонус!)",
+      location: "📍 Адрес: Старый город, Stora Nygatan 30",
+      contact: "📞 Запись и вопросы: 073 517 33 30 (Ирина)"
+    },
+    group: {
+      title: "👥 Группа \"Мастихины\" (12+):",
+      schedule: "Занятия по воскресеньям в 12:00",
+      duration: "🔟 Всего 10 уроков по 1,5 часа",
+      price: "💰 Стоимость курса — 2400 kr",
+      registration: "Запись только по предоплате"
+    },
+    footer: "🌟 Не упустите шанс развить творческий потенциал своего подростка в уютной и вдохновляющей атмосфере!\n📲 Места ограничены — бронируйте заранее!"
   },
   en: {
-    title: "Current Events",
-    artMarketTitle: "You're invited to participate in the Children's Art Market!",
-    artMarketContent: `Dear students, parents, and friends of the studio,
-
-As part of the KUL TUR festival in Bromma, our studio will host an Open House Day, and one of the highlights will be the Children's Art Market — an exhibition and sale of children's artworks.
-
-✨ Special spotlight on our young artists:
-We warmly welcome your children's artworks for display and sale.
-It's a wonderful opportunity to share their creativity and feel proud of being seen and appreciated.
-All proceeds from the sale of children's artworks go directly to the young artists.
-
-🎨 Studio friends and craft artists are also welcome to take part.
-A separate space will be provided for your handmade works.
-For adult participants, a 10% commission from each sale will go to the studio to support event organization. The rest goes to the artist.
-
-📦 Artworks can be brought in advance or on the day of the event before 10:30.
-Please label each item clearly with the artist's name, age (for children), and price.
-
-📍 Children's Art Market takes place on May 17th from 11:00 to 17:00 at Stopvägen 38.
-
-We look forward to seeing you — whether as a participant, guest, or art enthusiast.
-Let's make this day a celebration of inspiration, creativity, and joyful connection`,
-    festivalLink: "Learn more about the KUL TUR festival"
+    title: "🎨 Drawing course for teenagers \"Let's create a masterpiece together\"",
+    subtitle: "at Estety school by Irina Zay Art Studio",
+    announcement: "🍁 Registration open for autumn course 2025! 🍁",
+    motto: "An artist lives in each of us — let's awaken them together!",
+    schedule: {
+      dates: "📅 Course dates:\nStart — August 31\nLast lesson — November 23\nHolidays — October 26 to November 2",
+      pleinair: "🎨 Outdoor plein air — September 7 at 10:30 (2.5 hours, included as a bonus!)",
+      location: "📍 Address: Old Town, Stora Nygatan 30",
+      contact: "📞 Registration and questions: 073 517 33 30 (Irina)"
+    },
+    group: {
+      title: "👥 \"Palette Knives\" group (12+):",
+      schedule: "Classes on Sundays at 12:00",
+      duration: "🔟 Total 10 lessons of 1.5 hours each",
+      price: "💰 Course fee — 2400 kr",
+      registration: "Registration only with prepayment"
+    },
+    footer: "🌟 Don't miss the chance to develop your teenager's creative potential in a cozy and inspiring atmosphere!\n📲 Limited seats — book in advance!"
   },
   sv: {
-    title: "Aktuella Händelser",
-    artMarketTitle: "Du är inbjuden att delta i Children's Art Market!",
-    artMarketContent: `Kära elever, föräldrar och vänner till studion,
+    title: "🎨 Ritningskurs för tonåringar \"Låt oss skapa ett mästerverk tillsammans\"",
+    subtitle: "på Estety-skolan av Irina Zay Art Studio",
+    announcement: "🍁 Registrering öppen för höstkurs 2025! 🍁",
+    motto: "En konstnär lever i var och en av oss — låt oss väcka dem tillsammans!",
+    schedule: {
+      dates: "📅 Kursdatum:\nStart — 31 augusti\nSista lektionen — 23 november\nLov — 26 oktober till 2 november",
+      pleinair: "🎨 Utomhus plein air — 7 september kl 10:30 (2,5 timmar, ingår som bonus!)",
+      location: "📍 Adress: Gamla stan, Stora Nygatan 30",
+      contact: "📞 Registrering och frågor: 073 517 33 30 (Irina)"
+    },
+    group: {
+      title: "👥 \"Palettknivarna\" grupp (12+):",
+      schedule: "Lektioner på söndagar kl 12:00",
+      duration: "🔟 Totalt 10 lektioner på 1,5 timme vardera",
+      price: "💰 Kursavgift — 2400 kr",
+      registration: "Registrering endast med förskottsbetalning"
+    },
+    footer: "🌟 Missa inte chansen att utveckla din tonårings kreativa potential i en mysig och inspirerande atmosfär!\n📲 Begränsat antal platser — boka i förväg!"
+  }
+};
 
-Som en del av KUL TUR-festivalen i Bromma kommer vår studio att hålla öppet hus, och ett av höjdpunkterna blir Children's Art Market — en utställning och försäljning av barnens konstverk.
-
-✨ Särskilt fokus på våra unga konstnärer:
-Vi välkomnar varmt ditt barns konstverk för visning och försäljning.
-Det är ett underbart tillfälle att dela deras kreativitet och känna sig stolt över att bli sedd och uppskattad.
-Alla intäkter från försäljningen av barnens konstverk går direkt till de unga konstnärerna.
-
-🎨 Studiovänner och hantverkskonstnärer är också välkomna att delta.
-Ett separat utrymme kommer att tillhandahållas för dina handgjorda arbeten.
-För vuxna deltagare går 10% provision från varje försäljning till studion för att stödja evenemangsorganisationen. Resten går till konstnären.
-
-📦 Konstverk kan lämnas in i förväg eller på dagen för evenemanget före 10:30.
-Vänligen märk varje föremål tydligt med konstnärens namn, ålder (för barn) och pris.
-
-📍 Children's Art Market äger rum den 17 maj från 11:00 till 17:00 på Stopvägen 38.
-
-Vi ser fram emot att träffa dig — oavsett om du är deltagare, gäst eller konstentusiast.
-Låt oss göra denna dag till en firande av inspiration, kreativitet och glädjefull gemenskap.`,
-    festivalLink: "Läs mer om KUL TUR-festivalen"
+const soapCandles = {
+  ru: {
+    title: "🎨🧼 Приглашаем детей на творческий мастер-класс в Стокгольме! 🕯️✨",
+    subtitle: "Хочешь провести время весело и с пользой? Приходи на мастер-класс по созданию мыла и свечей, где каждый сможет почувствовать себя настоящим мастером!",
+    details: {
+      location: "📍 Где: Стокгольм",
+      date: "📅 Когда: 15 июня",
+      time: "🕘 Время 11:00 (продолжительность 2 часа)",
+      address: "📢 Адрес Stopvägen 38",
+      price: "💰 Стоимость участия: 350 крон",
+      age: "👧👦 Возраст: от 6 лет"
+    },
+    activities: {
+      title: "На мастер-классе:",
+      soap: "🧼 Сделаем ароматное и красивое мыло своими руками",
+      candles: "🕯️ Создадим уникальные свечи с разными формами и запахами",
+      takeaway: "🎁 Каждый участник унесёт свои творения домой!",
+      teacher: "👩‍🏫 Преподаватель @anastasia_morzzz"
+    },
+    registration: "Количество мест ограничено — успей записаться!\n📩 Для регистрации и вопросов пишите в личные сообщения. И по телефону 0735173330\n\nПодарите своему ребёнку день творчества и ярких эмоций! 🌈"
+  },
+  en: {
+    title: "🎨🧼 We invite children to a creative workshop in Stockholm! 🕯️✨",
+    subtitle: "Want to spend time fun and useful? Come to a workshop on creating soap and candles, where everyone can feel like a real master!",
+    details: {
+      location: "📍 Where: Stockholm",
+      date: "📅 When: June 15",
+      time: "🕘 Time 11:00 (duration 2 hours)",
+      address: "📢 Address Stopvägen 38",
+      price: "💰 Participation fee: 350 kr",
+      age: "👧👦 Age: from 6 years"
+    },
+    activities: {
+      title: "At the workshop:",
+      soap: "🧼 Make fragrant and beautiful soap with your own hands",
+      candles: "🕯️ Create unique candles with different shapes and scents",
+      takeaway: "🎁 Each participant will take their creations home!",
+      teacher: "👩‍🏫 Teacher @anastasia_morzzz"
+    },
+    registration: "Limited seats — hurry to register!\n📩 For registration and questions, write to private messages. And by phone 0735173330\n\nGive your child a day of creativity and bright emotions! 🌈"
+  },
+  sv: {
+    title: "🎨🧼 Vi inbjuder barn till en kreativ workshop i Stockholm! 🕯️✨",
+    subtitle: "Vill du tillbringa tid roligt och nyttigt? Kom till en workshop om att skapa tvål och ljus, där alla kan känna sig som en riktig mästare!",
+    details: {
+      location: "📍 Var: Stockholm",
+      date: "📅 När: 15 juni",
+      time: "🕘 Tid 11:00 (varaktighet 2 timmar)",
+      address: "📢 Adress Stopvägen 38",
+      price: "💰 Deltagaravgift: 350 kr",
+      age: "👧👦 Ålder: från 6 år"
+    },
+    activities: {
+      title: "På workshopen:",
+      soap: "🧼 Gör doftande och vacker tvål med egna händer",
+      candles: "🕯️ Skapa unika ljus med olika former och dofter",
+      takeaway: "🎁 Varje deltagare kommer att ta sina kreationer hem!",
+      teacher: "👩‍🏫 Lärare @anastasia_morzzz"
+    },
+    registration: "Begränsat antal platser — skynda dig att registrera!\n📩 För registrering och frågor, skriv till privata meddelanden. Och via telefon 0735173330\n\nGe ditt barn en dag av kreativitet och ljusa känslor! 🌈"
   }
 };
 
@@ -164,38 +299,186 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* Current Events Section */}
+        {/* Summer Courses Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-bold text-center text-secondary mb-10">
-            {currentEvents[currentLang].title}
+          <h2 className="text-3xl font-bold text-center text-secondary mb-6">
+            {summerCourses[currentLang].title}
           </h2>
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="w-full md:w-1/2">
               <img
-                src="/lovable-uploads/3483ccec-bd7f-4e71-a004-dfadb0a20552.png"
-                alt="Children Art Market Poster"
+                src="/lovable-uploads/0b836411-c360-4739-bf85-3ca993cdafae.png"
+                alt="Summer Art Courses 2025"
                 className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
-            <div className="w-full md:w-1/2 space-y-6">
-              <h3 className="text-2xl font-bold text-secondary">
-                {currentEvents[currentLang].artMarketTitle}
+            <div className="w-full md:w-1/2 space-y-4">
+              <h3 className="text-xl font-bold text-secondary">
+                {summerCourses[currentLang].mainTitle}
               </h3>
-              <div className="text-secondary/80 space-y-4">
-                {currentEvents[currentLang].artMarketContent.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
+              <p className="text-secondary/80 mb-4">
+                {summerCourses[currentLang].subtitle}
+              </p>
+              
+              <div className="space-y-6">
+                <div className="border-l-4 border-primary pl-4">
+                  <h4 className="font-semibold text-secondary mb-2">
+                    {summerCourses[currentLang].courses.pleinair.title}
+                  </h4>
+                  <div className="text-sm text-secondary/80 space-y-1">
+                    <p>{summerCourses[currentLang].courses.pleinair.dates}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.time}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.age}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.description}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.materials}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.location}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.price}</p>
+                    <p>{summerCourses[currentLang].courses.pleinair.note}</p>
+                  </div>
+                </div>
+
+                <div className="border-l-4 border-primary pl-4">
+                  <h4 className="font-semibold text-secondary mb-2">
+                    {summerCourses[currentLang].courses.sculpture.title}
+                  </h4>
+                  <div className="text-sm text-secondary/80 space-y-1">
+                    <p>{summerCourses[currentLang].courses.sculpture.dates}</p>
+                    <p>{summerCourses[currentLang].courses.sculpture.time}</p>
+                    <p>{summerCourses[currentLang].courses.sculpture.age}</p>
+                    <p>{summerCourses[currentLang].courses.sculpture.location}</p>
+                    <p>{summerCourses[currentLang].courses.sculpture.description}</p>
+                    <p>{summerCourses[currentLang].courses.sculpture.materials}</p>
+                    <p>{summerCourses[currentLang].courses.sculpture.price}</p>
+                  </div>
+                </div>
+
+                <div className="border-l-4 border-primary pl-4">
+                  <h4 className="font-semibold text-secondary mb-2">
+                    {summerCourses[currentLang].courses.ceramics.title}
+                  </h4>
+                  <div className="text-sm text-secondary/80 space-y-1">
+                    <p>{summerCourses[currentLang].courses.ceramics.dates}</p>
+                    <p>{summerCourses[currentLang].courses.ceramics.time}</p>
+                    <p>{summerCourses[currentLang].courses.ceramics.age}</p>
+                    <p>{summerCourses[currentLang].courses.ceramics.description}</p>
+                    <p>{summerCourses[currentLang].courses.ceramics.materials}</p>
+                    <p>{summerCourses[currentLang].courses.ceramics.price}</p>
+                    <p>{summerCourses[currentLang].courses.ceramics.note}</p>
+                  </div>
+                </div>
               </div>
-              <a 
-                href="https://kulturbromma.se/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block mt-4 text-primary font-medium hover:underline"
-              >
-                {currentEvents[currentLang].festivalLink}
-              </a>
+              
+              <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
+                  {summerCourses[currentLang].registration}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Autumn Course Section */}
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/lovable-uploads/5f1681fe-4d52-4767-ab5b-5e96578e718d.png"
+                alt="Estety Autumn Course 2025"
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+            <div className="w-full md:w-1/2 space-y-4">
+              <h3 className="text-xl font-bold text-secondary">
+                {autumnCourse[currentLang].title}
+              </h3>
+              <p className="text-lg text-secondary/90">
+                {autumnCourse[currentLang].subtitle}
+              </p>
+              <p className="text-primary font-medium">
+                {autumnCourse[currentLang].announcement}
+              </p>
+              <p className="text-secondary/80 italic">
+                {autumnCourse[currentLang].motto}
+              </p>
+              
+              <div className="space-y-3">
+                <div className="text-sm text-secondary/80">
+                  <pre className="whitespace-pre-wrap font-sans">
+                    {autumnCourse[currentLang].schedule.dates}
+                  </pre>
+                </div>
+                <p className="text-sm text-secondary/80">
+                  {autumnCourse[currentLang].schedule.pleinair}
+                </p>
+                <p className="text-sm text-secondary/80">
+                  {autumnCourse[currentLang].schedule.location}
+                </p>
+                <p className="text-sm text-secondary/80">
+                  {autumnCourse[currentLang].schedule.contact}
+                </p>
+              </div>
+
+              <div className="border-l-4 border-primary pl-4 mt-6">
+                <h4 className="font-semibold text-secondary mb-2">
+                  {autumnCourse[currentLang].group.title}
+                </h4>
+                <div className="text-sm text-secondary/80 space-y-1">
+                  <p>{autumnCourse[currentLang].group.schedule}</p>
+                  <p>{autumnCourse[currentLang].group.duration}</p>
+                  <p>{autumnCourse[currentLang].group.price}</p>
+                  <p>{autumnCourse[currentLang].group.registration}</p>
+                </div>
+              </div>
+
+              <div className="mt-4 p-4 bg-primary/10 rounded-lg">
+                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
+                  {autumnCourse[currentLang].footer}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Soap and Candles Workshop Section */}
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-center text-secondary mb-6">
+            {soapCandles[currentLang].title}
+          </h2>
+          <div className="space-y-6">
+            <p className="text-secondary/80 text-center">
+              {soapCandles[currentLang].subtitle}
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-secondary mb-3">Детали:</h4>
+                <div className="space-y-2 text-sm text-secondary/80">
+                  <p>{soapCandles[currentLang].details.location}</p>
+                  <p>{soapCandles[currentLang].details.date}</p>
+                  <p>{soapCandles[currentLang].details.time}</p>
+                  <p>{soapCandles[currentLang].details.address}</p>
+                  <p>{soapCandles[currentLang].details.price}</p>
+                  <p>{soapCandles[currentLang].details.age}</p>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-secondary mb-3">
+                  {soapCandles[currentLang].activities.title}
+                </h4>
+                <div className="space-y-2 text-sm text-secondary/80">
+                  <p>{soapCandles[currentLang].activities.soap}</p>
+                  <p>{soapCandles[currentLang].activities.candles}</p>
+                  <p>{soapCandles[currentLang].activities.takeaway}</p>
+                  <p>{soapCandles[currentLang].activities.teacher}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-primary/10 rounded-lg">
+              <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
+                {soapCandles[currentLang].registration}
+              </pre>
             </div>
           </div>
         </div>
@@ -220,36 +503,6 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
               alt="Art teacher in studio surrounded by colorful artwork"
               className="w-full h-auto rounded-lg shadow-md"
             />
-          </div>
-        </div>
-        
-        {/* Spring Announcement Section */}
-        <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
-          <div className="w-full md:w-1/2">
-            <img
-              src="/lovable-uploads/3d5c7bb0-aa36-42ae-b1c8-6ab25d281a4a.png"
-              alt="Spring 2025 Art Classes"
-              className="w-full h-auto rounded-lg shadow-md"
-            />
-          </div>
-          <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-2xl font-bold text-secondary">
-              {springAnnouncement[currentLang].title}
-            </h2>
-            <div className="space-y-4 text-secondary/80">
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.preschool}
-              </pre>
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.school}
-              </pre>
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.teens}
-              </pre>
-              <pre className="whitespace-pre-wrap font-sans">
-                {springAnnouncement[currentLang].schedule.additional}
-              </pre>
-            </div>
           </div>
         </div>
       </div>
