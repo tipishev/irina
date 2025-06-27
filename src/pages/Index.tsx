@@ -1,4 +1,3 @@
-
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 
@@ -48,123 +47,42 @@ I studion skapar jag en balanserad atmosfär där komfort och kreativitet kombin
   }
 };
 
-const summerCourses = {
+const ceramicsCourse = {
   ru: {
-    title: "Летние творческие курсы 2025",
-    mainTitle: "🎨 Летние творческие курсы для детей и подростков в \"Irina Zay Art Studio\"!",
-    subtitle: "Подарите вашему ребёнку лето, полное вдохновения, красок и искусства!",
-    courses: {
-      pleinair: {
-        title: "🌿 Курс «Пленэр: Пейзажи и ботаника»",
-        dates: "📅 16–20 июня",
-        time: "🕙 с 10:00 до 13:00",
-        age: "👧 Возраст: 10+",
-        description: "🎨 Учимся писать пейзажи с натуры — леса, озёра, цветущие сады и даже домики — сразу цветом!",
-        materials: "🖌 Материалы: пастель, гуашь, акварель (приносите с собой, список выдаём при записи).",
-        location: "📍 Встреча в студии, затем прогулка на пленэр в окрестностях Броммы.",
-        price: "💰 Цена: 1750 kr за курс / 400 kr за 1 день",
-        note: "⚠️ Не забудьте проездной и защиту от комаров и клещей!"
-      },
-      sculpture: {
-        title: "🐚 Курс «Каркасная скульптура: Морские обитатели»",
-        dates: "📅 23–27 июня",
-        time: "🕚 с 11:00 до 13:00",
-        age: "👧 Возраст: 10+",
-        location: "📍 Адрес: Stopvägen 38, Bromma",
-        description: "Создаём интерьерный арт-объект от каркаса до готовой фигуры: лепка, гипс, акрил, лакировка.",
-        materials: "🎨 Все материалы включены!",
-        price: "💰 Цена: 1300 kr"
-      },
-      ceramics: {
-        title: "🐴 Курс по керамике «Народная игрушка»",
-        dates: "📅 30 июня – 4 июля",
-        time: "🕙 с 10:00 до 13:00",
-        age: "👧 Возраст: 7+",
-        description: "Создадим 5 уникальных игрушек в традиционных техниках: дымковская, каргопольская и филимоновская.",
-        materials: "🧱 Работа с глиной + обжиг (всё включено)",
-        price: "💰 Цена: 1700kr / Drop-in 350 kr",
-        note: "⚠️ Готовые работы будут готовы к выдаче осенью (после просушки и обжига)."
-      }
-    },
-    registration: "📞 Запись только по предоплате\nТелефон для регистрации: 073-517 33 30\n🌟 Количество мест ограничено — бронируйте заранее!\nСоздаём лето, полное творчества! ✨"
+    title: "🏺Курс по керамике «Народная игрушка»",
+    dates: "📅 30 июня – 4 июля",
+    time: "🕙 Время: с 10:00 до 13:00",
+    location: "📍 Адрес: Stopvägen 38",
+    age: "👧 Возраст: от 7 лет",
+    description: "Приглашаем детей на летний курс по созданию народной глиняной игрушки! За 5 дней участники создадут пять уникальных игрушек в традиционных техниках: дымковская, каргопольская и филимоновская.",
+    materials: "🔹 Работа с глиной и обжиг — всё включено",
+    note: "⚠️ Готовые изделия можно будет забрать осенью (после сушки и обжига)",
+    pricing: "💰 Стоимость:\n– 1700 kr за весь курс\n– Drop-in (разовое занятие): 350 kr",
+    registration: "📞 Запись только по предоплате\nРегистрация по телефону: 073-517 33 30"
   },
   en: {
-    title: "Summer Creative Courses 2025",
-    mainTitle: "🎨 Summer creative courses for children and teenagers at \"Irina Zay Art Studio\"!",
-    subtitle: "Give your child a summer full of inspiration, colors and art!",
-    courses: {
-      pleinair: {
-        title: "🌿 Course \"Plein Air: Landscapes and Botany\"",
-        dates: "📅 June 16–20",
-        time: "🕙 10:00 to 13:00",
-        age: "👧 Age: 10+",
-        description: "🎨 Learn to paint landscapes from nature — forests, lakes, blooming gardens and even houses — directly with color!",
-        materials: "🖌 Materials: pastels, gouache, watercolor (bring your own, list provided upon registration).",
-        location: "📍 Meeting at the studio, then walk to plein air locations around Bromma.",
-        price: "💰 Price: 1750 kr per course / 400 kr per day",
-        note: "⚠️ Don't forget travel pass and protection from mosquitoes and ticks!"
-      },
-      sculpture: {
-        title: "🐚 Course \"Frame Sculpture: Marine Life\"",
-        dates: "📅 June 23–27",
-        time: "🕚 11:00 to 13:00",
-        age: "👧 Age: 10+",
-        location: "📍 Address: Stopvägen 38, Bromma",
-        description: "Create interior art objects from frame to finished figure: sculpting, plaster, acrylic, varnishing.",
-        materials: "🎨 All materials included!",
-        price: "💰 Price: 1300 kr"
-      },
-      ceramics: {
-        title: "🐴 Ceramics Course \"Folk Toy\"",
-        dates: "📅 June 30 – July 4",
-        time: "🕙 10:00 to 13:00",
-        age: "👧 Age: 7+",
-        description: "Create 5 unique toys in traditional techniques: Dymkovo, Kargopol and Filimonovo.",
-        materials: "🧱 Clay work + firing (everything included)",
-        price: "💰 Price: 1700kr / Drop-in 350 kr",
-        note: "⚠️ Finished works will be ready for pickup in autumn (after drying and firing)."
-      }
-    },
-    registration: "📞 Registration only with prepayment\nRegistration phone: 073-517 33 30\n🌟 Limited seats — book in advance!\nCreating a summer full of creativity! ✨"
+    title: "🏺Ceramics Course «Folk Toy»",
+    dates: "📅 June 30 – July 4",
+    time: "🕙 Time: 10:00 to 13:00",
+    location: "📍 Address: Stopvägen 38",
+    age: "👧 Age: from 7 years",
+    description: "We invite children to a summer course on creating folk clay toys! Over 5 days, participants will create five unique toys in traditional techniques: Dymkovo, Kargopol and Filimonovo.",
+    materials: "🔹 Clay work and firing — everything included",
+    note: "⚠️ Finished items can be picked up in autumn (after drying and firing)",
+    pricing: "💰 Cost:\n– 1700 kr for the entire course\n– Drop-in (single session): 350 kr",
+    registration: "📞 Registration only with prepayment\nRegistration by phone: 073-517 33 30"
   },
   sv: {
-    title: "Sommarkreativa kurser 2025",
-    mainTitle: "🎨 Sommarkreativa kurser för barn och tonåringar på \"Irina Zay Art Studio\"!",
-    subtitle: "Ge ditt barn en sommar full av inspiration, färger och konst!",
-    courses: {
-      pleinair: {
-        title: "🌿 Kurs \"Plein Air: Landskap och botanik\"",
-        dates: "📅 16–20 juni",
-        time: "🕙 10:00 till 13:00",
-        age: "👧 Ålder: 10+",
-        description: "🎨 Lär dig måla landskap från naturen — skogar, sjöar, blommande trädgårdar och till och med hus — direkt med färg!",
-        materials: "🖌 Material: pastell, gouache, akvarell (ta med egna, lista ges vid registrering).",
-        location: "📍 Träff i studion, sedan promenad till plein air-platser runt Bromma.",
-        price: "💰 Pris: 1750 kr per kurs / 400 kr per dag",
-        note: "⚠️ Glöm inte resekort och skydd mot myggor och fästingar!"
-      },
-      sculpture: {
-        title: "🐚 Kurs \"Ramskulptur: Havsliv\"",
-        dates: "📅 23–27 juni",
-        time: "🕚 11:00 till 13:00",
-        age: "👧 Ålder: 10+",
-        location: "📍 Adress: Stopvägen 38, Bromma",
-        description: "Skapa interiörkonstobjekt från ram till färdig figur: skulptering, gips, akryl, lackering.",
-        materials: "🎨 Allt material ingår!",
-        price: "💰 Pris: 1300 kr"
-      },
-      ceramics: {
-        title: "🐴 Keramikkurs \"Folkleksak\"",
-        dates: "📅 30 juni – 4 juli",
-        time: "🕙 10:00 till 13:00",
-        age: "👧 Ålder: 7+",
-        description: "Skapa 5 unika leksaker i traditionella tekniker: Dymkovo, Kargopol och Filimonovo.",
-        materials: "🧱 Lerarbete + bränning (allt ingår)",
-        price: "💰 Pris: 1700kr / Drop-in 350 kr",
-        note: "⚠️ Färdiga verk kommer att vara redo för upphämtning på hösten (efter torkning och bränning)."
-      }
-    },
-    registration: "📞 Anmälan endast med förskottsbetalning\nRegistreringstelefon: 073-517 33 30\n🌟 Begränsat antal platser — boka i förväg!\nSkapar en sommar full av kreativitet! ✨"
+    title: "🏺Keramikkurs «Folkleksak»",
+    dates: "📅 30 juni – 4 juli",
+    time: "🕙 Tid: 10:00 till 13:00",
+    location: "📍 Adress: Stopvägen 38",
+    age: "👧 Ålder: från 7 år",
+    description: "Vi inbjuder barn till en sommarkurs i att skapa folkleksakslera! Under 5 dagar kommer deltagarna att skapa fem unika leksaker i traditionella tekniker: Dymkovo, Kargopol och Filimonovo.",
+    materials: "🔹 Lerarbete och bränning — allt ingår",
+    note: "⚠️ Färdiga föremål kan hämtas på hösten (efter torkning och bränning)",
+    pricing: "💰 Kostnad:\n– 1700 kr för hela kursen\n– Drop-in (enskild session): 350 kr",
+    registration: "📞 Registrering endast med förskottsbetalning\nRegistrering per telefon: 073-517 33 30"
   }
 };
 
@@ -299,78 +217,46 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* Summer Courses Section */}
+        {/* Ceramics Course Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-bold text-center text-secondary mb-6">
-            {summerCourses[currentLang].title}
-          </h2>
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="w-full md:w-1/2">
               <img
-                src="/lovable-uploads/0b836411-c360-4739-bf85-3ca993cdafae.png"
-                alt="Summer Art Courses 2025"
+                src="/lovable-uploads/2286b2de-2c3d-47a3-b70e-4f2609547730.png"
+                alt="Clay Toys Ceramics Course"
                 className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
             <div className="w-full md:w-1/2 space-y-4">
               <h3 className="text-xl font-bold text-secondary">
-                {summerCourses[currentLang].mainTitle}
+                {ceramicsCourse[currentLang].title}
               </h3>
-              <p className="text-secondary/80 mb-4">
-                {summerCourses[currentLang].subtitle}
-              </p>
               
-              <div className="space-y-6">
-                <div className="border-l-4 border-primary pl-4">
-                  <h4 className="font-semibold text-secondary mb-2">
-                    {summerCourses[currentLang].courses.pleinair.title}
-                  </h4>
-                  <div className="text-sm text-secondary/80 space-y-1">
-                    <p>{summerCourses[currentLang].courses.pleinair.dates}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.time}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.age}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.description}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.materials}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.location}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.price}</p>
-                    <p>{summerCourses[currentLang].courses.pleinair.note}</p>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-primary pl-4">
-                  <h4 className="font-semibold text-secondary mb-2">
-                    {summerCourses[currentLang].courses.sculpture.title}
-                  </h4>
-                  <div className="text-sm text-secondary/80 space-y-1">
-                    <p>{summerCourses[currentLang].courses.sculpture.dates}</p>
-                    <p>{summerCourses[currentLang].courses.sculpture.time}</p>
-                    <p>{summerCourses[currentLang].courses.sculpture.age}</p>
-                    <p>{summerCourses[currentLang].courses.sculpture.location}</p>
-                    <p>{summerCourses[currentLang].courses.sculpture.description}</p>
-                    <p>{summerCourses[currentLang].courses.sculpture.materials}</p>
-                    <p>{summerCourses[currentLang].courses.sculpture.price}</p>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-primary pl-4">
-                  <h4 className="font-semibold text-secondary mb-2">
-                    {summerCourses[currentLang].courses.ceramics.title}
-                  </h4>
-                  <div className="text-sm text-secondary/80 space-y-1">
-                    <p>{summerCourses[currentLang].courses.ceramics.dates}</p>
-                    <p>{summerCourses[currentLang].courses.ceramics.time}</p>
-                    <p>{summerCourses[currentLang].courses.ceramics.age}</p>
-                    <p>{summerCourses[currentLang].courses.ceramics.description}</p>
-                    <p>{summerCourses[currentLang].courses.ceramics.materials}</p>
-                    <p>{summerCourses[currentLang].courses.ceramics.price}</p>
-                    <p>{summerCourses[currentLang].courses.ceramics.note}</p>
-                  </div>
-                </div>
+              <div className="space-y-3">
+                <p className="text-secondary/80">{ceramicsCourse[currentLang].dates}</p>
+                <p className="text-secondary/80">{ceramicsCourse[currentLang].time}</p>
+                <p className="text-secondary/80">{ceramicsCourse[currentLang].location}</p>
+                <p className="text-secondary/80">{ceramicsCourse[currentLang].age}</p>
               </div>
               
-              <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+              <p className="text-secondary/80">
+                {ceramicsCourse[currentLang].description}
+              </p>
+              
+              <div className="space-y-2">
+                <p className="text-secondary/80">{ceramicsCourse[currentLang].materials}</p>
+                <p className="text-secondary/80">{ceramicsCourse[currentLang].note}</p>
+              </div>
+              
+              <div className="p-4 bg-primary/10 rounded-lg">
                 <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
-                  {summerCourses[currentLang].registration}
+                  {ceramicsCourse[currentLang].pricing}
+                </pre>
+              </div>
+              
+              <div className="p-4 bg-primary/10 rounded-lg">
+                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
+                  {ceramicsCourse[currentLang].registration}
                 </pre>
               </div>
             </div>
