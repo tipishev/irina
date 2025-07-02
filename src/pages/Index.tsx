@@ -1,4 +1,3 @@
-
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 
@@ -42,7 +41,7 @@ Jag tog examen från en konstskola med inriktning mot dekorativ och tillämpad k
 
 I min studio kombinerar jag professionalism och kreativitet. Vi studerar akademisk teckning, dekorativ och tillämpad konst och rysk kultur, med betoning på kulturella och historiska traditioner. Jag tror att innan man ägnar sig åt experimentell kreativitet är det viktigt att behärska teknik och grunder.
 
-Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag strävar efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
+Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag sträver efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
 
 I studion skapar jag en balanserad atmosfär där komfort och kreativitet kombineras med disciplin och ett strukturerat tillvägagångssätt.`
   }
@@ -59,13 +58,14 @@ const julyCourses = {
         title: "🧶 1. Ассорти",
         dates: "📅 7–11 июля",
         time: "🕚 11:00–13:00",
+        age: "Для детей от 7+",
         price: "💰 Стоимость за неделю: 1300 крон",
         description: "Каждый день — новое вдохновляющее занятие:",
         schedule: [
           "7 июля (понедельник): валяние",
           "8 июля (вторник): декупаж по стеклу",
-          "9 июля (среда): роспись по керамике",
-          "10 июля (четверг): роспись ложек (хохлома)",
+          "9 июля (среда): роспись по керамике (тарелки)",
+          "10 июля (четверг): роспись по дереву ложек (хохлома)",
           "11 июля (пятница): 3D-цветы из термомозаики"
         ]
       },
@@ -73,23 +73,24 @@ const julyCourses = {
         title: "🧵 2. Текстиль",
         dates: "📅 14–18 июля",
         time: "🕚 11:00–13:00",
+        age: "Для детей от 7+",
         price: "💰 Стоимость за неделю: 1300 крон",
         description: "На занятиях:",
         activities: [
-          "бисероплетение и бусинки",
-          "тай-дай футболки",
-          "мягкое шитьё",
-          "роспись по ткани"
+          "Бисероплетение и работа с бусинками",
+          "Узелковые техники в росписи ткани Тай-дай футболки, цветочные оттиски",
+          "Мягкая игрушка шьём из войлок (царевна Лягушка)",
+          "Роспись акрилом по ткани, работа с грунтом, создание игрушки"
         ],
-        note: "‼️ На занятие по тай-дай участникам необходимо принести с собой три футболки: две чёрные и одну белую."
+        note: "‼️ На занятие по тай-дай участникам необходимо принести с собой три футболки: однотонные две чёрные/синие/зелёные и одну белую."
       },
       sculpture: {
         title: "🎭 3. Каркасная скульптура",
         dates: "📅 21–25 июля",
         time: "🕚 11:00–13:00",
-        age: "🎂 Для детей от 7 лет",
+        age: "Для детей от 7 лет",
         price: "💰 Стоимость за неделю: 1300 крон",
-        description: "Изучаем основы объемной формы: лепим, строим, создаём выразительные фигурки и персонажи из проволоки, фольги, бумаги и других материалов."
+        description: "Изучаем основы объемной формы: лепим, строим, создаём выразительные фигурки и персонажи из проволоки, фольги, бумаги, работа с гипсом и акрилом и других материалов. Итоговую работу можно будет забрать после лакировки."
       }
     },
     footer: "📢 Записывайтесь заранее — количество мест ограничено!\n✨ Приходите творить, пробовать новое и весело проводить лето вместе с нами!"
@@ -104,13 +105,14 @@ const julyCourses = {
         title: "🧶 1. Assorted",
         dates: "📅 July 7–11",
         time: "🕚 11:00–13:00",
+        age: "For children 7+",
         price: "💰 Cost per week: 1300 kr",
         description: "Each day — a new inspiring activity:",
         schedule: [
           "July 7 (Monday): felting",
           "July 8 (Tuesday): glass decoupage",
-          "July 9 (Wednesday): ceramic painting",
-          "July 10 (Thursday): spoon painting (Khokhloma)",
+          "July 9 (Wednesday): ceramic painting (plates)",
+          "July 10 (Thursday): wooden spoon painting (Khokhloma)",
           "July 11 (Friday): 3D flowers from thermal mosaic"
         ]
       },
@@ -118,23 +120,24 @@ const julyCourses = {
         title: "🧵 2. Textile",
         dates: "📅 July 14–18",
         time: "🕚 11:00–13:00",
+        age: "For children 7+",
         price: "💰 Cost per week: 1300 kr",
         description: "In classes:",
         activities: [
-          "beadwork and beads",
-          "tie-dye t-shirts",
-          "soft sewing",
-          "fabric painting"
+          "Beadwork and working with beads",
+          "Tie-dye techniques in fabric painting, floral prints",
+          "Soft toy sewing from felt (Princess Frog)",
+          "Acrylic painting on fabric, working with primer, toy creation"
         ],
-        note: "‼️ For tie-dye classes, participants need to bring three t-shirts: two black and one white."
+        note: "‼️ For tie-dye classes, participants need to bring three t-shirts: two solid colored black/blue/green and one white."
       },
       sculpture: {
         title: "🎭 3. Frame sculpture",
         dates: "📅 July 21–25",
         time: "🕚 11:00–13:00",
-        age: "🎂 For children from 7 years old",
+        age: "For children from 7 years old",
         price: "💰 Cost per week: 1300 kr",
-        description: "Learning the basics of three-dimensional form: sculpting, building, creating expressive figures and characters from wire, foil, paper and other materials."
+        description: "Learning the basics of three-dimensional form: sculpting, building, creating expressive figures and characters from wire, foil, paper, working with plaster and acrylic and other materials. The final work can be picked up after varnishing."
       }
     },
     footer: "📢 Register in advance — limited seats!\n✨ Come create, try new things and have a fun summer with us!"
@@ -149,13 +152,14 @@ const julyCourses = {
         title: "🧶 1. Blandat",
         dates: "📅 7–11 juli",
         time: "🕚 11:00–13:00",
+        age: "För barn 7+",
         price: "💰 Kostnad per vecka: 1300 kr",
         description: "Varje dag — en ny inspirerande aktivitet:",
         schedule: [
           "7 juli (måndag): tovning",
           "8 juli (tisdag): glasdecoupage",
-          "9 juli (onsdag): keramikmålning",
-          "10 juli (torsdag): skedmålning (Khokhloma)",
+          "9 juli (onsdag): keramikmålning (tallrikar)",
+          "10 juli (torsdag): träskedmålning (Khokhloma)",
           "11 juli (fredag): 3D-blommor från termisk mosaik"
         ]
       },
@@ -163,23 +167,24 @@ const julyCourses = {
         title: "🧵 2. Textil",
         dates: "📅 14–18 juli",
         time: "🕚 11:00–13:00",
+        age: "För barn 7+",
         price: "💰 Kostnad per vecka: 1300 kr",
         description: "I klasser:",
         activities: [
-          "pärlarbete och pärlor",
-          "tie-dye t-shirts",
-          "mjuk sömnad",
-          "tygmålning"
+          "Pärlarbete och arbete med pärlor",
+          "Tie-dye tekniker i tygmålning, blomtryck",
+          "Mjuk leksak sömnad från filt (Prinsessa Groda)",
+          "Akrylmålning på tyg, arbete med primer, leksakskapande"
         ],
-        note: "‼️ För tie-dye-klasser behöver deltagarna ta med tre t-shirts: två svarta och en vit."
+        note: "‼️ För tie-dye-klasser behöver deltagarna ta med tre t-shirts: två enfärgade svarta/blå/gröna och en vit."
       },
       sculpture: {
         title: "🎭 3. Ramskulptur",
         dates: "📅 21–25 juli",
         time: "🕚 11:00–13:00",
-        age: "🎂 För barn från 7 år",
+        age: "För barn från 7 år",
         price: "💰 Kostnad per vecka: 1300 kr",
-        description: "Lära sig grunderna i tredimensionell form: skulptera, bygga, skapa uttrycksfulla figurer och karaktärer från tråd, folie, papper och andra material."
+        description: "Lära sig grunderna i tredimensionell form: skulptera, bygga, skapa uttrycksfulla figurer och karaktärer från tråd, folie, papper, arbeta med gips och akryl och andra material. Det slutliga verket kan hämtas efter lackering."
       }
     },
     footer: "📢 Anmäl dig i förväg — begränsat antal platser!\n✨ Kom och skapa, prova nya saker och ha en rolig sommar med oss!"
@@ -326,6 +331,7 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
                   <div className="text-sm text-secondary/80 space-y-1">
                     <p>{julyCourses[currentLang].courses.assorted.dates}</p>
                     <p>{julyCourses[currentLang].courses.assorted.time}</p>
+                    <p>{julyCourses[currentLang].courses.assorted.age}</p>
                     <p>{julyCourses[currentLang].courses.assorted.price}</p>
                     <p className="font-medium">{julyCourses[currentLang].courses.assorted.description}</p>
                     {julyCourses[currentLang].courses.assorted.schedule.map((item, idx) => (
@@ -342,6 +348,7 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
                   <div className="text-sm text-secondary/80 space-y-1">
                     <p>{julyCourses[currentLang].courses.textile.dates}</p>
                     <p>{julyCourses[currentLang].courses.textile.time}</p>
+                    <p>{julyCourses[currentLang].courses.textile.age}</p>
                     <p>{julyCourses[currentLang].courses.textile.price}</p>
                     <p className="font-medium">{julyCourses[currentLang].courses.textile.description}</p>
                     {julyCourses[currentLang].courses.textile.activities.map((item, idx) => (
