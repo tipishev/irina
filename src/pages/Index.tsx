@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 
@@ -44,6 +45,144 @@ I min studio kombinerar jag professionalism och kreativitet. Vi studerar akademi
 Mitt mål är att lära barn tekniker och ge dem verktyg så att de kan skapa självständigt i framtiden. Jag strävar efter att tända kreativitetens fackla, föra den vidare till barn och inspirera dem att bära den framåt.
 
 I studion skapar jag en balanserad atmosfär där komfort och kreativitet kombineras med disciplin och ett strukturerat tillvägagångssätt.`
+  }
+};
+
+const julyCourses = {
+  ru: {
+    title: "🎨 Летние творческие курсы в художественной студии!",
+    location: "📍 Stopvägen 38, Bromma",
+    phone: "📞 Запись по телефону: 073-517-3330",
+    description: "Приглашаем детей на увлекательные и разнообразные занятия в июле! Все материалы включены в стоимость. Можно записаться на полный курс или приходить по системе drop-in — 270 крон за занятие.",
+    courses: {
+      assorted: {
+        title: "🧶 1. Ассорти",
+        dates: "📅 7–11 июля",
+        time: "🕚 11:00–13:00",
+        price: "💰 Стоимость за неделю: 1300 крон",
+        description: "Каждый день — новое вдохновляющее занятие:",
+        schedule: [
+          "7 июля (понедельник): валяние",
+          "8 июля (вторник): декупаж по стеклу",
+          "9 июля (среда): роспись по керамике",
+          "10 июля (четверг): роспись ложек (хохлома)",
+          "11 июля (пятница): 3D-цветы из термомозаики"
+        ]
+      },
+      textile: {
+        title: "🧵 2. Текстиль",
+        dates: "📅 14–18 июля",
+        time: "🕚 11:00–13:00",
+        price: "💰 Стоимость за неделю: 1300 крон",
+        description: "На занятиях:",
+        activities: [
+          "бисероплетение и бусинки",
+          "тай-дай футболки",
+          "мягкое шитьё",
+          "роспись по ткани"
+        ],
+        note: "‼️ На занятие по тай-дай участникам необходимо принести с собой три футболки: две чёрные и одну белую."
+      },
+      sculpture: {
+        title: "🎭 3. Каркасная скульптура",
+        dates: "📅 21–25 июля",
+        time: "🕚 11:00–13:00",
+        age: "🎂 Для детей от 7 лет",
+        price: "💰 Стоимость за неделю: 1300 крон",
+        description: "Изучаем основы объемной формы: лепим, строим, создаём выразительные фигурки и персонажи из проволоки, фольги, бумаги и других материалов."
+      }
+    },
+    footer: "📢 Записывайтесь заранее — количество мест ограничено!\n✨ Приходите творить, пробовать новое и весело проводить лето вместе с нами!"
+  },
+  en: {
+    title: "🎨 Summer creative courses at the art studio!",
+    location: "📍 Stopvägen 38, Bromma",
+    phone: "📞 Registration by phone: 073-517-3330",
+    description: "We invite children to exciting and diverse activities in July! All materials are included in the price. You can sign up for a full course or come on a drop-in basis — 270 kr per session.",
+    courses: {
+      assorted: {
+        title: "🧶 1. Assorted",
+        dates: "📅 July 7–11",
+        time: "🕚 11:00–13:00",
+        price: "💰 Cost per week: 1300 kr",
+        description: "Each day — a new inspiring activity:",
+        schedule: [
+          "July 7 (Monday): felting",
+          "July 8 (Tuesday): glass decoupage",
+          "July 9 (Wednesday): ceramic painting",
+          "July 10 (Thursday): spoon painting (Khokhloma)",
+          "July 11 (Friday): 3D flowers from thermal mosaic"
+        ]
+      },
+      textile: {
+        title: "🧵 2. Textile",
+        dates: "📅 July 14–18",
+        time: "🕚 11:00–13:00",
+        price: "💰 Cost per week: 1300 kr",
+        description: "In classes:",
+        activities: [
+          "beadwork and beads",
+          "tie-dye t-shirts",
+          "soft sewing",
+          "fabric painting"
+        ],
+        note: "‼️ For tie-dye classes, participants need to bring three t-shirts: two black and one white."
+      },
+      sculpture: {
+        title: "🎭 3. Frame sculpture",
+        dates: "📅 July 21–25",
+        time: "🕚 11:00–13:00",
+        age: "🎂 For children from 7 years old",
+        price: "💰 Cost per week: 1300 kr",
+        description: "Learning the basics of three-dimensional form: sculpting, building, creating expressive figures and characters from wire, foil, paper and other materials."
+      }
+    },
+    footer: "📢 Register in advance — limited seats!\n✨ Come create, try new things and have a fun summer with us!"
+  },
+  sv: {
+    title: "🎨 Sommarkreativa kurser på konststudion!",
+    location: "📍 Stopvägen 38, Bromma",
+    phone: "📞 Anmälan per telefon: 073-517-3330",
+    description: "Vi inbjuder barn till spännande och mångsidiga aktiviteter i juli! Allt material ingår i priset. Du kan anmäla dig till en fullständig kurs eller komma på drop-in-basis — 270 kr per session.",
+    courses: {
+      assorted: {
+        title: "🧶 1. Blandat",
+        dates: "📅 7–11 juli",
+        time: "🕚 11:00–13:00",
+        price: "💰 Kostnad per vecka: 1300 kr",
+        description: "Varje dag — en ny inspirerande aktivitet:",
+        schedule: [
+          "7 juli (måndag): tovning",
+          "8 juli (tisdag): glasdecoupage",
+          "9 juli (onsdag): keramikmålning",
+          "10 juli (torsdag): skedmålning (Khokhloma)",
+          "11 juli (fredag): 3D-blommor från termisk mosaik"
+        ]
+      },
+      textile: {
+        title: "🧵 2. Textil",
+        dates: "📅 14–18 juli",
+        time: "🕚 11:00–13:00",
+        price: "💰 Kostnad per vecka: 1300 kr",
+        description: "I klasser:",
+        activities: [
+          "pärlarbete och pärlor",
+          "tie-dye t-shirts",
+          "mjuk sömnad",
+          "tygmålning"
+        ],
+        note: "‼️ För tie-dye-klasser behöver deltagarna ta med tre t-shirts: två svarta och en vit."
+      },
+      sculpture: {
+        title: "🎭 3. Ramskulptur",
+        dates: "📅 21–25 juli",
+        time: "🕚 11:00–13:00",
+        age: "🎂 För barn från 7 år",
+        price: "💰 Kostnad per vecka: 1300 kr",
+        description: "Lära sig grunderna i tredimensionell form: skulptera, bygga, skapa uttrycksfulla figurer och karaktärer från tråd, folie, papper och andra material."
+      }
+    },
+    footer: "📢 Anmäl dig i förväg — begränsat antal platser!\n✨ Kom och skapa, prova nya saker och ha en rolig sommar med oss!"
   }
 };
 
@@ -149,74 +288,93 @@ const autumnCourse = {
   }
 };
 
-const soapCandles = {
-  ru: {
-    title: "🎨🧼 Приглашаем детей на творческий мастер-класс в Стокгольме! 🕯️✨",
-    subtitle: "Хочешь провести время весело и с пользой? Приходи на мастер-класс по созданию мыла и свечей, где каждый сможет почувствовать себя настоящим мастером!",
-    details: {
-      location: "📍 Где: Стокгольм",
-      date: "📅 Когда: 15 июня",
-      time: "🕘 Время 11:00 (продолжительность 2 часа)",
-      address: "📢 Адрес Stopvägen 38",
-      price: "💰 Стоимость участия: 350 крон",
-      age: "👧👦 Возраст: от 6 лет"
-    },
-    activities: {
-      title: "На мастер-классе:",
-      soap: "🧼 Сделаем ароматное и красивое мыло своими руками",
-      candles: "🕯️ Создадим уникальные свечи с разными формами и запахами",
-      takeaway: "🎁 Каждый участник унесёт свои творения домой!",
-      teacher: "👩‍🏫 Преподаватель @anastasia_morzzz"
-    },
-    registration: "Количество мест ограничено — успей записаться!\n📩 Для регистрации и вопросов пишите в личные сообщения. И по телефону 0735173330\n\nПодарите своему ребёнку день творчества и ярких эмоций! 🌈"
-  },
-  en: {
-    title: "🎨🧼 We invite children to a creative workshop in Stockholm! 🕯️✨",
-    subtitle: "Want to spend time fun and useful? Come to a workshop on creating soap and candles, where everyone can feel like a real master!",
-    details: {
-      location: "📍 Where: Stockholm",
-      date: "📅 When: June 15",
-      time: "🕘 Time 11:00 (duration 2 hours)",
-      address: "📢 Address Stopvägen 38",
-      price: "💰 Participation fee: 350 kr",
-      age: "👧👦 Age: from 6 years"
-    },
-    activities: {
-      title: "At the workshop:",
-      soap: "🧼 Make fragrant and beautiful soap with your own hands",
-      candles: "🕯️ Create unique candles with different shapes and scents",
-      takeaway: "🎁 Each participant will take their creations home!",
-      teacher: "👩‍🏫 Teacher @anastasia_morzzz"
-    },
-    registration: "Limited seats — hurry to register!\n📩 For registration and questions, write to private messages. And by phone 0735173330\n\nGive your child a day of creativity and bright emotions! 🌈"
-  },
-  sv: {
-    title: "🎨🧼 Vi inbjuder barn till en kreativ workshop i Stockholm! 🕯️✨",
-    subtitle: "Vill du tillbringa tid roligt och nyttigt? Kom till en workshop om att skapa tvål och ljus, där alla kan känna sig som en riktig mästare!",
-    details: {
-      location: "📍 Var: Stockholm",
-      date: "📅 När: 15 juni",
-      time: "🕘 Tid 11:00 (varaktighet 2 timmar)",
-      address: "📢 Adress Stopvägen 38",
-      price: "💰 Deltagaravgift: 350 kr",
-      age: "👧👦 Ålder: från 6 år"
-    },
-    activities: {
-      title: "På workshopen:",
-      soap: "🧼 Gör doftande och vacker tvål med egna händer",
-      candles: "🕯️ Skapa unika ljus med olika former och dofter",
-      takeaway: "🎁 Varje deltagare kommer att ta sina kreationer hem!",
-      teacher: "👩‍🏫 Lärare @anastasia_morzzz"
-    },
-    registration: "Begränsat antal platser — skynda dig att registrera!\n📩 För registrering och frågor, skriv till privata meddelanden. Och via telefon 0735173330\n\nGe ditt barn en dag av kreativitet och ljusa känslor! 🌈"
-  }
-};
-
 const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
   return (
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
+        {/* July Courses Section */}
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/lovable-uploads/622b8cef-0e22-41ea-a648-6e11365d8c45.png"
+                alt="July Courses Schedule"
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+            <div className="w-full md:w-1/2 space-y-4">
+              <h3 className="text-xl font-bold text-secondary">
+                {julyCourses[currentLang].title}
+              </h3>
+              
+              <div className="space-y-3">
+                <p className="text-secondary/80">{julyCourses[currentLang].location}</p>
+                <p className="text-secondary/80">{julyCourses[currentLang].phone}</p>
+              </div>
+              
+              <p className="text-secondary/80">
+                {julyCourses[currentLang].description}
+              </p>
+              
+              <div className="space-y-6">
+                {/* Assorted Course */}
+                <div className="border-l-4 border-primary pl-4">
+                  <h4 className="font-semibold text-secondary mb-2">
+                    {julyCourses[currentLang].courses.assorted.title}
+                  </h4>
+                  <div className="text-sm text-secondary/80 space-y-1">
+                    <p>{julyCourses[currentLang].courses.assorted.dates}</p>
+                    <p>{julyCourses[currentLang].courses.assorted.time}</p>
+                    <p>{julyCourses[currentLang].courses.assorted.price}</p>
+                    <p className="font-medium">{julyCourses[currentLang].courses.assorted.description}</p>
+                    {julyCourses[currentLang].courses.assorted.schedule.map((item, idx) => (
+                      <p key={idx}>• {item}</p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Textile Course */}
+                <div className="border-l-4 border-primary pl-4">
+                  <h4 className="font-semibold text-secondary mb-2">
+                    {julyCourses[currentLang].courses.textile.title}
+                  </h4>
+                  <div className="text-sm text-secondary/80 space-y-1">
+                    <p>{julyCourses[currentLang].courses.textile.dates}</p>
+                    <p>{julyCourses[currentLang].courses.textile.time}</p>
+                    <p>{julyCourses[currentLang].courses.textile.price}</p>
+                    <p className="font-medium">{julyCourses[currentLang].courses.textile.description}</p>
+                    {julyCourses[currentLang].courses.textile.activities.map((item, idx) => (
+                      <p key={idx}>• {item}</p>
+                    ))}
+                    <p className="text-red-600 font-medium">{julyCourses[currentLang].courses.textile.note}</p>
+                  </div>
+                </div>
+
+                {/* Sculpture Course */}
+                <div className="border-l-4 border-primary pl-4">
+                  <h4 className="font-semibold text-secondary mb-2">
+                    {julyCourses[currentLang].courses.sculpture.title}
+                  </h4>
+                  <div className="text-sm text-secondary/80 space-y-1">
+                    <p>{julyCourses[currentLang].courses.sculpture.dates}</p>
+                    <p>{julyCourses[currentLang].courses.sculpture.time}</p>
+                    <p>{julyCourses[currentLang].courses.sculpture.age}</p>
+                    <p>{julyCourses[currentLang].courses.sculpture.price}</p>
+                    <p>{julyCourses[currentLang].courses.sculpture.description}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-4 bg-primary/10 rounded-lg">
+                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
+                  {julyCourses[currentLang].footer}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Ceramics Course Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="flex flex-col md:flex-row items-start gap-8">
@@ -319,59 +477,6 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
               <div className="mt-4 p-4 bg-primary/10 rounded-lg">
                 <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
                   {autumnCourse[currentLang].footer}
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Soap and Candles Workshop Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-center text-secondary mb-6">
-            {soapCandles[currentLang].title}
-          </h2>
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="w-full md:w-1/2">
-              <img
-                src="/lovable-uploads/920f07cd-3b2b-4d07-bfff-110162c90968.png"
-                alt="Soap and Candles Workshop"
-                className="w-full h-auto rounded-lg shadow-md"
-              />
-            </div>
-            <div className="w-full md:w-1/2 space-y-6">
-              <p className="text-secondary/80">
-                {soapCandles[currentLang].subtitle}
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-secondary mb-3">Детали:</h4>
-                  <div className="space-y-2 text-sm text-secondary/80">
-                    <p>{soapCandles[currentLang].details.location}</p>
-                    <p>{soapCandles[currentLang].details.date}</p>
-                    <p>{soapCandles[currentLang].details.time}</p>
-                    <p>{soapCandles[currentLang].details.address}</p>
-                    <p>{soapCandles[currentLang].details.price}</p>
-                    <p>{soapCandles[currentLang].details.age}</p>
-                  </div>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-secondary mb-3">
-                    {soapCandles[currentLang].activities.title}
-                  </h4>
-                  <div className="space-y-2 text-sm text-secondary/80">
-                    <p>{soapCandles[currentLang].activities.soap}</p>
-                    <p>{soapCandles[currentLang].activities.candles}</p>
-                    <p>{soapCandles[currentLang].activities.takeaway}</p>
-                    <p>{soapCandles[currentLang].activities.teacher}</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-4 bg-primary/10 rounded-lg">
-                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
-                  {soapCandles[currentLang].registration}
                 </pre>
               </div>
             </div>
