@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 type Language = 'ru' | 'en' | 'sv';
@@ -11,11 +12,11 @@ export const LanguageSelector = ({ currentLang, onLanguageChange }: Props) => {
   return (
     <div className="flex gap-2">
       <Button 
-        variant={currentLang === 'ru' ? "default" : "outline"}
-        onClick={() => onLanguageChange('ru')}
+        variant={currentLang === 'sv' ? "default" : "outline"}
+        onClick={() => onLanguageChange('sv')}
         className="text-sm"
       >
-        RU
+        SV
       </Button>
       <Button 
         variant={currentLang === 'en' ? "default" : "outline"}
@@ -25,11 +26,11 @@ export const LanguageSelector = ({ currentLang, onLanguageChange }: Props) => {
         EN
       </Button>
       <Button 
-        variant={currentLang === 'sv' ? "default" : "outline"}
-        onClick={() => onLanguageChange('sv')}
+        variant={currentLang === 'ru' ? "default" : "outline"}
+        onClick={() => onLanguageChange('ru')}
         className="text-sm"
       >
-        SV
+        RU
       </Button>
     </div>
   );

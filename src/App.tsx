@@ -14,7 +14,7 @@ function App() {
   const navigate = useNavigate();
   const [currentLang, setCurrentLang] = useState<Language>(() => {
     const langParam = searchParams.get('lang');
-    return (langParam as Language) || 'ru';
+    return (langParam as Language) || 'sv';
   });
 
   const handleLanguageChange = (lang: Language) => {
