@@ -1,3 +1,4 @@
+
 import { Palette, Camera, Brush } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -11,19 +12,22 @@ const translations = {
         icon: Palette,
         link: "/portfolio/art",
         rulesButton: "Правила студии",
-        scheduleButton: "Расписание и стоимость"
+        scheduleButton: "Расписание и стоимость",
+        showPortfolio: true
       },
       {
         title: "Фотография",
         description: "Профессиональная фотосъемка и фотоуроки",
         icon: Camera,
-        link: "/portfolio/photography"
+        link: "/portfolio/photography",
+        showPortfolio: false
       },
       {
         title: "Макияж",
         description: "Уроки макияжа и профессиональный мейкап",
         icon: Brush,
-        link: "/portfolio/makeup"
+        link: "/portfolio/makeup",
+        showPortfolio: true
       }
     ],
     viewPortfolio: "Смотреть портфолио"
@@ -37,19 +41,22 @@ const translations = {
         icon: Palette,
         link: "/portfolio/art",
         rulesButton: "Studio Rules",
-        scheduleButton: "Schedule and Prices"
+        scheduleButton: "Schedule and Prices",
+        showPortfolio: true
       },
       {
         title: "Photography",
         description: "Professional photography and photo lessons",
         icon: Camera,
-        link: "/portfolio/photography"
+        link: "/portfolio/photography",
+        showPortfolio: false
       },
       {
         title: "Makeup",
         description: "Makeup lessons and professional makeup services",
         icon: Brush,
-        link: "/portfolio/makeup"
+        link: "/portfolio/makeup",
+        showPortfolio: true
       }
     ],
     viewPortfolio: "View Portfolio"
@@ -63,19 +70,22 @@ const translations = {
         icon: Palette,
         link: "/portfolio/art",
         rulesButton: "Studioregler",
-        scheduleButton: "Schema och priser"
+        scheduleButton: "Schema och priser",
+        showPortfolio: true
       },
       {
         title: "Fotografi",
         description: "Professionell fotografering och fotolektioner",
         icon: Camera,
-        link: "/portfolio/photography"
+        link: "/portfolio/photography",
+        showPortfolio: false
       },
       {
         title: "Makeup",
         description: "Makeuplektioner och professionella makeuptjänster",
         icon: Brush,
-        link: "/portfolio/makeup"
+        link: "/portfolio/makeup",
+        showPortfolio: true
       }
     ],
     viewPortfolio: "Visa Portfolio"
@@ -110,12 +120,14 @@ export const Services = ({ currentLang }: ServicesProps) => {
                 {service.description}
               </p>
               <div className="space-y-2">
-                <Link 
-                  to={service.link}
-                  className="inline-block w-full px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors text-center"
-                >
-                  {translations[currentLang].viewPortfolio}
-                </Link>
+                {service.showPortfolio && (
+                  <Link 
+                    to={service.link}
+                    className="inline-block w-full px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors text-center"
+                  >
+                    {translations[currentLang].viewPortfolio}
+                  </Link>
+                )}
                 {service.scheduleButton && (
                   <Link 
                     to="/art-schedule"
