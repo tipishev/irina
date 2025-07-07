@@ -8,6 +8,90 @@ interface IndexProps {
   onLanguageChange: (lang: Language) => void;
 }
 
+const textileCourse = {
+  ru: {
+    title: "🎨 Летний курс \"Текстиль\" для детей от 7 лет",
+    dates: "📅 14–18 июля",
+    time: "🕚 Время: 10:00–13:00",
+    location: "📍 Адрес: Stopvägen 38, Bromma",
+    phone: "📞 Запись по телефону: 073-517-3330",
+    intro: "На этой неделе ребята будут осваивать разные творческие техники работы с тканью, фетром и нитями. Каждый день — новое увлекательное занятие!",
+    schedule: "📆 Программа по дням:",
+    days: {
+      monday: "Понедельник:\n🔸 Бисероплетение и создание фенечек",
+      tuesday: "Вторник:\n🔸 Шьём брошь в виде розы из джинсовой ткани",
+      wednesday: "Среда:\n🔸 Макраме: плетём настенное панно в форме листика",
+      thursday: "Четверг:\n🔸 Роспись ткани в стиле тай-дай — 3 разные техники (нужно принести свои футболки!)",
+      friday: "Пятница:\n🔸 Шьём мягкую игрушку из фетра — Царевна-лягушка"
+    },
+    important: "📌 Важно!",
+    notes: [
+      "🔹 Необходимо принести 3 футболки: 1 белую и 2 чёрные для росписи",
+      "🔹 С собой каждый день — ланч"
+    ],
+    pricing: "💰 Стоимость:",
+    prices: [
+      "— Вся неделя: 1300 крон",
+      "— Разовое посещение (дроп-ин): 270 крон/день"
+    ],
+    footer: "Ждём юных мастеров на неделю творчества и вдохновения!"
+  },
+  en: {
+    title: "🎨 Summer \"Textile\" Course for Children 7+",
+    dates: "📅 July 14–18",
+    time: "🕚 Time: 10:00–13:00",
+    location: "📍 Address: Stopvägen 38, Bromma",
+    phone: "📞 Registration by phone: 073-517-3330",
+    intro: "This week children will master various creative techniques working with fabric, felt and threads. Each day — a new exciting activity!",
+    schedule: "📆 Daily Program:",
+    days: {
+      monday: "Monday:\n🔸 Beadwork and friendship bracelet making",
+      tuesday: "Tuesday:\n🔸 Sewing a rose brooch from denim fabric",
+      wednesday: "Wednesday:\n🔸 Macrame: weaving a leaf-shaped wall panel",
+      thursday: "Thursday:\n🔸 Tie-dye fabric painting — 3 different techniques (bring your own t-shirts!)",
+      friday: "Friday:\n🔸 Sewing a soft felt toy — Princess Frog"
+    },
+    important: "📌 Important!",
+    notes: [
+      "🔹 Need to bring 3 t-shirts: 1 white and 2 black for painting",
+      "🔹 Bring lunch each day"
+    ],
+    pricing: "💰 Cost:",
+    prices: [
+      "— Full week: 1300 kr",
+      "— Single visit (drop-in): 270 kr/day"
+    ],
+    footer: "We await young masters for a week of creativity and inspiration!"
+  },
+  sv: {
+    title: "🎨 Sommar \"Textil\" Kurs för Barn 7+",
+    dates: "📅 14–18 juli",
+    time: "🕚 Tid: 10:00–13:00",
+    location: "📍 Adress: Stopvägen 38, Bromma",
+    phone: "📞 Anmälan per telefon: 073-517-3330",
+    intro: "Denna vecka kommer barn att bemästra olika kreativa tekniker för att arbeta med tyg, filt och trådar. Varje dag — en ny spännande aktivitet!",
+    schedule: "📆 Dagligt Program:",
+    days: {
+      monday: "Måndag:\n🔸 Pärlarbete och vänskapsarmband",
+      tuesday: "Tisdag:\n🔸 Sy en rosbrosch av jeanstyg",
+      wednesday: "Onsdag:\n🔸 Makrame: väva en bladformad väggpanel",
+      thursday: "Torsdag:\n🔸 Tie-dye tygmålning — 3 olika tekniker (ta med egna t-shirts!)",
+      friday: "Fredag:\n🔸 Sy en mjuk filtleksak — Prinsessa Groda"
+    },
+    important: "📌 Viktigt!",
+    notes: [
+      "🔹 Behöver ta med 3 t-shirts: 1 vit och 2 svarta för målning",
+      "🔹 Ta med lunch varje dag"
+    ],
+    pricing: "💰 Kostnad:",
+    prices: [
+      "— Hela veckan: 1300 kr",
+      "— Enskilt besök (drop-in): 270 kr/dag"
+    ],
+    footer: "Vi väntar på unga mästare för en vecka av kreativitet och inspiration!"
+  }
+};
+
 const aboutMe = {
   ru: {
     title: "Обо Мне",
@@ -52,7 +136,7 @@ const julyCourses = {
     title: "🎨 Летние творческие курсы в художественной студии!",
     location: "📍 Stopvägen 38, Bromma",
     phone: "📞 Запись по телефону: 073-517-3330",
-    description: "Приглашаем детей на увлекательные и разнообразные занятия в июле! Все материалы включены в стоимость. Можно записаться на полный курс или приходить по системе drop-in — 270 крон за занятие.",
+    description: "Приглашаем детей на увлекательные и разнообразные занятия в июле! Все материалы включены в стоимость. Можно записаться на полный курс или прийти по системе drop-in — 270 крон за занятие.",
     courses: {
       assorted: {
         title: "🧶 1. Ассорти",
@@ -298,6 +382,90 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
+        {/* New Textile Course Section */}
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/lovable-uploads/27848801-3443-4335-93f9-c6096c1fc4de.png"
+                alt="Textile Course July 14-18"
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+            <div className="w-full md:w-1/2 space-y-4">
+              <h3 className="text-xl font-bold text-secondary">
+                {textileCourse[currentLang].title}
+              </h3>
+              
+              <div className="space-y-2">
+                <p className="text-secondary/80">{textileCourse[currentLang].dates}</p>
+                <p className="text-secondary/80">{textileCourse[currentLang].time}</p>
+                <p className="text-secondary/80">{textileCourse[currentLang].location}</p>
+                <p className="text-secondary/80">{textileCourse[currentLang].phone}</p>
+              </div>
+              
+              <p className="text-secondary/80">
+                {textileCourse[currentLang].intro}
+              </p>
+              
+              <div className="space-y-3">
+                <h4 className="font-semibold text-secondary">
+                  {textileCourse[currentLang].schedule}
+                </h4>
+                <div className="space-y-2 text-sm">
+                  <div className="border-l-4 border-primary pl-3">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
+                      {textileCourse[currentLang].days.monday}
+                    </pre>
+                  </div>
+                  <div className="border-l-4 border-primary pl-3">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
+                      {textileCourse[currentLang].days.tuesday}
+                    </pre>
+                  </div>
+                  <div className="border-l-4 border-primary pl-3">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
+                      {textileCourse[currentLang].days.wednesday}
+                    </pre>
+                  </div>
+                  <div className="border-l-4 border-primary pl-3">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
+                      {textileCourse[currentLang].days.thursday}
+                    </pre>
+                  </div>
+                  <div className="border-l-4 border-primary pl-3">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
+                      {textileCourse[currentLang].days.friday}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-secondary mb-2">
+                  {textileCourse[currentLang].important}
+                </h4>
+                {textileCourse[currentLang].notes.map((note, idx) => (
+                  <p key={idx} className="text-sm text-secondary/80">{note}</p>
+                ))}
+              </div>
+              
+              <div className="p-4 bg-primary/10 rounded-lg">
+                <h4 className="font-semibold text-secondary mb-2">
+                  {textileCourse[currentLang].pricing}
+                </h4>
+                {textileCourse[currentLang].prices.map((price, idx) => (
+                  <p key={idx} className="text-sm text-secondary/80">{price}</p>
+                ))}
+              </div>
+              
+              <p className="text-center text-secondary font-medium italic">
+                {textileCourse[currentLang].footer}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* July Courses Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="flex flex-col md:flex-row items-start gap-8">
