@@ -8,87 +8,138 @@ interface IndexProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-const textileCourse = {
+const autumnEnrollment = {
   ru: {
-    title: "🎨 Летний курс \"Текстиль\" для детей от 7 лет",
-    dates: "📅 14–18 июля",
-    time: "🕚 Время: 10:00–13:00",
-    location: "📍 Адрес: Stopvägen 38, Bromma",
-    phone: "📞 Запись по телефону: 073-517-3330",
-    intro: "На этой неделе ребята будут осваивать разные творческие техники работы с тканью, фетром и нитями. Каждый день — новое увлекательное занятие!",
-    schedule: "📆 Программа по дням:",
-    days: {
-      monday: "Понедельник:\n🔸 Бисероплетение и создание фенечек",
-      tuesday: "Вторник:\n🔸 Шьём брошь в виде розы из джинсовой ткани",
-      wednesday: "Среда:\n🔸 Макраме: плетём настенное панно в форме листика",
-      thursday: "Четверг:\n🔸 Роспись ткани в стиле тай-дай — 3 разные техники (нужно принести свои футболки!)",
-      friday: "Пятница:\n🔸 Шьём мягкую игрушку из фетра — Царевна-лягушка"
+    title: "🎨 Открыт набор на курсы по рисунку, живописи и декоративно-прикладному искусству для детей и подростков!",
+    description: "Ждём вас на увлекательных занятиях, где каждый сможет развивать творческие навыки и выразить себя через искусство.",
+    schedule: {
+      title: "📅 Расписание и возрастные группы:",
+      groups: {
+        little: "👶 Малыши (6–7 лет):\n▪️ Вторник – 15:00",
+        school: "👧🧒 Школьники (8–10 лет):\n▪️ Вторник – 17:00\n▪️ Среда – 17:00", 
+        family: "👨‍👩‍👧‍👦 Семейная группа (сиблинги, 6–10 лет):\n▪️ Понедельник – 17:00\n▪️ Четверг – 15:00",
+        teens: "🧑‍🎨 Подростки (10–16 лет):\n▪️ Среда – 15:00\n▪️ Четверг – 17:00"
+      }
     },
-    important: "📌 Важно!",
-    notes: [
-      "🔹 Необходимо принести 3 футболки: 1 белую и 2 чёрные для росписи",
-      "🔹 С собой каждый день — ланч"
-    ],
-    pricing: "💰 Стоимость:",
-    prices: [
-      "— Вся неделя: 1300 крон",
-      "— Разовое посещение (дроп-ин): 270 крон/день"
-    ],
-    footer: "Ждём юных мастеров на неделю творчества и вдохновения!"
+    duration: "⏱️ Продолжительность занятий: 1,5 часа",
+    pricing: "💰 Абонемент (10 занятий): 2300 крон",
+    additional: {
+      title: "Дополнительные возможности:",
+      single: "🔹 Разовое занятие (по записи, при наличии мест): 250 крон",
+      trial: "🔹 Пробный урок (1 час): 150 крон",
+      discount: "🔹 Семейная скидка: 10% при записи двух детей из одной семьи"
+    },
+    materials: {
+      title: "🎨 Что нужно брать с собой:",
+      basic: "▪️ Базовые материалы (краски, бумага) приносятся самостоятельно",
+      special: "▪️ Специальные материалы предоставляются студией"
+    },
+    curriculum: {
+      title: "📚 Чему вы научитесь:",
+      drawing: "Рисунок и живопись:\n– Карандаш, уголь, пастель\n– Акварель, гуашь",
+      sculpture: "Скульптура:\n– Глина, папье-маше", 
+      graphics: "Графика:\n– Тушь, перо",
+      crafts: "Декоративно-прикладное искусство"
+    },
+    contact: {
+      address: "📍 Адрес: Stopvägen 38, Bromma",
+      phone: "📞 Телефон для записи: 073-517-3330"
+    },
+    dates: {
+      start: "🚀 Начало занятий: 1 сентября 2025 года",
+      end: "Окончание осеннего термина: 1 декабря",
+      vacation: "Каникулы: 24 октября по 2 ноября"
+    },
+    rules: "Ознакомьтесь с правилами студии тут:",
+    footer: "✨ Не упустите возможность раскрыть творческий потенциал вашего ребёнка в атмосфере вдохновения и творчества!"
   },
   en: {
-    title: "🎨 Summer \"Textile\" Course for Children 7+",
-    dates: "📅 July 14–18",
-    time: "🕚 Time: 10:00–13:00",
-    location: "📍 Address: Stopvägen 38, Bromma",
-    phone: "📞 Registration by phone: 073-517-3330",
-    intro: "This week children will master various creative techniques working with fabric, felt and threads. Each day — a new exciting activity!",
-    schedule: "📆 Daily Program:",
-    days: {
-      monday: "Monday:\n🔸 Beadwork and friendship bracelet making",
-      tuesday: "Tuesday:\n🔸 Sewing a rose brooch from denim fabric",
-      wednesday: "Wednesday:\n🔸 Macrame: weaving a leaf-shaped wall panel",
-      thursday: "Thursday:\n🔸 Tie-dye fabric painting — 3 different techniques (bring your own t-shirts!)",
-      friday: "Friday:\n🔸 Sewing a soft felt toy — Princess Frog"
+    title: "🎨 Enrollment open for drawing, painting and decorative arts courses for children and teenagers!",
+    description: "We invite you to exciting classes where everyone can develop creative skills and express themselves through art.",
+    schedule: {
+      title: "📅 Schedule and age groups:",
+      groups: {
+        little: "👶 Little ones (6–7 years):\n▪️ Tuesday – 15:00",
+        school: "👧🧒 School children (8–10 years):\n▪️ Tuesday – 17:00\n▪️ Wednesday – 17:00",
+        family: "👨‍👩‍👧‍👦 Family group (siblings, 6–10 years):\n▪️ Monday – 17:00\n▪️ Thursday – 15:00",
+        teens: "🧑‍🎨 Teenagers (10–16 years):\n▪️ Wednesday – 15:00\n▪️ Thursday – 17:00"
+      }
     },
-    important: "📌 Important!",
-    notes: [
-      "🔹 Need to bring 3 t-shirts: 1 white and 2 black for painting",
-      "🔹 Bring lunch each day"
-    ],
-    pricing: "💰 Cost:",
-    prices: [
-      "— Full week: 1300 kr",
-      "— Single visit (drop-in): 270 kr/day"
-    ],
-    footer: "We await young masters for a week of creativity and inspiration!"
+    duration: "⏱️ Lesson duration: 1.5 hours",
+    pricing: "💰 Subscription (10 lessons): 2300 kr",
+    additional: {
+      title: "Additional options:",
+      single: "🔹 Single lesson (by appointment, subject to availability): 250 kr",
+      trial: "🔹 Trial lesson (1 hour): 150 kr",
+      discount: "🔹 Family discount: 10% when enrolling two children from the same family"
+    },
+    materials: {
+      title: "🎨 What to bring:",
+      basic: "▪️ Basic materials (paints, paper) brought independently",
+      special: "▪️ Special materials provided by the studio"
+    },
+    curriculum: {
+      title: "📚 What you will learn:",
+      drawing: "Drawing and painting:\n– Pencil, charcoal, pastel\n– Watercolor, gouache",
+      sculpture: "Sculpture:\n– Clay, papier-mâché",
+      graphics: "Graphics:\n– Ink, pen",
+      crafts: "Decorative and applied arts"
+    },
+    contact: {
+      address: "📍 Address: Stopvägen 38, Bromma",
+      phone: "📞 Registration phone: 073-517-3330"
+    },
+    dates: {
+      start: "🚀 Classes start: September 1, 2025",
+      end: "End of autumn term: December 1",
+      vacation: "Holidays: October 24 to November 2"
+    },
+    rules: "Check out the studio rules here:",
+    footer: "✨ Don't miss the opportunity to unlock your child's creative potential in an atmosphere of inspiration and creativity!"
   },
   sv: {
-    title: "🎨 Sommar \"Textil\" Kurs för Barn 7+",
-    dates: "📅 14–18 juli",
-    time: "🕚 Tid: 10:00–13:00",
-    location: "📍 Adress: Stopvägen 38, Bromma",
-    phone: "📞 Anmälan per telefon: 073-517-3330",
-    intro: "Denna vecka kommer barn att bemästra olika kreativa tekniker för att arbeta med tyg, filt och trådar. Varje dag — en ny spännande aktivitet!",
-    schedule: "📆 Dagligt Program:",
-    days: {
-      monday: "Måndag:\n🔸 Pärlarbete och vänskapsarmband",
-      tuesday: "Tisdag:\n🔸 Sy en rosbrosch av jeanstyg",
-      wednesday: "Onsdag:\n🔸 Makrame: väva en bladformad väggpanel",
-      thursday: "Torsdag:\n🔸 Tie-dye tygmålning — 3 olika tekniker (ta med egna t-shirts!)",
-      friday: "Fredag:\n🔸 Sy en mjuk filtleksak — Prinsessa Groda"
+    title: "🎨 Anmälan öppen för kurser i teckning, målning och konsthantverk för barn och tonåringar!",
+    description: "Vi välkomnar dig till spännande lektioner där alla kan utveckla kreativa färdigheter och uttrycka sig genom konst.",
+    schedule: {
+      title: "📅 Schema och åldersgrupper:",
+      groups: {
+        little: "👶 Småbarn (6–7 år):\n▪️ Tisdag – 15:00",
+        school: "👧🧒 Skolbarn (8–10 år):\n▪️ Tisdag – 17:00\n▪️ Onsdag – 17:00",
+        family: "👨‍👩‍👧‍👦 Familjegrupp (syskon, 6–10 år):\n▪️ Måndag – 17:00\n▪️ Torsdag – 15:00",
+        teens: "🧑‍🎨 Tonåringar (10–16 år):\n▪️ Onsdag – 15:00\n▪️ Torsdag – 17:00"
+      }
     },
-    important: "📌 Viktigt!",
-    notes: [
-      "🔹 Behöver ta med 3 t-shirts: 1 vit och 2 svarta för målning",
-      "🔹 Ta med lunch varje dag"
-    ],
-    pricing: "💰 Kostnad:",
-    prices: [
-      "— Hela veckan: 1300 kr",
-      "— Enskilt besök (drop-in): 270 kr/dag"
-    ],
-    footer: "Vi väntar på unga mästare för en vecka av kreativitet och inspiration!"
+    duration: "⏱️ Lektionslängd: 1,5 timmar",
+    pricing: "💰 Prenumeration (10 lektioner): 2300 kr",
+    additional: {
+      title: "Ytterligare alternativ:",
+      single: "🔹 Enstaka lektion (efter bokning, i mån av plats): 250 kr",
+      trial: "🔹 Provlektion (1 timme): 150 kr",
+      discount: "🔹 Familjerabatt: 10% vid inskrivning av två barn från samma familj"
+    },
+    materials: {
+      title: "🎨 Vad du ska ta med:",
+      basic: "▪️ Grundmaterial (färger, papper) tas med självständigt",
+      special: "▪️ Specialmaterial tillhandahålls av studion"
+    },
+    curriculum: {
+      title: "📚 Vad du kommer att lära dig:",
+      drawing: "Teckning och målning:\n– Penna, kol, pastell\n– Akvarell, gouache",
+      sculpture: "Skulptur:\n– Lera, papier-mâché",
+      graphics: "Grafik:\n– Bläck, penna",
+      crafts: "Dekorativ och tillämpad konst"
+    },
+    contact: {
+      address: "📍 Adress: Stopvägen 38, Bromma",
+      phone: "📞 Anmälningstelefon: 073-517-3330"
+    },
+    dates: {
+      start: "🚀 Lektionerna börjar: 1 september 2025",
+      end: "Slutet av höstterminen: 1 december",
+      vacation: "Lov: 24 oktober till 2 november"
+    },
+    rules: "Kolla studioreglerna här:",
+    footer: "✨ Missa inte möjligheten att låsa upp ditt barns kreativa potential i en atmosfär av inspiration och kreativitet!"
   }
 };
 
@@ -131,188 +182,6 @@ I studion skapar jag en balanserad atmosfär där komfort och kreativitet kombin
   }
 };
 
-const julyCourses = {
-  ru: {
-    title: "🎨 Летние творческие курсы в художественной студии!",
-    location: "📍 Stopvägen 38, Bromma",
-    phone: "📞 Запись по телефону: 073-517-3330",
-    description: "Приглашаем детей на увлекательные и разнообразные занятия в июле! Все материалы включены в стоимость. Можно записаться на полный курс или прийти по системе drop-in — 270 крон за занятие.",
-    courses: {
-      assorted: {
-        title: "🧶 1. Ассорти",
-        dates: "📅 7–11 июля",
-        time: "🕚 11:00–13:00",
-        age: "Для детей от 7+",
-        price: "💰 Стоимость за неделю: 1300 крон",
-        description: "Каждый день — новое вдохновляющее занятие:",
-        schedule: [
-          "7 июля (понедельник): валяние",
-          "8 июля (вторник): декупаж по стеклу",
-          "9 июля (среда): роспись по керамике (тарелки)",
-          "10 июля (четверг): роспись по дереву ложек (хохлома)",
-          "11 июля (пятница): 3D-цветы из термомозаики"
-        ]
-      },
-      textile: {
-        title: "🧵 2. Текстиль",
-        dates: "📅 14–18 июля",
-        time: "🕚 11:00–13:00",
-        age: "Для детей от 7+",
-        price: "💰 Стоимость за неделю: 1300 крон",
-        description: "На занятиях:",
-        activities: [
-          "Бисероплетение и работа с бусинками",
-          "Узелковые техники в росписи ткани Тай-дай футболки, цветочные оттиски",
-          "Мягкая игрушка шьём из войлок (царевна Лягушка)",
-          "Роспись акрилом по ткани, работа с грунтом, создание игрушки"
-        ],
-        note: "‼️ На занятие по тай-дай участникам необходимо принести с собой три футболки: однотонные две чёрные/синие/зелёные и одну белую."
-      },
-      sculpture: {
-        title: "🎭 3. Каркасная скульптура",
-        dates: "📅 21–25 июля",
-        time: "🕚 11:00–13:00",
-        age: "Для детей от 7 лет",
-        price: "💰 Стоимость за неделю: 1300 крон",
-        description: "Изучаем основы объемной формы: лепим, строим, создаём выразительные фигурки и персонажи из проволоки, фольги, бумаги, работа с гипсом и акрилом и других материалов. Итоговую работу можно будет забрать после лакировки."
-      }
-    },
-    footer: "📢 Записывайтесь заранее — количество мест ограничено!\n✨ Приходите творить, пробовать новое и весело проводить лето вместе с нами!"
-  },
-  en: {
-    title: "🎨 Summer creative courses at the art studio!",
-    location: "📍 Stopvägen 38, Bromma",
-    phone: "📞 Registration by phone: 073-517-3330",
-    description: "We invite children to exciting and diverse activities in July! All materials are included in the price. You can sign up for a full course or come on a drop-in basis — 270 kr per session.",
-    courses: {
-      assorted: {
-        title: "🧶 1. Assorted",
-        dates: "📅 July 7–11",
-        time: "🕚 11:00–13:00",
-        age: "For children 7+",
-        price: "💰 Cost per week: 1300 kr",
-        description: "Each day — a new inspiring activity:",
-        schedule: [
-          "July 7 (Monday): felting",
-          "July 8 (Tuesday): glass decoupage",
-          "July 9 (Wednesday): ceramic painting (plates)",
-          "July 10 (Thursday): wooden spoon painting (Khokhloma)",
-          "July 11 (Friday): 3D flowers from thermal mosaic"
-        ]
-      },
-      textile: {
-        title: "🧵 2. Textile",
-        dates: "📅 July 14–18",
-        time: "🕚 11:00–13:00",
-        age: "For children 7+",
-        price: "💰 Cost per week: 1300 kr",
-        description: "In classes:",
-        activities: [
-          "Beadwork and working with beads",
-          "Tie-dye techniques in fabric painting, floral prints",
-          "Soft toy sewing from felt (Princess Frog)",
-          "Acrylic painting on fabric, working with primer, toy creation"
-        ],
-        note: "‼️ For tie-dye classes, participants need to bring three t-shirts: two solid colored black/blue/green and one white."
-      },
-      sculpture: {
-        title: "🎭 3. Frame sculpture",
-        dates: "📅 July 21–25",
-        time: "🕚 11:00–13:00",
-        age: "For children from 7 years old",
-        price: "💰 Cost per week: 1300 kr",
-        description: "Learning the basics of three-dimensional form: sculpting, building, creating expressive figures and characters from wire, foil, paper, working with plaster and acrylic and other materials. The final work can be picked up after varnishing."
-      }
-    },
-    footer: "📢 Register in advance — limited seats!\n✨ Come create, try new things and have a fun summer with us!"
-  },
-  sv: {
-    title: "🎨 Sommarkreativa kurser på konststudion!",
-    location: "📍 Stopvägen 38, Bromma",
-    phone: "📞 Anmälan per telefon: 073-517-3330",
-    description: "Vi inbjuder barn till spännande och mångsidiga aktiviteter i juli! Allt material ingår i priset. Du kan anmäla dig till en fullständig kurs eller komma på drop-in-basis — 270 kr per session.",
-    courses: {
-      assorted: {
-        title: "🧶 1. Blandat",
-        dates: "📅 7–11 juli",
-        time: "🕚 11:00–13:00",
-        age: "För barn 7+",
-        price: "💰 Kostnad per vecka: 1300 kr",
-        description: "Varje dag — en ny inspirerande aktivitet:",
-        schedule: [
-          "7 juli (måndag): tovning",
-          "8 juli (tisdag): glasdecoupage",
-          "9 juli (onsdag): keramikmålning (tallrikar)",
-          "10 juli (torsdag): träskedmålning (Khokhloma)",
-          "11 juli (fredag): 3D-blommor från termisk mosaik"
-        ]
-      },
-      textile: {
-        title: "🧵 2. Textil",
-        dates: "📅 14–18 juli",
-        time: "🕚 11:00–13:00",
-        age: "För barn 7+",
-        price: "💰 Kostnad per vecka: 1300 kr",
-        description: "I klasser:",
-        activities: [
-          "Pärlarbete och arbete med pärlor",
-          "Tie-dye tekniker i tygmålning, blomtryck",
-          "Mjuk leksak sömnad från filt (Prinsessa Groda)",
-          "Akrylmålning på tyg, arbete med primer, leksakskapande"
-        ],
-        note: "‼️ För tie-dye-klasser behöver deltagarna ta med tre t-shirts: två enfärgade svarta/blå/gröna och en vit."
-      },
-      sculpture: {
-        title: "🎭 3. Ramskulptur",
-        dates: "📅 21–25 juli",
-        time: "🕚 11:00–13:00",
-        age: "För barn från 7 år",
-        price: "💰 Kostnad per vecka: 1300 kr",
-        description: "Lära sig grunderna i tredimensionell form: skulptera, bygga, skapa uttrycksfulla figurer och karaktärer från tråd, folie, papper, arbeta med gips och akryl och andra material. Det slutliga verket kan hämtas efter lackering."
-      }
-    },
-    footer: "📢 Anmäl dig i förväg — begränsat antal platser!\n✨ Kom och skapa, prova nya saker och ha en rolig sommar med oss!"
-  }
-};
-
-const ceramicsCourse = {
-  ru: {
-    title: "🏺Курс по керамике «Народная игрушка»",
-    dates: "📅 30 июня – 4 июля",
-    time: "🕙 Время: с 10:00 до 13:00",
-    location: "📍 Адрес: Stopvägen 38",
-    age: "👧 Возраст: от 7 лет",
-    description: "Приглашаем детей на летний курс по созданию народной глиняной игрушки! За 5 дней участники создадут пять уникальных игрушек в традиционных техниках: дымковская, каргопольская и филимоновская.",
-    materials: "🔹 Работа с глиной и обжиг — всё включено",
-    note: "⚠️ Готовые изделия можно будет забрать осенью (после сушки и обжига)",
-    pricing: "💰 Стоимость:\n– 1700 kr за весь курс\n– Drop-in (разовое занятие): 350 kr",
-    registration: "📞 Запись только по предоплате\nРегистрация по телефону: 073-517 33 30"
-  },
-  en: {
-    title: "🏺Ceramics Course «Folk Toy»",
-    dates: "📅 June 30 – July 4",
-    time: "🕙 Time: 10:00 to 13:00",
-    location: "📍 Address: Stopvägen 38",
-    age: "👧 Age: from 7 years",
-    description: "We invite children to a summer course on creating folk clay toys! Over 5 days, participants will create five unique toys in traditional techniques: Dymkovo, Kargopol and Filimonovo.",
-    materials: "🔹 Clay work and firing — everything included",
-    note: "⚠️ Finished items can be picked up in autumn (after drying and firing)",
-    pricing: "💰 Cost:\n– 1700 kr for the entire course\n– Drop-in (single session): 350 kr",
-    registration: "📞 Registration only with prepayment\nRegistration by phone: 073-517 33 30"
-  },
-  sv: {
-    title: "🏺Keramikkurs «Folkleksak»",
-    dates: "📅 30 juni – 4 juli",
-    time: "🕙 Tid: 10:00 till 13:00",
-    location: "📍 Adress: Stopvägen 38",
-    age: "👧 Ålder: från 7 år",
-    description: "Vi inbjuder barn till en sommarkurs i att skapa folkleksakslera! Under 5 dagar kommer deltagarna att skapa fem unika leksaker i traditionella tekniker: Dymkovo, Kargopol och Filimonovo.",
-    materials: "🔹 Lerarbete och bränning — allt ingår",
-    note: "⚠️ Färdiga föremål kan hämtas på hösten (efter torkning och bränning)",
-    pricing: "💰 Kostnad:\n– 1700 kr för hela kursen\n– Drop-in (enskild session): 350 kr",
-    registration: "📞 Registrering endast med förskottsbetalning\nRegistrering per telefon: 073-517 33 30"
-  }
-};
 
 const autumnCourse = {
   ru: {
@@ -382,216 +251,126 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* New Textile Course Section */}
+        {/* Autumn Enrollment 2025 Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="w-full md:w-1/2">
               <img
-                src="/lovable-uploads/27848801-3443-4335-93f9-c6096c1fc4de.png"
-                alt="Textile Course July 14-18"
+                src="/lovable-uploads/0c0afa43-6d1d-4926-8288-0b2fae26b160.png"
+                alt="Autumn 2025 Art Course Enrollment"
                 className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
-            <div className="w-full md:w-1/2 space-y-4">
-              <h3 className="text-xl font-bold text-secondary">
-                {textileCourse[currentLang].title}
+            <div className="w-full md:w-1/2 space-y-6">
+              <h3 className="text-2xl font-bold text-secondary">
+                {autumnEnrollment[currentLang].title}
               </h3>
               
-              <div className="space-y-2">
-                <p className="text-secondary/80">{textileCourse[currentLang].dates}</p>
-                <p className="text-secondary/80">{textileCourse[currentLang].time}</p>
-                <p className="text-secondary/80">{textileCourse[currentLang].location}</p>
-                <p className="text-secondary/80">{textileCourse[currentLang].phone}</p>
-              </div>
-              
               <p className="text-secondary/80">
-                {textileCourse[currentLang].intro}
+                {autumnEnrollment[currentLang].description}
               </p>
               
-              <div className="space-y-3">
-                <h4 className="font-semibold text-secondary">
-                  {textileCourse[currentLang].schedule}
+              {/* Schedule Section */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-semibold text-secondary">
+                  {autumnEnrollment[currentLang].schedule.title}
                 </h4>
-                <div className="space-y-2 text-sm">
-                  <div className="border-l-4 border-primary pl-3">
-                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
-                      {textileCourse[currentLang].days.monday}
+                <div className="space-y-3">
+                  <div className="border-l-4 border-primary pl-4">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80 text-sm">
+                      {autumnEnrollment[currentLang].schedule.groups.little}
                     </pre>
                   </div>
-                  <div className="border-l-4 border-primary pl-3">
-                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
-                      {textileCourse[currentLang].days.tuesday}
+                  <div className="border-l-4 border-primary pl-4">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80 text-sm">
+                      {autumnEnrollment[currentLang].schedule.groups.school}
                     </pre>
                   </div>
-                  <div className="border-l-4 border-primary pl-3">
-                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
-                      {textileCourse[currentLang].days.wednesday}
+                  <div className="border-l-4 border-primary pl-4">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80 text-sm">
+                      {autumnEnrollment[currentLang].schedule.groups.family}
                     </pre>
                   </div>
-                  <div className="border-l-4 border-primary pl-3">
-                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
-                      {textileCourse[currentLang].days.thursday}
-                    </pre>
-                  </div>
-                  <div className="border-l-4 border-primary pl-3">
-                    <pre className="whitespace-pre-wrap font-sans text-secondary/80">
-                      {textileCourse[currentLang].days.friday}
+                  <div className="border-l-4 border-primary pl-4">
+                    <pre className="whitespace-pre-wrap font-sans text-secondary/80 text-sm">
+                      {autumnEnrollment[currentLang].schedule.groups.teens}
                     </pre>
                   </div>
                 </div>
               </div>
-              
-              <div className="bg-yellow-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-secondary mb-2">
-                  {textileCourse[currentLang].important}
-                </h4>
-                {textileCourse[currentLang].notes.map((note, idx) => (
-                  <p key={idx} className="text-sm text-secondary/80">{note}</p>
-                ))}
+
+              {/* Duration and Pricing */}
+              <div className="space-y-2">
+                <p className="text-secondary font-medium">{autumnEnrollment[currentLang].duration}</p>
+                <p className="text-secondary font-medium">{autumnEnrollment[currentLang].pricing}</p>
               </div>
-              
-              <div className="p-4 bg-primary/10 rounded-lg">
+
+              {/* Additional Options */}
+              <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-secondary mb-2">
-                  {textileCourse[currentLang].pricing}
+                  {autumnEnrollment[currentLang].additional.title}
                 </h4>
-                {textileCourse[currentLang].prices.map((price, idx) => (
-                  <p key={idx} className="text-sm text-secondary/80">{price}</p>
-                ))}
+                <div className="space-y-1 text-sm text-secondary/80">
+                  <p>{autumnEnrollment[currentLang].additional.single}</p>
+                  <p>{autumnEnrollment[currentLang].additional.trial}</p>
+                  <p>{autumnEnrollment[currentLang].additional.discount}</p>
+                </div>
               </div>
-              
+
+              {/* Materials Section */}
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-secondary mb-2">
+                  {autumnEnrollment[currentLang].materials.title}
+                </h4>
+                <div className="space-y-1 text-sm text-secondary/80">
+                  <p>{autumnEnrollment[currentLang].materials.basic}</p>
+                  <p>{autumnEnrollment[currentLang].materials.special}</p>
+                </div>
+              </div>
+
+              {/* Curriculum */}
+              <div className="bg-green-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-secondary mb-2">
+                  {autumnEnrollment[currentLang].curriculum.title}
+                </h4>
+                <div className="space-y-2 text-sm text-secondary/80">
+                  <pre className="whitespace-pre-wrap font-sans">{autumnEnrollment[currentLang].curriculum.drawing}</pre>
+                  <pre className="whitespace-pre-wrap font-sans">{autumnEnrollment[currentLang].curriculum.sculpture}</pre>
+                  <pre className="whitespace-pre-wrap font-sans">{autumnEnrollment[currentLang].curriculum.graphics}</pre>
+                  <p>{autumnEnrollment[currentLang].curriculum.crafts}</p>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-2">
+                <p className="text-secondary/80">{autumnEnrollment[currentLang].contact.address}</p>
+                <p className="text-secondary/80">{autumnEnrollment[currentLang].contact.phone}</p>
+              </div>
+
+              {/* Dates */}
+              <div className="bg-primary/10 p-4 rounded-lg">
+                <div className="space-y-1 text-sm text-secondary">
+                  <p className="font-semibold">{autumnEnrollment[currentLang].dates.start}</p>
+                  <p>{autumnEnrollment[currentLang].dates.end}</p>
+                  <p>{autumnEnrollment[currentLang].dates.vacation}</p>
+                </div>
+              </div>
+
+              {/* Studio Rules Link */}
+              <div className="text-center">
+                <p className="text-secondary/80">{autumnEnrollment[currentLang].rules}</p>
+                <a 
+                  href="/studio-rules" 
+                  className="text-primary hover:text-primary/80 underline font-medium"
+                >
+                  Studio Rules
+                </a>
+              </div>
+
+              {/* Footer */}
               <p className="text-center text-secondary font-medium italic">
-                {textileCourse[currentLang].footer}
+                {autumnEnrollment[currentLang].footer}
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* July Courses Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="w-full md:w-1/2">
-              <img
-                src="/lovable-uploads/622b8cef-0e22-41ea-a648-6e11365d8c45.png"
-                alt="July Courses Schedule"
-                className="w-full h-auto rounded-lg shadow-md"
-              />
-            </div>
-            <div className="w-full md:w-1/2 space-y-4">
-              <h3 className="text-xl font-bold text-secondary">
-                {julyCourses[currentLang].title}
-              </h3>
-              
-              <div className="space-y-3">
-                <p className="text-secondary/80">{julyCourses[currentLang].location}</p>
-                <p className="text-secondary/80">{julyCourses[currentLang].phone}</p>
-              </div>
-              
-              <p className="text-secondary/80">
-                {julyCourses[currentLang].description}
-              </p>
-              
-              <div className="space-y-6">
-                {/* Assorted Course */}
-                <div className="border-l-4 border-primary pl-4">
-                  <h4 className="font-semibold text-secondary mb-2">
-                    {julyCourses[currentLang].courses.assorted.title}
-                  </h4>
-                  <div className="text-sm text-secondary/80 space-y-1">
-                    <p>{julyCourses[currentLang].courses.assorted.dates}</p>
-                    <p>{julyCourses[currentLang].courses.assorted.time}</p>
-                    <p>{julyCourses[currentLang].courses.assorted.age}</p>
-                    <p>{julyCourses[currentLang].courses.assorted.price}</p>
-                    <p className="font-medium">{julyCourses[currentLang].courses.assorted.description}</p>
-                    {julyCourses[currentLang].courses.assorted.schedule.map((item, idx) => (
-                      <p key={idx}>• {item}</p>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Textile Course */}
-                <div className="border-l-4 border-primary pl-4">
-                  <h4 className="font-semibold text-secondary mb-2">
-                    {julyCourses[currentLang].courses.textile.title}
-                  </h4>
-                  <div className="text-sm text-secondary/80 space-y-1">
-                    <p>{julyCourses[currentLang].courses.textile.dates}</p>
-                    <p>{julyCourses[currentLang].courses.textile.time}</p>
-                    <p>{julyCourses[currentLang].courses.textile.age}</p>
-                    <p>{julyCourses[currentLang].courses.textile.price}</p>
-                    <p className="font-medium">{julyCourses[currentLang].courses.textile.description}</p>
-                    {julyCourses[currentLang].courses.textile.activities.map((item, idx) => (
-                      <p key={idx}>• {item}</p>
-                    ))}
-                    <p className="text-red-600 font-medium">{julyCourses[currentLang].courses.textile.note}</p>
-                  </div>
-                </div>
-
-                {/* Sculpture Course */}
-                <div className="border-l-4 border-primary pl-4">
-                  <h4 className="font-semibold text-secondary mb-2">
-                    {julyCourses[currentLang].courses.sculpture.title}
-                  </h4>
-                  <div className="text-sm text-secondary/80 space-y-1">
-                    <p>{julyCourses[currentLang].courses.sculpture.dates}</p>
-                    <p>{julyCourses[currentLang].courses.sculpture.time}</p>
-                    <p>{julyCourses[currentLang].courses.sculpture.age}</p>
-                    <p>{julyCourses[currentLang].courses.sculpture.price}</p>
-                    <p>{julyCourses[currentLang].courses.sculpture.description}</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-4 bg-primary/10 rounded-lg">
-                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
-                  {julyCourses[currentLang].footer}
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Ceramics Course Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="w-full md:w-1/2">
-              <img
-                src="/lovable-uploads/2286b2de-2c3d-47a3-b70e-4f2609547730.png"
-                alt="Clay Toys Ceramics Course"
-                className="w-full h-auto rounded-lg shadow-md"
-              />
-            </div>
-            <div className="w-full md:w-1/2 space-y-4">
-              <h3 className="text-xl font-bold text-secondary">
-                {ceramicsCourse[currentLang].title}
-              </h3>
-              
-              <div className="space-y-3">
-                <p className="text-secondary/80">{ceramicsCourse[currentLang].dates}</p>
-                <p className="text-secondary/80">{ceramicsCourse[currentLang].time}</p>
-                <p className="text-secondary/80">{ceramicsCourse[currentLang].location}</p>
-                <p className="text-secondary/80">{ceramicsCourse[currentLang].age}</p>
-              </div>
-              
-              <p className="text-secondary/80">
-                {ceramicsCourse[currentLang].description}
-              </p>
-              
-              <div className="space-y-2">
-                <p className="text-secondary/80">{ceramicsCourse[currentLang].materials}</p>
-                <p className="text-secondary/80">{ceramicsCourse[currentLang].note}</p>
-              </div>
-              
-              <div className="p-4 bg-primary/10 rounded-lg">
-                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
-                  {ceramicsCourse[currentLang].pricing}
-                </pre>
-              </div>
-              
-              <div className="p-4 bg-primary/10 rounded-lg">
-                <pre className="whitespace-pre-wrap font-sans text-sm text-secondary">
-                  {ceramicsCourse[currentLang].registration}
-                </pre>
-              </div>
             </div>
           </div>
         </div>
