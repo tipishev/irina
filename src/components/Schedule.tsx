@@ -2,93 +2,108 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const translations = {
   ru: {
-    title: "Расписание и стоимость",
+    title: "Расписание и возрастные группы",
     groups: {
-      preschool: {
-        title: "🎨 Дошколята (5-6 лет)",
-        schedule: ["Вторник 16:00", "Среда 17:00"],
-        duration: "Продолжительность занятия: 1 час",
-        price: "Цена абонемента: 2000 крон (10 уроков)"
+      littleOnes: {
+        title: "👶 Малыши (6–7 лет)",
+        schedule: ["Вторник – 15:00"],
+        duration: "Продолжительность занятий: 1,5 часа",
+        price: "Абонемент (10 занятий): 2300 крон"
       },
       school: {
-        title: "🎨 Школьники (7-9 лет)",
-        schedule: ["Понедельник 17:00", "Вторник 15:00 и 17:00"],
-        duration: "Продолжительность занятия: 1,5 часа",
-        price: "Цена абонемента: 2300 крон (10 уроков)"
+        title: "👧🧒 Школьники (8–10 лет)",
+        schedule: ["Вторник – 17:00", "Среда – 17:00"],
+        duration: "Продолжительность занятий: 1,5 часа",
+        price: "Абонемент (10 занятий): 2300 крон"
+      },
+      family: {
+        title: "👨‍👩‍👧‍👦 Семейная группа (сиблинги, 6–10 лет)",
+        schedule: ["Понедельник – 17:00", "Четверг – 15:00"],
+        duration: "Продолжительность занятий: 1,5 часа",
+        price: "Абонемент (10 занятий): 2300 крон"
       },
       teens: {
-        title: "🎨 Подростки (10-15 лет)",
-        schedule: ["Среда 15:00", "Четверг 15:00 и 17:00"],
-        duration: "Продолжительность занятия: 1,5 часа",
-        price: "Цена абонемента: 2300 крон (10 уроков)"
+        title: "🧑‍🎨 Подростки (10–16 лет)",
+        schedule: ["Среда – 15:00", "Четверг – 17:00"],
+        duration: "Продолжительность занятий: 1,5 часа",
+        price: "Абонемент (10 занятий): 2300 крон"
       }
     },
     additional: {
-      title: "Дополнительно",
-      dropIn: "Разовое занятие (Drop-in): 250 крон (по записи, при наличии мест)",
-      trial: "Пробный урок (1 час): 150 крон",
-      discount: "Скидка: 10% при записи двух детей из одной семьи",
-      saturday: "Суббота: организация детских Арт классов (дней рождений) по записи. Максимум 10 мест, цена от 150 до 400 крон за ребенка в зависимости от материалов и сложности."
+      title: "Дополнительные возможности",
+      dropIn: "🔹 Разовое занятие (по записи, при наличии мест): 250 крон",
+      trial: "🔹 Пробный урок (1 час): 150 крон",
+      discount: "🔹 Семейная скидка: 10% при записи двух детей из одной семьи"
     }
   },
   en: {
-    title: "Schedule and Prices",
+    title: "Schedule and Age Groups",
     groups: {
-      preschool: {
-        title: "🎨 Preschool (5-6 years)",
-        schedule: ["Tuesday 16:00", "Wednesday 17:00"],
-        duration: "Lesson duration: 1 hour",
-        price: "Subscription price: 2000 kr (10 lessons)"
+      littleOnes: {
+        title: "👶 Little Ones (6–7 years)",
+        schedule: ["Tuesday – 15:00"],
+        duration: "Lesson duration: 1.5 hours",
+        price: "Subscription (10 lessons): 2300 kr"
       },
       school: {
-        title: "🎨 School children (7-9 years)",
-        schedule: ["Monday 17:00", "Tuesday 15:00 and 17:00"],
+        title: "👧🧒 School Children (8–10 years)",
+        schedule: ["Tuesday – 17:00", "Wednesday – 17:00"],
         duration: "Lesson duration: 1.5 hours",
-        price: "Subscription price: 2300 kr (10 lessons)"
+        price: "Subscription (10 lessons): 2300 kr"
+      },
+      family: {
+        title: "👨‍👩‍👧‍👦 Family Group (siblings, 6–10 years)",
+        schedule: ["Monday – 17:00", "Thursday – 15:00"],
+        duration: "Lesson duration: 1.5 hours",
+        price: "Subscription (10 lessons): 2300 kr"
       },
       teens: {
-        title: "🎨 Teenagers (10-15 years)",
-        schedule: ["Wednesday 15:00", "Thursday 15:00 and 17:00"],
+        title: "🧑‍🎨 Teenagers (10–16 years)",
+        schedule: ["Wednesday – 15:00", "Thursday – 17:00"],
         duration: "Lesson duration: 1.5 hours",
-        price: "Subscription price: 2300 kr (10 lessons)"
+        price: "Subscription (10 lessons): 2300 kr"
       }
     },
     additional: {
-      title: "Additional Information",
-      dropIn: "Single lesson (Drop-in): 250 kr (by appointment, subject to availability)",
-      trial: "Trial lesson (1 hour): 150 kr",
-      discount: "Discount: 10% when enrolling two children from the same family",
-      saturday: "Saturday: Art classes and birthday parties available by appointment. Maximum 10 participants, price ranges from 150 to 400 kr per child depending on materials and complexity."
+      title: "Additional Options",
+      dropIn: "🔹 Single lesson (by appointment, subject to availability): 250 kr",
+      trial: "🔹 Trial lesson (1 hour): 150 kr",
+      discount: "🔹 Family discount: 10% when enrolling two children from the same family"
     }
   },
   sv: {
-    title: "Schema och priser",
+    title: "Schema och åldersgrupper",
     groups: {
-      preschool: {
-        title: "🎨 Förskola (5-6 år)",
-        schedule: ["Tisdag 16:00", "Onsdag 17:00"],
-        duration: "Lektionslängd: 1 timme",
-        price: "Prenumerationspris: 2000 kr (10 lektioner)"
+      littleOnes: {
+        title: "👶 Småbarn (6–7 år)",
+        schedule: ["Tisdag – 15:00"],
+        duration: "Lektionslängd: 1,5 timmar",
+        price: "Prenumeration (10 lektioner): 2300 kr"
       },
       school: {
-        title: "🎨 Skolbarn (7-9 år)",
-        schedule: ["Måndag 17:00", "Tisdag 15:00 och 17:00"],
+        title: "👧🧒 Skolbarn (8–10 år)",
+        schedule: ["Tisdag – 17:00", "Onsdag – 17:00"],
         duration: "Lektionslängd: 1,5 timmar",
-        price: "Prenumerationspris: 2300 kr (10 lektioner)"
+        price: "Prenumeration (10 lektioner): 2300 kr"
+      },
+      family: {
+        title: "👨‍👩‍👧‍👦 Familjegrupp (syskon, 6–10 år)",
+        schedule: ["Måndag – 17:00", "Torsdag – 15:00"],
+        duration: "Lektionslängd: 1,5 timmar",
+        price: "Prenumeration (10 lektioner): 2300 kr"
       },
       teens: {
-        title: "🎨 Tonåringar (10-15 år)",
-        schedule: ["Onsdag 15:00", "Torsdag 15:00 och 17:00"],
+        title: "🧑‍🎨 Tonåringar (10–16 år)",
+        schedule: ["Onsdag – 15:00", "Torsdag – 17:00"],
         duration: "Lektionslängd: 1,5 timmar",
-        price: "Prenumerationspris: 2300 kr (10 lektioner)"
+        price: "Prenumeration (10 lektioner): 2300 kr"
       }
     },
     additional: {
-      title: "Ytterligare information",
-      dropIn: "Enstaka lektion (Drop-in): 250 kr (efter bokning, i mån av plats)",
-      trial: "Provlektion (1 timme): 150 kr",
-      discount: "Rabatt: 10% vid inskrivning av två barn från samma familj",
-      saturday: "Lördag: Konstklasser och födelsedagsfester tillgängliga efter bokning. Maximalt 10 deltagare, pris mellan 150-400 kr per barn beroende på material och komplexitet."
+      title: "Ytterligare alternativ",
+      dropIn: "🔹 Enstaka lektion (efter bokning, i mån av plats): 250 kr",
+      trial: "🔹 Provlektion (1 timme): 150 kr",
+      discount: "🔹 Familjerabatt: 10% vid inskrivning av två barn från samma familj"
     }
   }
 };
@@ -137,7 +152,6 @@ export const Schedule = ({ currentLang }: ScheduleProps) => {
               <p className="text-secondary">{translations[currentLang].additional.dropIn}</p>
               <p className="text-secondary">{translations[currentLang].additional.trial}</p>
               <p className="text-secondary font-medium">{translations[currentLang].additional.discount}</p>
-              <p className="text-secondary">{translations[currentLang].additional.saturday}</p>
             </div>
           </CardContent>
         </Card>
