@@ -6,7 +6,7 @@ const translations = {
     groups: {
       littleOnes: {
         title: "👶 Малыши (6–7 лет)",
-        schedule: ["Вторник – 15:00"],
+        schedule: ["Понедельник – 17:00", "Вторник – 15:00"],
         duration: "Продолжительность занятий: 1,5 часа",
         price: "Абонемент (10 занятий): 2300 крон"
       },
@@ -41,7 +41,7 @@ const translations = {
     groups: {
       littleOnes: {
         title: "👶 Little Ones (6–7 years)",
-        schedule: ["Tuesday – 15:00"],
+        schedule: ["Monday – 17:00", "Tuesday – 15:00"],
         duration: "Lesson duration: 1.5 hours",
         price: "Subscription (10 lessons): 2300 kr"
       },
@@ -76,7 +76,7 @@ const translations = {
     groups: {
       littleOnes: {
         title: "👶 Småbarn (6–7 år)",
-        schedule: ["Tisdag – 15:00"],
+        schedule: ["Måndag – 17:00", "Tisdag – 15:00"],
         duration: "Lektionslängd: 1,5 timmar",
         price: "Prenumeration (10 lektioner): 2300 kr"
       },
