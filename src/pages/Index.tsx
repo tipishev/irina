@@ -16,7 +16,7 @@ const autumnEnrollment = {
     schedule: {
       title: "📅 Расписание и возрастные группы:",
       groups: {
-        little: "👶 Малыши (6–7 лет):\n▪️ Вторник – 15:00",
+        little: "👶 Малыши (6–7 лет):\n▪️ Понедельник – 17:00\n▪️ Вторник – 15:00",
         school: "👧🧒 Школьники (8–10 лет):\n▪️ Вторник – 17:00\n▪️ Среда – 17:00", 
         family: "👨‍👩‍👧‍👦 Семейная группа (сиблинги, 6–10 лет):\n▪️ Понедельник – 17:00\n▪️ Четверг – 15:00",
         teens: "🧑‍🎨 Подростки (10–16 лет):\n▪️ Среда – 15:00\n▪️ Четверг – 17:00"
@@ -60,7 +60,7 @@ const autumnEnrollment = {
     schedule: {
       title: "📅 Schedule and age groups:",
       groups: {
-        little: "👶 Little ones (6–7 years):\n▪️ Tuesday – 15:00",
+        little: "👶 Little ones (6–7 years):\n▪️ Monday – 17:00\n▪️ Tuesday – 15:00",
         school: "👧🧒 School children (8–10 years):\n▪️ Tuesday – 17:00\n▪️ Wednesday – 17:00",
         family: "👨‍👩‍👧‍👦 Family group (siblings, 6–10 years):\n▪️ Monday – 17:00\n▪️ Thursday – 15:00",
         teens: "🧑‍🎨 Teenagers (10–16 years):\n▪️ Wednesday – 15:00\n▪️ Thursday – 17:00"
@@ -104,7 +104,7 @@ const autumnEnrollment = {
     schedule: {
       title: "📅 Schema och åldersgrupper:",
       groups: {
-        little: "👶 Småbarn (6–7 år):\n▪️ Tisdag – 15:00",
+        little: "👶 Småbarn (6–7 år):\n▪️ Måndag – 17:00\n▪️ Tisdag – 15:00",
         school: "👧🧒 Skolbarn (8–10 år):\n▪️ Tisdag – 17:00\n▪️ Onsdag – 17:00",
         family: "👨‍👩‍👧‍👦 Familjegrupp (syskon, 6–10 år):\n▪️ Måndag – 17:00\n▪️ Torsdag – 15:00",
         teens: "🧑‍🎨 Tonåringar (10–16 år):\n▪️ Onsdag – 15:00\n▪️ Torsdag – 17:00"
