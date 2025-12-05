@@ -311,6 +311,16 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
               <p className="text-secondary/80 font-medium">
                 {julKultur[currentLang].location}
               </p>
+              <a 
+                href="https://kulturbromma.se/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
+              >
+                {currentLang === 'ru' ? '🔗 Подробнее на kulturbromma.se' : 
+                 currentLang === 'en' ? '🔗 More details at kulturbromma.se' : 
+                 '🔗 Mer information på kulturbromma.se'}
+              </a>
             </div>
           </div>
         </div>
