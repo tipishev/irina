@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import christmasStudio1 from "@/assets/christmas-studio-1.jpg";
-import christmasStudio2 from "@/assets/christmas-studio-2.jpg";
+import christmasStudioImage from "@/assets/christmas-studio-2.jpg";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -34,14 +33,9 @@ export const ChristmasPhotoshoot = ({ currentLang, showLink = false }: Christmas
   return (
     <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-lg shadow-lg p-8 border-2 border-red-200">
       <div className="flex flex-col md:flex-row items-start gap-8">
-        <div className="w-full md:w-1/3 space-y-4">
+        <div className="w-full md:w-1/3">
           <img
-            src={christmasStudio1}
-            alt="Christmas studio setup"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
-          <img
-            src={christmasStudio2}
+            src={christmasStudioImage}
             alt="Christmas studio setup"
             className="w-full h-auto rounded-lg shadow-md"
           />
