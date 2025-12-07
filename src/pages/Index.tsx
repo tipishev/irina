@@ -1,6 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import julKulturImage from "@/assets/jul-kultur-2025.png";
+import { ChristmasPhotoshoot } from "@/components/ChristmasPhotoshoot";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -8,33 +8,6 @@ interface IndexProps {
   currentLang: Language;
   onLanguageChange: (lang: Language) => void;
 }
-
-const julKultur = {
-  ru: {
-    title: "🎄 En Jul-Kultur 2025",
-    subtitle: "Рождественская культурная прогулка от Abrahamsberg до Brommaplan",
-    description: "Присоединяйтесь к рождественскому культурному событию! Открытые ателье художников, рождественский мингель, возможность купить искусство и уникальные подарки, а также вкусный бранч.",
-    date: "📅 6-7 декабря",
-    time: "⏰ Начало в 11:00",
-    location: "📍 Маршрут: от Abrahamsberg до Brommaplan"
-  },
-  en: {
-    title: "🎄 En Jul-Kultur 2025",
-    subtitle: "Christmas cultural walk from Abrahamsberg to Brommaplan",
-    description: "Join the Christmas cultural event! Open artist studios, Christmas mingling, opportunity to buy art and unique gifts, plus delicious brunch.",
-    date: "📅 December 6-7",
-    time: "⏰ Start at 11:00",
-    location: "📍 Route: from Abrahamsberg to Brommaplan"
-  },
-  sv: {
-    title: "🎄 En Jul-Kultur 2025",
-    subtitle: "Julkulturpromenad från Abrahamsberg till Brommaplan",
-    description: "Delta i julens kulturevenemang! Öppna ateljéer, julmingel, möjlighet att köpa konst och unika julklappar, samt god brunch.",
-    date: "📅 6-7 december",
-    time: "⏰ Start kl 11",
-    location: "📍 Sträcka: från Abrahamsberg till Brommaplan"
-  }
-};
 
 
 const aboutMe = {
@@ -84,50 +57,8 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
 
-        {/* Jul-Kultur 2025 Event Announcement */}
-        <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-lg shadow-lg p-8 border-2 border-red-200">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-full md:w-1/3">
-              <img
-                src={julKulturImage}
-                alt="En Jul-Kultur 2025"
-                className="w-full h-auto rounded-lg shadow-md"
-              />
-            </div>
-            <div className="w-full md:w-2/3 space-y-4">
-              <h3 className="text-3xl font-bold text-red-700">
-                {julKultur[currentLang].title}
-              </h3>
-              <p className="text-xl font-semibold text-green-700">
-                {julKultur[currentLang].subtitle}
-              </p>
-              <p className="text-secondary/80">
-                {julKultur[currentLang].description}
-              </p>
-              <div className="flex flex-wrap gap-4 text-lg">
-                <span className="bg-red-100 px-4 py-2 rounded-full text-red-700 font-medium">
-                  {julKultur[currentLang].date}
-                </span>
-                <span className="bg-green-100 px-4 py-2 rounded-full text-green-700 font-medium">
-                  {julKultur[currentLang].time}
-                </span>
-              </div>
-              <p className="text-secondary/80 font-medium">
-                {julKultur[currentLang].location}
-              </p>
-              <a 
-                href="https://kulturbromma.se/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
-              >
-                {currentLang === 'ru' ? '🔗 Подробнее на kulturbromma.se' : 
-                 currentLang === 'en' ? '🔗 More details at kulturbromma.se' : 
-                 '🔗 Mer information på kulturbromma.se'}
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* Christmas Photoshoots Announcement */}
+        <ChristmasPhotoshoot currentLang={currentLang} showLink={true} />
 
         {/* About Me Section */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
