@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import christmasStudioImage from "@/assets/christmas-studio.jpg";
+import christmasStudio1 from "@/assets/christmas-studio-1.jpg";
+import christmasStudio2 from "@/assets/christmas-studio-2.jpg";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -33,9 +34,14 @@ export const ChristmasPhotoshoot = ({ currentLang, showLink = false }: Christmas
   return (
     <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-lg shadow-lg p-8 border-2 border-red-200">
       <div className="flex flex-col md:flex-row items-start gap-8">
-        <div className="w-full md:w-1/3">
+        <div className="w-full md:w-1/3 space-y-4">
           <img
-            src={christmasStudioImage}
+            src={christmasStudio1}
+            alt="Christmas studio setup"
+            className="w-full h-auto rounded-lg shadow-md"
+          />
+          <img
+            src={christmasStudio2}
             alt="Christmas studio setup"
             className="w-full h-auto rounded-lg shadow-md"
           />
@@ -57,22 +63,18 @@ export const ChristmasPhotoshoot = ({ currentLang, showLink = false }: Christmas
             </Link>
           )}
           
-          {!showLink && (
-            <>
-              <p className="text-secondary/80 font-medium">
-                {content[currentLang].availability}
-              </p>
-              <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-md border border-red-200">
-                <iframe
-                  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnkP2Dt2OZp8VIOEwmB9yn0GW03S8EB2t9SxhcoX7fn--CO5_rTlmGClUY2lQ_ggbW7v5Lzslfm4El/pubhtml?gid=0&single=true&widget=true&headers=false"
-                  title="Christmas photoshoot availability"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                />
-              </div>
-            </>
-          )}
+          <p className="text-secondary/80 font-medium">
+            {content[currentLang].availability}
+          </p>
+          <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-md border border-red-200">
+            <iframe
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnkP2Dt2OZp8VIOEwmB9yn0GW03S8EB2t9SxhcoX7fn--CO5_rTlmGClUY2lQ_ggbW7v5Lzslfm4El/pubhtml?gid=0&single=true&widget=true&headers=false"
+              title="Christmas photoshoot availability"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+            />
+          </div>
         </div>
       </div>
     </div>
