@@ -41,11 +41,11 @@ const content = {
 
 // Portfolio images from the jul directory
 const portfolioImages = [
+  "/lovable-uploads/portfolio/photography/jul/jul-5.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-1.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-2.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-3.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-4.jpg",
-  "/lovable-uploads/portfolio/photography/jul/jul-5.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-6.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-7.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-8.jpg",
