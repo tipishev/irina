@@ -51,6 +51,12 @@ const portfolioImages = [
   "/lovable-uploads/portfolio/photography/jul/jul-8.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-9.jpg",
   "/lovable-uploads/portfolio/photography/jul/jul-10.jpg",
+  "/lovable-uploads/portfolio/photography/jul/jul-11.jpg",
+  "/lovable-uploads/portfolio/photography/jul/jul-12.jpg",
+  "/lovable-uploads/portfolio/photography/jul/jul-13.jpg",
+  "/lovable-uploads/portfolio/photography/jul/jul-14.jpg",
+  "/lovable-uploads/portfolio/photography/jul/jul-15.jpg",
+  "/lovable-uploads/portfolio/photography/jul/jul-16.jpg",
 ];
 
 // Studio setup images
