@@ -57,8 +57,8 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
 
-        {/* Christmas Photoshoots Announcement */}
-        <ChristmasPhotoshoot currentLang={currentLang} showLink={false} />
+        {/* Christmas Photoshoots Announcement - uncomment in December */}
+        {/* <ChristmasPhotoshoot currentLang={currentLang} showLink={false} /> */}
 
         {/* About Me Section */}
         <div className="flex flex-col-reverse md:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8">
