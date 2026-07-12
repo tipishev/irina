@@ -155,11 +155,66 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
 
         {/* Autumn 2026 Art School Announcement */}
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
-          <img
-            src={autumn2026Announcement.url}
-            alt="Autumn 2026 art school enrollment announcement"
-            className="w-full h-auto rounded-lg"
-          />
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            <div className="w-full lg:w-1/2">
+              <img
+                src={autumn2026Announcement.url}
+                alt={autumn2026[currentLang].title}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 space-y-5 text-secondary/90">
+              <h2 className="text-2xl md:text-3xl font-bold text-secondary leading-tight">
+                {autumn2026[currentLang].title}
+              </h2>
+              <p className="leading-relaxed">
+                {autumn2026[currentLang].intro}
+              </p>
+              <div>
+                <h3 className="font-semibold text-secondary mb-2">
+                  {autumn2026[currentLang].scheduleTitle}
+                </h3>
+                <div className="space-y-3">
+                  {autumn2026[currentLang].groups.map((group, index) => (
+                    <div key={index}>
+                      <p className="font-medium text-secondary">{group.name}</p>
+                      <ul className="list-disc list-inside text-secondary/80">
+                        {group.times.map((time, i) => (
+                          <li key={i}>{time}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-3 font-medium">{autumn2026[currentLang].duration}</p>
+              </div>
+              <div className="space-y-1">
+                {autumn2026[currentLang].pricing.map((line, index) => (
+                  <p key={index} className={line.startsWith("•") ? "pl-2" : "font-medium"}>
+                    {line}
+                  </p>
+                ))}
+              </div>
+              <div>
+                <h3 className="font-semibold text-secondary mb-2">
+                  {autumn2026[currentLang].subjectsTitle}
+                </h3>
+                <ul className="list-disc list-inside text-secondary/80">
+                  {autumn2026[currentLang].subjects.map((subject, index) => (
+                    <li key={index}>{subject}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-1 text-secondary/80 pt-2 border-t border-secondary/10">
+                <p>{autumn2026[currentLang].address}</p>
+                <p>{autumn2026[currentLang].start}</p>
+                <p>{autumn2026[currentLang].term}</p>
+                <p>{autumn2026[currentLang].holidays}</p>
+                <p className="font-medium text-secondary">{autumn2026[currentLang].contact}</p>
+                <p className="text-sm italic mt-2">{autumn2026[currentLang].materials}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Christmas Photoshoots Announcement - uncomment in December */}
