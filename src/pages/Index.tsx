@@ -1,7 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { ChristmasPhotoshoot } from "@/components/ChristmasPhotoshoot";
-import autumn2026Announcement from "@/assets/autumn-2026-announcement.jpg.asset.json";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -10,6 +9,101 @@ interface IndexProps {
   onLanguageChange: (lang: Language) => void;
 }
 
+const autumn2026 = {
+  ru: {
+    title: "Осенний набор 2026 в художественную студию в Бромме открыт!",
+    intro: "Приглашаем детей и подростков на занятия по рисунку, живописи, академическому рисунку, скульптуре и декоративно-прикладному искусству. Учим видеть, творить и уверенно развивать художественные навыки в дружелюбной атмосфере.",
+    scheduleTitle: "Предварительное расписание (возможны изменения)",
+    groups: [
+      { name: "Группы 7–10 лет", times: ["Вторник — 17:00", "Среда — 17:00", "Пятница — 17:00"] },
+      { name: "Группа 12–16 лет", times: ["Четверг"] },
+      { name: "Группа Академический рисунок (подростки)", times: ["Вторник и пятница — 16:00"] }
+    ],
+    duration: "Продолжительность занятия — 1,5 часа",
+    pricing: [
+      "Абонемент (10 занятий) — 2400 крон",
+      "Дополнительно:",
+      "• Разовое занятие (по записи, при наличии мест) — 250 крон",
+      "• Пробный урок (1 час) — 150 крон"
+    ],
+    subjectsTitle: "На занятиях изучаем:",
+    subjects: [
+      "рисунок (карандаш, уголь, пастель);",
+      "живопись (акварель, гуашь);",
+      "скульптуру (глина, папье-маше);",
+      "графику (тушь, перо);",
+      "декоративно-прикладное искусство."
+    ],
+    address: "Адрес: Stopvägen 38, Bromma",
+    start: "Начало занятий: 1 сентября 2026",
+    term: "Осенний термин: до 1 декабря 2026",
+    holidays: "Каникулы: 24 октября — 2 ноября",
+    contact: "Запись: 073-517-3330",
+    materials: "Базовые материалы (бумага, краски) ученики приносят с собой. Специальные материалы предоставляет студия."
+  },
+  en: {
+    title: "Autumn 2026 enrollment for the art studio in Bromma is now open!",
+    intro: "We invite children and teenagers to classes in drawing, painting, academic drawing, sculpture, and decorative and applied arts. We teach students to see, create, and confidently develop their artistic skills in a friendly atmosphere.",
+    scheduleTitle: "Preliminary schedule (subject to change)",
+    groups: [
+      { name: "Groups 7–10 years", times: ["Tuesday — 17:00", "Wednesday — 17:00", "Friday — 17:00"] },
+      { name: "Group 12–16 years", times: ["Thursday"] },
+      { name: "Academic Drawing group (teenagers)", times: ["Tuesday and Friday — 16:00"] }
+    ],
+    duration: "Class duration — 1.5 hours",
+    pricing: [
+      "Term pass (10 classes) — 2400 SEK",
+      "Additional options:",
+      "• Single class (by appointment, if space available) — 250 SEK",
+      "• Trial lesson (1 hour) — 150 SEK"
+    ],
+    subjectsTitle: "In our classes we study:",
+    subjects: [
+      "drawing (pencil, charcoal, pastel);",
+      "painting (watercolor, gouache);",
+      "sculpture (clay, papier-mâché);",
+      "graphics (ink, pen);",
+      "decorative and applied arts."
+    ],
+    address: "Address: Stopvägen 38, Bromma",
+    start: "Classes start: 1 September 2026",
+    term: "Autumn term: until 1 December 2026",
+    holidays: "Holidays: 24 October — 2 November",
+    contact: "Registration: 073-517-3330",
+    materials: "Students bring basic materials (paper, paints) with them. Special materials are provided by the studio."
+  },
+  sv: {
+    title: "Höstterminen 2026 — anmälan till konststudion i Bromma är nu öppen!",
+    intro: "Vi bjuder in barn och tonåringar till kurser i teckning, målning, akademisk teckning, skulptur och dekorativ och tillämpad konst. Vi lär ut att se, skapa och självsäkert utveckla konstnärliga färdigheter i en vänlig atmosfär.",
+    scheduleTitle: "Preliminärt schema (ändringar kan förekomma)",
+    groups: [
+      { name: "Grupper 7–10 år", times: ["Tisdag — 17:00", "Onsdag — 17:00", "Fredag — 17:00"] },
+      { name: "Grupp 12–16 år", times: ["Torsdag"] },
+      { name: "Akademisk teckning (tonåringar)", times: ["Tisdag och fredag — 16:00"] }
+    ],
+    duration: "Lektionslängd — 1,5 timmar",
+    pricing: [
+      "Terminskort (10 lektioner) — 2400 kr",
+      "Ytterligare alternativ:",
+      "• Enstaka lektion (efter bokning, om plats finns) — 250 kr",
+      "• Prova-på-lektion (1 timme) — 150 kr"
+    ],
+    subjectsTitle: "Under lektionerna studerar vi:",
+    subjects: [
+      "teckning (blyerts, kol, pastell);",
+      "målning (akvarell, gouache);",
+      "skulptur (lera, pappmaché);",
+      "grafik (tusch, penna);",
+      "dekorativ och tillämpad konst."
+    ],
+    address: "Adress: Stopvägen 38, Bromma",
+    start: "Kursstart: 1 september 2026",
+    term: "Hösttermin: till 1 december 2026",
+    holidays: "Lov: 24 oktober — 2 november",
+    contact: "Anmälan: 073-517-3330",
+    materials: "Eleverna tar med sig basmaterial (papper, färg). Specialmaterial tillhandahålls av studion."
+  }
+};
 
 const aboutMe = {
   ru: {
@@ -60,11 +154,66 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
 
         {/* Autumn 2026 Art School Announcement */}
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
-          <img
-            src={autumn2026Announcement.url}
-            alt="Autumn 2026 art school enrollment announcement"
-            className="w-full h-auto rounded-lg"
-          />
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            <div className="w-full lg:w-1/2">
+              <img
+                src="/lovable-uploads/autumn-2026-announcement.jpg"
+                alt={autumn2026[currentLang].title}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 space-y-5 text-secondary/90">
+              <h2 className="text-2xl md:text-3xl font-bold text-secondary leading-tight">
+                {autumn2026[currentLang].title}
+              </h2>
+              <p className="leading-relaxed">
+                {autumn2026[currentLang].intro}
+              </p>
+              <div>
+                <h3 className="font-semibold text-secondary mb-2">
+                  {autumn2026[currentLang].scheduleTitle}
+                </h3>
+                <div className="space-y-3">
+                  {autumn2026[currentLang].groups.map((group, index) => (
+                    <div key={index}>
+                      <p className="font-medium text-secondary">{group.name}</p>
+                      <ul className="list-disc list-inside text-secondary/80">
+                        {group.times.map((time, i) => (
+                          <li key={i}>{time}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-3 font-medium">{autumn2026[currentLang].duration}</p>
+              </div>
+              <div className="space-y-1">
+                {autumn2026[currentLang].pricing.map((line, index) => (
+                  <p key={index} className={line.startsWith("•") ? "pl-2" : "font-medium"}>
+                    {line}
+                  </p>
+                ))}
+              </div>
+              <div>
+                <h3 className="font-semibold text-secondary mb-2">
+                  {autumn2026[currentLang].subjectsTitle}
+                </h3>
+                <ul className="list-disc list-inside text-secondary/80">
+                  {autumn2026[currentLang].subjects.map((subject, index) => (
+                    <li key={index}>{subject}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-1 text-secondary/80 pt-2 border-t border-secondary/10">
+                <p>{autumn2026[currentLang].address}</p>
+                <p>{autumn2026[currentLang].start}</p>
+                <p>{autumn2026[currentLang].term}</p>
+                <p>{autumn2026[currentLang].holidays}</p>
+                <p className="font-medium text-secondary">{autumn2026[currentLang].contact}</p>
+                <p className="text-sm italic mt-2">{autumn2026[currentLang].materials}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Christmas Photoshoots Announcement - uncomment in December */}
