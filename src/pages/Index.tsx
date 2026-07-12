@@ -1,7 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { ChristmasPhotoshoot } from "@/components/ChristmasPhotoshoot";
-import autumn2026Announcement from "@/assets/autumn-2026-announcement.jpg.asset.json";
 
 type Language = 'ru' | 'en' | 'sv';
 
