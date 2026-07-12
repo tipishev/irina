@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { ChristmasPhotoshoot } from "@/components/ChristmasPhotoshoot";
+import autumn2026Announcement from "@/assets/autumn-2026-announcement.jpg.asset.json";
 
 type Language = 'ru' | 'en' | 'sv';
 
@@ -56,6 +57,15 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
     <div className="min-h-screen">
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
+
+        {/* Autumn 2026 Art School Announcement */}
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
+          <img
+            src={autumn2026Announcement.url}
+            alt="Autumn 2026 art school enrollment announcement"
+            className="w-full h-auto rounded-lg"
+          />
+        </div>
 
         {/* Christmas Photoshoots Announcement - uncomment in December */}
         {/* <ChristmasPhotoshoot currentLang={currentLang} showLink={false} /> */}
