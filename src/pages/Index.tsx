@@ -157,7 +157,7 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             <div className="w-full lg:w-1/2">
               <img
-                src={autumn2026Announcement.url}
+                src="/lovable-uploads/autumn-2026-announcement.jpg"
                 alt={autumn2026[currentLang].title}
                 className="w-full h-auto rounded-lg"
               />
