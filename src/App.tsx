@@ -6,6 +6,7 @@ import MakeupPortfolio from "./pages/MakeupPortfolio";
 import StudioRules from "./pages/StudioRules";
 import ArtSchedule from "./pages/ArtSchedule";
 import Jul from "./pages/Jul";
+import Materials from "./pages/Materials";
 import { useEffect, useState } from "react";
 
 type Language = 'ru' | 'en' | 'sv';
