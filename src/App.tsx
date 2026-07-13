@@ -99,6 +99,15 @@ function App() {
             />
           } 
         />
+        <Route
+          path="/materials"
+          element={
+            <Materials
+              currentLang={currentLang}
+              onLanguageChange={handleLanguageChange}
+            />
+          }
+        />
       </Routes>
     </div>
   );
