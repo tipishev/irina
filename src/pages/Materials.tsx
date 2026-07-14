@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import materialsHtml from "@/content/materials.html?raw";
+import materialsRu from "@/content/materials.ru.html?raw";
+import materialsEn from "@/content/materials.en.html?raw";
+import materialsSv from "@/content/materials.sv.html?raw";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { X } from "lucide-react";
@@ -11,9 +13,16 @@ interface Props {
   onLanguageChange: (lang: Language) => void;
 }
 
+const contentByLang: Record<Language, string> = {
+  ru: materialsRu,
+  en: materialsEn,
+  sv: materialsSv,
+};
+
 const Materials = ({ currentLang, onLanguageChange }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const materialsHtml = contentByLang[currentLang];
 
   useEffect(() => {
     const el = contentRef.current;
