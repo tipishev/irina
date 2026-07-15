@@ -80,3 +80,16 @@
 .materials-content img.materials-img {
   @apply inline-block my-2 mr-2 max-w-[220px] max-h-[220px] w-auto h-auto rounded-md shadow-md cursor-zoom-in transition-transform hover:scale-105 object-cover align-middle;
 }
+.materials-content .heading-anchor {
+  @apply scroll-mt-24 relative;
+}
+.materials-content .anchor-link {
+  @apply text-muted-foreground/40 no-underline mr-2 opacity-0 transition-opacity;
+  text-decoration: none;
+}
+.materials-content .heading-anchor:hover .anchor-link {
+  @apply opacity-100;
+}
+.materials-content .anchor-link:hover {
+  @apply text-primary;
+}
