@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import materialsRu from "@/content/materials.ru.html?raw";
 import materialsEn from "@/content/materials.en.html?raw";
 import materialsSv from "@/content/materials.sv.html?raw";
@@ -19,10 +20,53 @@ const contentByLang: Record<Language, string> = {
   sv: materialsSv,
 };
 
+const slugify = (text: string): string => {
+  return text
+    .toLowerCase()
+    .trim()
+    // strip emoji and symbols
+    .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, "")
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+};
+
+const addHeadingAnchors = (html: string): string => {
+  if (typeof window === "undefined") return html;
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  const usedIds = new Set<string>();
+  doc.querySelectorAll("h1, h2, h3, h4").forEach((h) => {
+    const text = h.textContent || "";
+    let base = slugify(text);
+    if (!base) return;
+    let id = base;
+    let i = 2;
+    while (usedIds.has(id)) {
+      id = `${base}-${i++}`;
+    }
+    usedIds.add(id);
+    h.id = id;
+    h.classList.add("heading-anchor");
+    const a = doc.createElement("a");
+    a.href = `#${id}`;
+    a.className = "anchor-link";
+    a.setAttribute("aria-label", "Link to section");
+    a.textContent = "#";
+    h.insertBefore(a, h.firstChild);
+  });
+  return doc.body.innerHTML;
+};
+
 const Materials = ({ currentLang, onLanguageChange }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
-  const materialsHtml = contentByLang[currentLang];
+  const location = useLocation();
+
+  const materialsHtml = useMemo(
+    () => addHeadingAnchors(contentByLang[currentLang]),
+    [currentLang]
+  );
 
   useEffect(() => {
     const el = contentRef.current;
@@ -37,6 +81,18 @@ const Materials = ({ currentLang, onLanguageChange }: Props) => {
     el.addEventListener("click", onClick);
     return () => el.removeEventListener("click", onClick);
   }, []);
+
+  // Scroll to hash after content renders / language changes
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    // Wait for DOM to render
+    const t = setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+    return () => clearTimeout(t);
+  }, [location.hash, materialsHtml]);
 
   return (
     <div className="min-h-screen bg-background">
