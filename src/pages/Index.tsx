@@ -152,7 +152,35 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
 
-        {/* Autumn 2026 Art School Announcement */}
+        {/* Materials page banner */}
+        <a
+          href={`/materials?lang=${currentLang}`}
+          className="block bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-lg p-4 md:p-5 hover:shadow-md transition-shadow"
+        >
+          <div className="flex items-center gap-3 md:gap-4">
+            <span className="text-2xl md:text-3xl" aria-hidden>📦</span>
+            <div className="flex-1">
+              <p className="font-semibold text-secondary text-base md:text-lg">
+                {currentLang === "ru"
+                  ? "Материалы на учебный год"
+                  : currentLang === "sv"
+                  ? "Material för läsåret"
+                  : "Materials for the school year"}
+              </p>
+              <p className="text-sm text-secondary/70">
+                {currentLang === "ru"
+                  ? "Что купить, какие марки и где найти — полный список и рекомендации."
+                  : currentLang === "sv"
+                  ? "Vad du ska köpa, vilka märken och var du hittar dem — full lista och rekommendationer."
+                  : "What to buy, which brands and where to find them — full list and recommendations."}
+              </p>
+            </div>
+            <span className="text-primary font-medium text-sm md:text-base whitespace-nowrap">
+              {currentLang === "ru" ? "Открыть →" : currentLang === "sv" ? "Öppna →" : "Open →"}
+            </span>
+          </div>
+        </a>
+
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
             <div className="w-full lg:w-1/2">
