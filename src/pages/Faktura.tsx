@@ -25,7 +25,6 @@ type Item = { benamning: string; antal: number; apris: number };
 
 type InvoiceMeta = {
   fakturanummer: string;
-  kundnummer: string;
   fakturadatum: string;
   leveransdatum: string;
   betalningsvillkor: string;
@@ -61,7 +60,6 @@ function buildDefaultMeta(): InvoiceMeta {
   const today = todayISO();
   return {
     fakturanummer: "",
-    kundnummer: "",
     fakturadatum: today,
     leveransdatum: today,
     betalningsvillkor: "30 dagar netto",
@@ -201,7 +199,7 @@ const Faktura = () => {
     const rightColW = W - leftColW - 6;
 
     const metaPairs: [string, string, string, string][] = [
-      ["Fakturanummer", meta.fakturanummer, "Kundnummer", meta.kundnummer],
+      ["Fakturanummer", meta.fakturanummer, "", ""],
       ["Fakturadatum", meta.fakturadatum, "Leveransdatum", meta.leveransdatum],
       ["Betalningsvillkor", meta.betalningsvillkor, "Förfallodatum", meta.forfallodatum],
       ["Dröjsmålsränta", `${fmt(meta.drojsmalsranta)} %`, "", ""],
@@ -418,13 +416,13 @@ const Faktura = () => {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                Данные счёта
+                Данные фактуры
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Номер счёта</label>
+                  <label className="text-xs text-muted-foreground">Номер фактуры</label>
                   <Input
                     className="h-9"
                     value={meta.fakturanummer}
@@ -432,15 +430,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Номер клиента</label>
-                  <Input
-                    className="h-9"
-                    value={meta.kundnummer}
-                    onChange={(e) => updateMeta("kundnummer", e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Дата счёта</label>
+                  <label className="text-xs text-muted-foreground">Дата фактуры</label>
                   <Input
                     className="h-9"
                     type="date"
@@ -682,10 +672,7 @@ const Faktura = () => {
                           <div className="lbl">Fakturanummer</div>
                           <div className="val">{meta.fakturanummer}</div>
                         </td>
-                        <td>
-                          <div className="lbl">Kundnummer</div>
-                          <div className="val">{meta.kundnummer}</div>
-                        </td>
+                        <td></td>
                       </tr>
                       <tr>
                         <td>
