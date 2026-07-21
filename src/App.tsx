@@ -7,6 +7,7 @@ import StudioRules from "./pages/StudioRules";
 import ArtSchedule from "./pages/ArtSchedule";
 import Jul from "./pages/Jul";
 import Materials from "./pages/Materials";
+import Receipts from "./pages/Receipts";
 import { useEffect, useState } from "react";
 
 type Language = 'ru' | 'en' | 'sv';
@@ -108,6 +109,7 @@ function App() {
             />
           }
         />
+        <Route path="/receipts" element={<Receipts />} />
       </Routes>
     </div>
   );
