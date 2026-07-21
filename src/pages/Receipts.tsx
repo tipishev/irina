@@ -16,6 +16,10 @@ type Row = {
   datum: string;
 };
 
+// Fixed organisation number — this tool is single-tenant (Irina only), so it's a
+// frozen constant rather than an editable field. Edit here if it ever changes.
+const ORGNR = "830524-6723";
+
 const DEFAULT_SERVICES: ServiceConfig = {
   "Обучение": { spec: "Konstundervisning barn och ungdomar", rate: 6 },
   "Фото": { spec: "Fotografering", rate: 25 },
@@ -109,8 +113,8 @@ function drawReceipt(
   doc.setLineWidth(0.2);
   doc.rect(x, y, w, h);
 
-  const headerH = 16;
-  const specH = 16;
+  const headerH = 15;
+  const specH = 13;
   const rowH = 6;
   const kronorH = 8;
   const datumH = 6;
@@ -195,7 +199,6 @@ function drawReceipt(
 }
 
 const Receipts = () => {
-  const [orgnr, setOrgnr] = useState("830524-6723");
   const [ort, setOrt] = useState("Stockholm");
   const [startNummer, setStartNummer] = useState(132);
   const [serviceConfig, setServiceConfig] = useState<ServiceConfig>(DEFAULT_SERVICES);
@@ -358,23 +361,26 @@ const Receipts = () => {
       return;
     }
     const doc = new jsPDF({ unit: "mm", format: "a4" });
-    const pageMargin = 8;
+    const pageMargin = 6;
     const gap = 2;
-    const cellW = (210 - 2 * pageMargin - gap) / 2;
-    const cellH = (297 - 2 * pageMargin - gap) / 2;
-    const positions: [number, number][] = [
-      [pageMargin, pageMargin],
-      [pageMargin + cellW + gap, pageMargin],
-      [pageMargin, pageMargin + cellH + gap],
-      [pageMargin + cellW + gap, pageMargin + cellH + gap],
-    ];
+    const cols = 2;
+    const rowsPerPage = 4;
+    const perPage = cols * rowsPerPage;
+    const cellW = (210 - 2 * pageMargin - (cols - 1) * gap) / cols;
+    const cellH = (297 - 2 * pageMargin - (rowsPerPage - 1) * gap) / rowsPerPage;
+    const positions: [number, number][] = [];
+    for (let row = 0; row < rowsPerPage; row++) {
+      for (let col = 0; col < cols; col++) {
+        positions.push([pageMargin + col * (cellW + gap), pageMargin + row * (cellH + gap)]);
+      }
+    }
 
     rows.forEach((r, i) => {
-      const slot = i % 4;
+      const slot = i % perPage;
       if (slot === 0 && i !== 0) doc.addPage();
       const [x, y] = positions[slot];
       const cfg = serviceConfig[r.service] || { spec: r.service, rate: 25 };
-      drawReceipt(doc, x, y, cellW, cellH, r, cfg, { orgnr, ort });
+      drawReceipt(doc, x, y, cellW, cellH, r, cfg, { orgnr: ORGNR, ort });
     });
 
     doc.save("Kvitton.pdf");
@@ -395,10 +401,9 @@ const Receipts = () => {
           className="hidden"
           onChange={handleFileChange}
         />
-        <label className="flex items-center gap-2 text-sm text-muted-foreground">
-          Орг. номер
-          <Input className="w-32 h-9" value={orgnr} onChange={(e) => setOrgnr(e.target.value)} />
-        </label>
+        <span className="flex items-center gap-2 text-sm text-muted-foreground">
+          Орг. номер <span className="font-medium text-foreground">{ORGNR}</span>
+        </span>
         <label className="flex items-center gap-2 text-sm text-muted-foreground">
           Город
           <Input className="w-32 h-9" value={ort} onChange={(e) => setOrt(e.target.value)} />
@@ -655,7 +660,7 @@ const Receipts = () => {
                     </div>
                     <div className="p-1.5 border-b border-black flex justify-between items-baseline">
                       <span className="text-[10px] text-gray-600">Momsreg.nr/org.nr</span>
-                      <span className="font-mono text-[13px]">{orgnr}</span>
+                      <span className="font-mono text-[13px]">{ORGNR}</span>
                     </div>
                     <div className="p-1.5 border-b border-black flex justify-between items-baseline">
                       <span className="text-[10px] text-gray-600">Moms ingår med kr ({cfg.rate}%)</span>
