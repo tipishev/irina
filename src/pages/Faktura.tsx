@@ -39,27 +39,44 @@ type InvoiceMeta = {
   custEmail: string;
 };
 
-const DEFAULT_META: InvoiceMeta = {
-  fakturanummer: "5",
-  kundnummer: "13",
-  fakturadatum: "2026-07-21",
-  leveransdatum: "2026-07-21",
-  betalningsvillkor: "30 dagar netto",
-  forfallodatum: "2026-08-20",
-  drojsmalsranta: 7.5,
-  momsrate: 25,
-  custName: "Irina Jonsson",
-  custCompany: "Aqua Sand Art",
-  custPhone: "+46703466756",
-  custAddress: "Östregårdsväg 7A, 195 32, Märsta",
-  custEmail: "faktura@aquasandart.se",
-};
+function toISODateLocal(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
 
-const DEFAULT_ITEMS: Item[] = [
-  { benamning: "Fotorapportering", antal: 2, apris: 600 },
-  { benamning: "Makeup", antal: 1, apris: 800 },
-  { benamning: "Reseersättning", antal: 1, apris: 150 },
-];
+function todayISO(): string {
+  return toISODateLocal(new Date());
+}
+
+function addDays(dateStr: string, days: number): string {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  dt.setDate(dt.getDate() + days);
+  return toISODateLocal(dt);
+}
+
+function buildDefaultMeta(): InvoiceMeta {
+  const today = todayISO();
+  return {
+    fakturanummer: "",
+    kundnummer: "",
+    fakturadatum: today,
+    leveransdatum: today,
+    betalningsvillkor: "30 dagar netto",
+    forfallodatum: addDays(today, 30),
+    drojsmalsranta: 7.5,
+    momsrate: 25,
+    custName: "",
+    custCompany: "",
+    custPhone: "",
+    custAddress: "",
+    custEmail: "",
+  };
+}
+
+const DEFAULT_ITEMS: Item[] = [];
 
 function fmt(n: number): string {
   return (Math.round(n * 100) / 100).toLocaleString("sv-SE", {
@@ -93,7 +110,7 @@ function buildUsingQRPayload(meta: InvoiceMeta, attBetala: number, moms: number)
 }
 
 const Faktura = () => {
-  const [meta, setMeta] = useState<InvoiceMeta>(DEFAULT_META);
+  const [meta, setMeta] = useState<InvoiceMeta>(buildDefaultMeta);
   const [items, setItems] = useState<Item[]>(DEFAULT_ITEMS);
   const [qrDataUrl, setQrDataUrl] = useState("");
   const logoImgRef = useRef<HTMLImageElement | null>(null);
@@ -411,7 +428,7 @@ const Faktura = () => {
             <CardContent>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Fakturanummer</label>
+                  <label className="text-xs text-muted-foreground">Номер счёта</label>
                   <Input
                     className="h-9"
                     value={meta.fakturanummer}
@@ -419,7 +436,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Kundnummer</label>
+                  <label className="text-xs text-muted-foreground">Номер клиента</label>
                   <Input
                     className="h-9"
                     value={meta.kundnummer}
@@ -427,7 +444,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Fakturadatum</label>
+                  <label className="text-xs text-muted-foreground">Дата счёта</label>
                   <Input
                     className="h-9"
                     type="date"
@@ -436,7 +453,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Leveransdatum</label>
+                  <label className="text-xs text-muted-foreground">Дата поставки</label>
                   <Input
                     className="h-9"
                     type="date"
@@ -445,7 +462,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Betalningsvillkor</label>
+                  <label className="text-xs text-muted-foreground">Условия оплаты</label>
                   <Input
                     className="h-9"
                     value={meta.betalningsvillkor}
@@ -453,7 +470,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Förfallodatum</label>
+                  <label className="text-xs text-muted-foreground">Срок оплаты</label>
                   <Input
                     className="h-9"
                     type="date"
@@ -462,7 +479,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Dröjsmålsränta %</label>
+                  <label className="text-xs text-muted-foreground">Пеня за просрочку, %</label>
                   <Input
                     className="h-9"
                     type="number"
@@ -472,7 +489,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Moms %</label>
+                  <label className="text-xs text-muted-foreground">НДС %</label>
                   <Input
                     className="h-9"
                     type="number"
@@ -488,13 +505,13 @@ const Faktura = () => {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                Заказчик (Fakturaadress)
+                Заказчик
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Namn</label>
+                  <label className="text-xs text-muted-foreground">Имя</label>
                   <Input
                     className="h-9"
                     value={meta.custName}
@@ -502,7 +519,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Företag</label>
+                  <label className="text-xs text-muted-foreground">Компания</label>
                   <Input
                     className="h-9"
                     value={meta.custCompany}
@@ -510,7 +527,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Telefon</label>
+                  <label className="text-xs text-muted-foreground">Телефон</label>
                   <Input
                     className="h-9"
                     value={meta.custPhone}
@@ -518,7 +535,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Adress</label>
+                  <label className="text-xs text-muted-foreground">Адрес</label>
                   <Input
                     className="h-9"
                     value={meta.custAddress}
@@ -526,7 +543,7 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1 col-span-2">
-                  <label className="text-xs text-muted-foreground">E-post</label>
+                  <label className="text-xs text-muted-foreground">Эл. почта</label>
                   <Input
                     className="h-9"
                     value={meta.custEmail}
@@ -540,18 +557,21 @@ const Faktura = () => {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                Rader
+                Позиции
               </CardTitle>
             </CardHeader>
             <CardContent>
+              {items.length === 0 && (
+                <p className="text-sm text-muted-foreground text-center py-4">Добавьте первую позицию.</p>
+              )}
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left text-xs text-muted-foreground border-b">
-                      <th className="py-1.5 pr-2 font-medium">Benämning</th>
-                      <th className="py-1.5 pr-2 font-medium text-right">Antal</th>
-                      <th className="py-1.5 pr-2 font-medium text-right">À-pris</th>
-                      <th className="py-1.5 pr-2 font-medium text-right">Summa</th>
+                      <th className="py-1.5 pr-2 font-medium">Наименование</th>
+                      <th className="py-1.5 pr-2 font-medium text-right">Кол-во</th>
+                      <th className="py-1.5 pr-2 font-medium text-right">Цена за ед.</th>
+                      <th className="py-1.5 pr-2 font-medium text-right">Сумма</th>
                       <th className="py-1.5"></th>
                     </tr>
                   </thead>
@@ -606,17 +626,17 @@ const Faktura = () => {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                Säljare (продавец) — фиксировано
+                Продавец — фиксировано
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="seller-frozen">
                 <div>
-                  <span className="k">Namn</span>
+                  <span className="k">Имя</span>
                   <span className="v">{SELLER.sellerName}</span>
                 </div>
                 <div>
-                  <span className="k">Adress</span>
+                  <span className="k">Адрес</span>
                   <span className="v">
                     {SELLER.sellerStreet}, {SELLER.sellerPostal}
                   </span>
@@ -626,15 +646,15 @@ const Faktura = () => {
                   <span className="v">{SELLER.sellerBankgiro}</span>
                 </div>
                 <div>
-                  <span className="k">Organisationsnr</span>
+                  <span className="k">Орг. номер</span>
                   <span className="v">{SELLER.sellerOrgnr}</span>
                 </div>
                 <div>
-                  <span className="k">Momsreg.nr</span>
+                  <span className="k">Номер НДС</span>
                   <span className="v">{SELLER.sellerVatnr}</span>
                 </div>
                 <div>
-                  <span className="k">Godkänd för F-skatt</span>
+                  <span className="k">Одобрен для F-skatt</span>
                   <span className="v">{SELLER.sellerFskatt}</span>
                 </div>
               </div>
