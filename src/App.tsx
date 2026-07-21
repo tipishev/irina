@@ -8,6 +8,7 @@ import ArtSchedule from "./pages/ArtSchedule";
 import Jul from "./pages/Jul";
 import Materials from "./pages/Materials";
 import Receipts from "./pages/Receipts";
+import Faktura from "./pages/Faktura";
 import { useEffect, useState } from "react";
 
 type Language = 'ru' | 'en' | 'sv';
@@ -110,6 +111,7 @@ function App() {
           }
         />
         <Route path="/receipts" element={<Receipts />} />
+        <Route path="/faktura" element={<Faktura />} />
       </Routes>
     </div>
   );
