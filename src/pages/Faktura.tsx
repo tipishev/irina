@@ -11,8 +11,8 @@ const LOGO_ASPECT = 486 / 600; // height / width, matches the print-optimized lo
 // Fixed seller/receiver details — this tool is single-tenant (Irina only), so these
 // are frozen constants rather than editable fields. Edit here if the business details change.
 const SELLER = {
-  sellerName: "Zayakina, Irina",
-  sellerAddrName: "Zayakina, Irina",
+  sellerName: "Irina Zayakina",
+  sellerAddrName: "Irina Zayakina",
   sellerStreet: "Abrahamsbergsvägen 66",
   sellerPostal: "168 30 Bromma",
   sellerBankgiro: "5871-9832",
@@ -195,10 +195,7 @@ const Faktura = () => {
     doc.setFontSize(26);
     doc.text("Faktura", M + W, M + 10, { align: "right" });
 
-    doc.setFontSize(15);
-    doc.text(SELLER.sellerName, M, M + logoH + 8);
-
-    const metaTop = M + logoH + 16;
+    const metaTop = M + logoH + 8;
     const leftColW = W * 0.55;
     const rightColX = M + leftColW + 6;
     const rightColW = W - leftColW - 6;
@@ -379,8 +376,7 @@ const Faktura = () => {
         .inv-header { display: flex; justify-content: space-between; align-items: flex-start; }
         .inv-header img { height: 24mm; }
         .inv-title { font-size: 26pt; font-weight: 700; text-align: right; }
-        .inv-seller-name { font-size: 15pt; font-weight: 700; margin-top: 8mm; }
-        .inv-meta-row { display: flex; margin-top: 6mm; gap: 6mm; }
+        .inv-meta-row { display: flex; margin-top: 8mm; gap: 6mm; }
         .inv-meta-left { flex: 1.1; }
         .inv-meta-left table { width: 100%; border-collapse: collapse; }
         .inv-meta-left td { padding: 2mm 2mm 2mm 0; vertical-align: top; width: 50%; }
@@ -676,7 +672,6 @@ const Faktura = () => {
                 <img src={LOGO_URL} alt="logo" />
                 <div className="inv-title">Faktura</div>
               </div>
-              <div className="inv-seller-name">{SELLER.sellerName}</div>
 
               <div className="inv-meta-row">
                 <div className="inv-meta-left">
