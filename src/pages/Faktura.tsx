@@ -258,48 +258,52 @@ const Faktura = () => {
       ty += 7;
     });
 
-    ty += 6;
+    // QR (left) + summary/total (right) share one row — keeps the QR out of the line items' way
+    const rowTop = ty + 6;
+    let qrBlockH = 0;
     if (pdfQrDataUrl) {
       const qrSize = 26;
-      const qrX = M + W - qrSize;
-      doc.addImage(pdfQrDataUrl, "PNG", qrX, ty, qrSize, qrSize);
+      doc.addImage(pdfQrDataUrl, "PNG", M, rowTop, qrSize, qrSize);
       doc.setFont("helvetica", "normal");
       doc.setFontSize(7);
       doc.setTextColor(120);
-      doc.text("Skanna för att betala", qrX + qrSize / 2, ty + qrSize + 4, { align: "center" });
-      ty += qrSize + 10;
+      doc.text("Skanna för att betala", M + qrSize / 2, rowTop + qrSize + 4, { align: "center" });
+      qrBlockH = qrSize + 8;
     }
 
-    ty += 6;
+    let sty = rowTop;
     const sumColW = 45;
     const sc = [M + W - 3 * sumColW, M + W - 2 * sumColW, M + W - sumColW, M + W];
     doc.setFont("helvetica", "bold");
     doc.setFontSize(8.5);
     doc.setTextColor(50);
-    doc.text("Netto", sc[0], ty, { align: "right" });
-    doc.text("Exkl moms", sc[1], ty, { align: "right" });
-    doc.text("Moms %", sc[2], ty, { align: "right" });
-    doc.text("Moms", sc[3], ty, { align: "right" });
-    doc.line(M + W - 4 * sumColW, ty + 1.5, M + W, ty + 1.5);
-    ty += 6;
+    doc.text("Netto", sc[0], sty, { align: "right" });
+    doc.text("Exkl moms", sc[1], sty, { align: "right" });
+    doc.text("Moms %", sc[2], sty, { align: "right" });
+    doc.text("Moms", sc[3], sty, { align: "right" });
+    doc.line(M + W - 4 * sumColW, sty + 1.5, M + W, sty + 1.5);
+    sty += 6;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(20);
-    doc.text(`${fmt(netto)} kr`, sc[0], ty, { align: "right" });
-    doc.text(`${fmt(exklMoms)} kr`, sc[1], ty, { align: "right" });
-    doc.text(`${fmt(meta.momsrate)} %`, sc[2], ty, { align: "right" });
-    doc.text(`${fmt(moms)} kr`, sc[3], ty, { align: "right" });
+    doc.text(`${fmt(netto)} kr`, sc[0], sty, { align: "right" });
+    doc.text(`${fmt(exklMoms)} kr`, sc[1], sty, { align: "right" });
+    doc.text(`${fmt(meta.momsrate)} %`, sc[2], sty, { align: "right" });
+    doc.text(`${fmt(moms)} kr`, sc[3], sty, { align: "right" });
 
-    ty += 9;
+    sty += 9;
     const totalBoxW = 90;
     const totalBoxX = M + W - totalBoxW;
     doc.setFillColor(242, 242, 242);
-    doc.rect(totalBoxX, ty - 5.5, totalBoxW, 10, "F");
+    doc.rect(totalBoxX, sty - 5.5, totalBoxW, 10, "F");
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
-    doc.text("ATT BETALA", totalBoxX + 3, ty + 1);
+    doc.text("ATT BETALA", totalBoxX + 3, sty + 1);
     doc.setFontSize(15);
-    doc.text(`${fmt(attBetala)} kr`, M + W - 3, ty + 1, { align: "right" });
+    doc.text(`${fmt(attBetala)} kr`, M + W - 3, sty + 1, { align: "right" });
+
+    const summaryBlockH = sty + 4.5 - rowTop;
+    ty = rowTop + Math.max(qrBlockH, summaryBlockH) + 4;
 
     const footTop = 260;
     doc.setDrawColor(200);
@@ -373,13 +377,14 @@ const Faktura = () => {
         table.inv-items thead th.num { text-align: right; }
         table.inv-items tbody td { padding: 2mm 2mm; border-bottom: 0.5px solid #ddd; font-size: 10pt; }
         table.inv-items tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
-        .inv-summary { display: flex; justify-content: flex-end; margin-top: 4mm; }
+        .inv-totals-row { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 6mm; gap: 6mm; }
+        .inv-qr-block { text-align: center; flex-shrink: 0; }
+        .inv-totals-block { display: flex; flex-direction: column; align-items: flex-end; gap: 3mm; }
         table.inv-summary-table { border-collapse: collapse; min-width: 90mm; }
         table.inv-summary-table th { font-size: 8.5pt; text-transform: uppercase; color: #333; border-bottom: 1.5px solid #222; padding: 1.5mm 2mm; text-align: right; }
         table.inv-summary-table th:first-child { text-align: left; }
         table.inv-summary-table td { padding: 1.5mm 2mm; text-align: right; font-size: 10pt; border-bottom: 0.5px solid #ddd; }
         table.inv-summary-table td:first-child { text-align: left; }
-        .inv-total-row { display: flex; justify-content: flex-end; margin-top: 3mm; }
         .inv-total-box { min-width: 90mm; display: flex; justify-content: space-between; align-items: baseline; background: #f2f2f2; padding: 3mm 4mm; border-radius: 3px; }
         .inv-total-box .lbl { font-weight: 700; font-size: 11pt; }
         .inv-total-box .val { font-weight: 700; font-size: 15pt; }
@@ -728,8 +733,8 @@ const Faktura = () => {
                 </tbody>
               </table>
 
-              <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "6mm" }}>
-                <div style={{ textAlign: "center" }}>
+              <div className="inv-totals-row">
+                <div className="inv-qr-block">
                   {qrDataUrl ? (
                     <img
                       src={qrDataUrl}
@@ -756,32 +761,29 @@ const Faktura = () => {
                     Skanna för att betala
                   </div>
                 </div>
-              </div>
-
-              <div className="inv-summary">
-                <table className="inv-summary-table">
-                  <thead>
-                    <tr>
-                      <th>Netto</th>
-                      <th>Exkl moms</th>
-                      <th>Moms %</th>
-                      <th>Moms</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{fmt(netto)} kr</td>
-                      <td>{fmt(exklMoms)} kr</td>
-                      <td>{fmt(meta.momsrate)} %</td>
-                      <td>{fmt(moms)} kr</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="inv-total-row">
-                <div className="inv-total-box">
-                  <span className="lbl">ATT BETALA</span>
-                  <span className="val">{fmt(attBetala)} kr</span>
+                <div className="inv-totals-block">
+                  <table className="inv-summary-table">
+                    <thead>
+                      <tr>
+                        <th>Netto</th>
+                        <th>Exkl moms</th>
+                        <th>Moms %</th>
+                        <th>Moms</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{fmt(netto)} kr</td>
+                        <td>{fmt(exklMoms)} kr</td>
+                        <td>{fmt(meta.momsrate)} %</td>
+                        <td>{fmt(moms)} kr</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div className="inv-total-box">
+                    <span className="lbl">ATT BETALA</span>
+                    <span className="val">{fmt(attBetala)} kr</span>
+                  </div>
                 </div>
               </div>
 
