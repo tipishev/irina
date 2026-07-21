@@ -27,8 +27,7 @@ type InvoiceMeta = {
   fakturanummer: string;
   fakturadatum: string;
   leveransdatum: string;
-  betalningsvillkor: string;
-  forfallodatum: string;
+  paymentDays: number;
   drojsmalsranta: number;
   momsrate: number;
   custName: string;
@@ -62,8 +61,7 @@ function buildDefaultMeta(): InvoiceMeta {
     fakturanummer: "",
     fakturadatum: today,
     leveransdatum: today,
-    betalningsvillkor: "30 dagar netto",
-    forfallodatum: addDays(today, 30),
+    paymentDays: 14,
     drojsmalsranta: 7.5,
     momsrate: 25,
     custName: "",
@@ -90,7 +88,7 @@ function computeTotals(items: Item[], momsrate: number) {
 }
 
 // UsingQR format (Visma spec rev. 2) — read by Swedish banking apps to auto-fill Bankgiro payments.
-function buildUsingQRPayload(meta: InvoiceMeta, attBetala: number, moms: number): string {
+function buildUsingQRPayload(meta: InvoiceMeta, forfallodatum: string, attBetala: number, moms: number): string {
   const payload = {
     uqr: 1,
     tp: 1,
@@ -98,7 +96,7 @@ function buildUsingQRPayload(meta: InvoiceMeta, attBetala: number, moms: number)
     cid: SELLER.sellerOrgnr,
     iref: meta.fakturanummer, // no proper OCR checksum in use — invoice number doubles as the free-text reference
     idt: (meta.fakturadatum || "").replace(/-/g, ""),
-    ddt: (meta.forfallodatum || "").replace(/-/g, ""),
+    ddt: (forfallodatum || "").replace(/-/g, ""),
     due: Math.round(attBetala * 100) / 100,
     vat: Math.round(moms * 100) / 100,
     pt: "BG",
@@ -114,6 +112,8 @@ const Faktura = () => {
   const logoImgRef = useRef<HTMLImageElement | null>(null);
 
   const { netto, exklMoms, moms, attBetala } = computeTotals(items, meta.momsrate);
+  const betalningsvillkor = `${meta.paymentDays} dagar netto`;
+  const forfallodatum = addDays(meta.fakturadatum, meta.paymentDays);
 
   useEffect(() => {
     const img = new Image();
@@ -129,7 +129,7 @@ const Faktura = () => {
       setQrDataUrl("");
       return;
     }
-    QRCode.toDataURL(buildUsingQRPayload(meta, attBetala, moms), { margin: 1, width: 300 })
+    QRCode.toDataURL(buildUsingQRPayload(meta, forfallodatum, attBetala, moms), { margin: 1, width: 300 })
       .then((url) => {
         if (!cancelled) setQrDataUrl(url);
       })
@@ -140,7 +140,7 @@ const Faktura = () => {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [meta.fakturanummer, meta.fakturadatum, meta.forfallodatum, attBetala, moms]);
+  }, [meta.fakturanummer, meta.fakturadatum, forfallodatum, attBetala, moms]);
 
   function updateMeta<K extends keyof InvoiceMeta>(field: K, value: InvoiceMeta[K]) {
     setMeta((prev) => ({ ...prev, [field]: value }));
@@ -172,7 +172,7 @@ const Faktura = () => {
     let pdfQrDataUrl = "";
     if (SELLER.sellerBankgiro && attBetala) {
       try {
-        pdfQrDataUrl = await QRCode.toDataURL(buildUsingQRPayload(meta, attBetala, moms), {
+        pdfQrDataUrl = await QRCode.toDataURL(buildUsingQRPayload(meta, forfallodatum, attBetala, moms), {
           margin: 1,
           width: 300,
         });
@@ -201,7 +201,7 @@ const Faktura = () => {
     const metaPairs: [string, string, string, string][] = [
       ["Fakturanummer", meta.fakturanummer, "", ""],
       ["Fakturadatum", meta.fakturadatum, "Leveransdatum", meta.leveransdatum],
-      ["Betalningsvillkor", meta.betalningsvillkor, "Förfallodatum", meta.forfallodatum],
+      ["Betalningsvillkor", betalningsvillkor, "Förfallodatum", forfallodatum],
       ["Dröjsmålsränta", `${fmt(meta.drojsmalsranta)} %`, "", ""],
     ];
     let my = metaTop;
@@ -448,20 +448,13 @@ const Faktura = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Условия оплаты</label>
+                  <label className="text-xs text-muted-foreground">Дней на оплату</label>
                   <Input
                     className="h-9"
-                    value={meta.betalningsvillkor}
-                    onChange={(e) => updateMeta("betalningsvillkor", e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Срок оплаты</label>
-                  <Input
-                    className="h-9"
-                    type="date"
-                    value={meta.forfallodatum}
-                    onChange={(e) => updateMeta("forfallodatum", e.target.value)}
+                    type="number"
+                    step="1"
+                    value={meta.paymentDays}
+                    onChange={(e) => updateMeta("paymentDays", parseInt(e.target.value, 10) || 0)}
                   />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -687,11 +680,11 @@ const Faktura = () => {
                       <tr>
                         <td>
                           <div className="lbl">Betalningsvillkor</div>
-                          <div className="val">{meta.betalningsvillkor}</div>
+                          <div className="val">{betalningsvillkor}</div>
                         </td>
                         <td>
                           <div className="lbl">Förfallodatum</div>
-                          <div className="val">{meta.forfallodatum}</div>
+                          <div className="val">{forfallodatum}</div>
                         </td>
                       </tr>
                       <tr>
