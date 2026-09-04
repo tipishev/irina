@@ -16,8 +16,8 @@ const autumn2026 = {
     scheduleTitle: "Предварительное расписание (возможны изменения)",
     groups: [
       { name: "Группы 7–10 лет", times: ["Вторник — 17:00", "Среда — 17:00", "Пятница — 17:00"] },
-      { name: "Группа 12–16 лет", times: ["Четверг"] },
-      { name: "Группа Академический рисунок (подростки)", times: ["Вторник и пятница — 16:00"] }
+      { name: "Группа 12–16 лет", times: ["Четверг — 16:00", "Пятница — 15:30"] },
+      { name: "Группа Академический рисунок (подростки, 14–18 лет)", times: ["Вторник и среда — 16:00"] }
     ],
     duration: "Продолжительность занятия — 1,5 часа",
     pricing: [
@@ -47,8 +47,8 @@ const autumn2026 = {
     scheduleTitle: "Preliminary schedule (subject to change)",
     groups: [
       { name: "Groups 7–10 years", times: ["Tuesday — 17:00", "Wednesday — 17:00", "Friday — 17:00"] },
-      { name: "Group 12–16 years", times: ["Thursday"] },
-      { name: "Academic Drawing group (teenagers)", times: ["Tuesday and Friday — 16:00"] }
+      { name: "Group 12–16 years", times: ["Thursday — 16:00", "Friday — 15:30"] },
+      { name: "Academic Drawing group (teenagers, 14–18 years)", times: ["Tuesday and Wednesday — 16:00"] }
     ],
     duration: "Class duration — 1.5 hours",
     pricing: [
@@ -78,8 +78,8 @@ const autumn2026 = {
     scheduleTitle: "Preliminärt schema (ändringar kan förekomma)",
     groups: [
       { name: "Grupper 7–10 år", times: ["Tisdag — 17:00", "Onsdag — 17:00", "Fredag — 17:00"] },
-      { name: "Grupp 12–16 år", times: ["Torsdag"] },
-      { name: "Akademisk teckning (tonåringar)", times: ["Tisdag och fredag — 16:00"] }
+      { name: "Grupp 12–16 år", times: ["Torsdag — 16:00", "Fredag — 15:30"] },
+      { name: "Akademisk teckning (tonåringar, 14–18 år)", times: ["Tisdag och onsdag — 16:00"] }
     ],
     duration: "Lektionslängd — 1,5 timmar",
     pricing: [
