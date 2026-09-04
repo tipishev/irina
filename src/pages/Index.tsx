@@ -201,9 +201,12 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
                 {autumn2026[currentLang].intro}
               </p>
               <div>
-                <h3 className="font-semibold text-secondary mb-2">
+                <h3 className="font-semibold text-secondary mb-1">
                   {autumn2026[currentLang].scheduleTitle}
                 </h3>
+                <p className="text-xs text-secondary/60 mb-3">
+                  {autumn2026[currentLang].lastUpdated}
+                </p>
                 <div className="space-y-3">
                   {autumn2026[currentLang].groups.map((group, index) => (
                     <div key={index}>
