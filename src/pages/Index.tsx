@@ -13,7 +13,8 @@ const autumn2026 = {
   ru: {
     title: "Осенний набор 2026 в художественную студию в Бромме открыт!",
     intro: "Приглашаем детей и подростков на занятия по рисунку, живописи, академическому рисунку, скульптуре и декоративно-прикладному искусству. Учим видеть, творить и уверенно развивать художественные навыки в дружелюбной атмосфере.",
-    scheduleTitle: "Предварительное расписание (возможны изменения)",
+    scheduleTitle: "Расписание",
+    lastUpdated: "Обновлено: 4 сентября 2026",
     groups: [
       { name: "Группы 7–10 лет", times: ["Вторник — 17:00", "Среда — 17:00", "Пятница — 17:00"] },
       { name: "Группа 12–16 лет", times: ["Четверг — 16:00", "Пятница — 15:30"] },
@@ -44,7 +45,8 @@ const autumn2026 = {
   en: {
     title: "Autumn 2026 enrollment for the art studio in Bromma is now open!",
     intro: "We invite children and teenagers to classes in drawing, painting, academic drawing, sculpture, and decorative and applied arts. We teach students to see, create, and confidently develop their artistic skills in a friendly atmosphere.",
-    scheduleTitle: "Preliminary schedule (subject to change)",
+    scheduleTitle: "Schedule",
+    lastUpdated: "Last updated: 4 September 2026",
     groups: [
       { name: "Groups 7–10 years", times: ["Tuesday — 17:00", "Wednesday — 17:00", "Friday — 17:00"] },
       { name: "Group 12–16 years", times: ["Thursday — 16:00", "Friday — 15:30"] },
@@ -75,7 +77,8 @@ const autumn2026 = {
   sv: {
     title: "Höstterminen 2026 — anmälan till konststudion i Bromma är nu öppen!",
     intro: "Vi bjuder in barn och tonåringar till kurser i teckning, målning, akademisk teckning, skulptur och dekorativ och tillämpad konst. Vi lär ut att se, skapa och självsäkert utveckla konstnärliga färdigheter i en vänlig atmosfär.",
-    scheduleTitle: "Preliminärt schema (ändringar kan förekomma)",
+    scheduleTitle: "Schema",
+    lastUpdated: "Senast uppdaterad: 4 september 2026",
     groups: [
       { name: "Grupper 7–10 år", times: ["Tisdag — 17:00", "Onsdag — 17:00", "Fredag — 17:00"] },
       { name: "Grupp 12–16 år", times: ["Torsdag — 16:00", "Fredag — 15:30"] },
@@ -198,9 +201,12 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
                 {autumn2026[currentLang].intro}
               </p>
               <div>
-                <h3 className="font-semibold text-secondary mb-2">
+                <h3 className="font-semibold text-secondary mb-1">
                   {autumn2026[currentLang].scheduleTitle}
                 </h3>
+                <p className="text-xs text-secondary/60 mb-3">
+                  {autumn2026[currentLang].lastUpdated}
+                </p>
                 <div className="space-y-3">
                   {autumn2026[currentLang].groups.map((group, index) => (
                     <div key={index}>
