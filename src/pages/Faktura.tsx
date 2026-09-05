@@ -155,9 +155,10 @@ const Faktura = () => {
     setItems((prev) => {
       const next = [...prev];
       const it = { ...next[i] };
-      const summa = parseFloat(value) || 0;
+      const bruttoSumma = parseFloat(value) || 0;
       const antal = Number(it.antal) || 1;
-      it.apris = Math.round((summa / antal) * 100) / 100;
+      const nettoSumma = bruttoSumma / (1 + meta.momsrate / 100);
+      it.apris = Math.round((nettoSumma / antal) * 100) / 100;
       next[i] = it;
       return next;
     });
@@ -521,13 +522,14 @@ const Faktura = () => {
                       <th className="py-1.5 pr-2 font-medium">Наименование</th>
                       <th className="py-1.5 pr-2 font-medium text-right">Кол-во</th>
                       <th className="py-1.5 pr-2 font-medium text-right">Цена за ед.</th>
-                      <th className="py-1.5 pr-2 font-medium text-right">Сумма</th>
+                      <th className="py-1.5 pr-2 font-medium text-right">Сумма с НДС</th>
                       <th className="py-1.5"></th>
                     </tr>
                   </thead>
                   <tbody>
                     {items.map((it, i) => {
-                      const sum = Math.round((Number(it.antal) || 0) * (Number(it.apris) || 0) * 100) / 100;
+                      const nettoSum = (Number(it.antal) || 0) * (Number(it.apris) || 0);
+                      const bruttoSum = Math.round(nettoSum * (1 + meta.momsrate / 100) * 100) / 100;
                       return (
                         <tr key={i} className="border-b last:border-0">
                           <td className="py-1 pr-2">
@@ -560,7 +562,7 @@ const Faktura = () => {
                               className="h-8 w-24 text-right"
                               type="number"
                               step="0.01"
-                              value={sum}
+                              value={bruttoSum}
                               onChange={(e) => updateItemSumma(i, e.target.value)}
                             />
                           </td>
