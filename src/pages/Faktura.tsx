@@ -522,7 +522,9 @@ const Faktura = () => {
                       <th className="py-1.5 pr-2 font-medium">Наименование</th>
                       <th className="py-1.5 pr-2 font-medium text-right">Кол-во</th>
                       <th className="py-1.5 pr-2 font-medium text-right">Цена за ед.</th>
-                      <th className="py-1.5 pr-2 font-medium text-right">Сумма с НДС</th>
+                      <th className="py-1.5 pr-2 font-medium text-right">
+                        Сумма с <strong>{meta.momsrate}%</strong> НДС
+                      </th>
                       <th className="py-1.5"></th>
                     </tr>
                   </thead>
