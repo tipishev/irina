@@ -3,6 +3,7 @@ import jsPDF from "jspdf";
 import QRCode from "qrcode";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const LOGO_URL = "/lovable-uploads/logo-Irina-Zay-print.png";
@@ -30,11 +31,7 @@ type InvoiceMeta = {
   paymentDays: number;
   drojsmalsranta: number;
   momsrate: number;
-  custName: string;
-  custCompany: string;
-  custPhone: string;
-  custAddress: string;
-  custEmail: string;
+  custDetails: string;
 };
 
 function toISODateLocal(d: Date): string {
@@ -64,11 +61,7 @@ function buildDefaultMeta(): InvoiceMeta {
     paymentDays: 14,
     drojsmalsranta: 7.5,
     momsrate: 25,
-    custName: "",
-    custCompany: "",
-    custPhone: "",
-    custAddress: "",
-    custEmail: "",
+    custDetails: "",
   };
 }
 
@@ -230,9 +223,7 @@ const Faktura = () => {
     doc.line(rightColX + 3, boxTop + 8, rightColX + rightColW - 3, boxTop + 8);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
-    const addrLines = [meta.custName, meta.custCompany, meta.custPhone, meta.custAddress, meta.custEmail].filter(
-      Boolean
-    );
+    const addrLines = meta.custDetails.split("\n").filter((line) => line.trim() !== "");
     addrLines.forEach((line, i) => {
       doc.text(line, rightColX + 3, boxTop + 13 + i * 5);
     });
@@ -488,47 +479,15 @@ const Faktura = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Имя</label>
-                  <Input
-                    className="h-9"
-                    value={meta.custName}
-                    onChange={(e) => updateMeta("custName", e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Компания</label>
-                  <Input
-                    className="h-9"
-                    value={meta.custCompany}
-                    onChange={(e) => updateMeta("custCompany", e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Телефон</label>
-                  <Input
-                    className="h-9"
-                    value={meta.custPhone}
-                    onChange={(e) => updateMeta("custPhone", e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="text-xs text-muted-foreground">Адрес</label>
-                  <Input
-                    className="h-9"
-                    value={meta.custAddress}
-                    onChange={(e) => updateMeta("custAddress", e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col gap-1 col-span-2">
-                  <label className="text-xs text-muted-foreground">Эл. почта</label>
-                  <Input
-                    className="h-9"
-                    value={meta.custEmail}
-                    onChange={(e) => updateMeta("custEmail", e.target.value)}
-                  />
-                </div>
+              <div className="flex flex-col gap-1">
+                <label className="text-xs text-muted-foreground">
+                  Данные (имя, компания, телефон, адрес, эл. почта — по строке на каждый)
+                </label>
+                <Textarea
+                  className="min-h-24"
+                  value={meta.custDetails}
+                  onChange={(e) => updateMeta("custDetails", e.target.value)}
+                />
               </div>
             </CardContent>
           </Card>
@@ -699,11 +658,14 @@ const Faktura = () => {
                 </div>
                 <div className="inv-address-box">
                   <div className="hdr">Fakturaadress</div>
-                  <div className="line">{meta.custName}</div>
-                  {meta.custCompany && <div className="line">{meta.custCompany}</div>}
-                  <div className="line">{meta.custPhone}</div>
-                  <div className="line">{meta.custAddress}</div>
-                  <div className="line">{meta.custEmail}</div>
+                  {meta.custDetails
+                    .split("\n")
+                    .filter((line) => line.trim() !== "")
+                    .map((line, i) => (
+                      <div className="line" key={i}>
+                        {line}
+                      </div>
+                    ))}
                 </div>
               </div>
 
