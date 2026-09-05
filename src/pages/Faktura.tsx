@@ -151,6 +151,18 @@ const Faktura = () => {
     });
   }
 
+  function updateItemSumma(i: number, value: string) {
+    setItems((prev) => {
+      const next = [...prev];
+      const it = { ...next[i] };
+      const summa = parseFloat(value) || 0;
+      const antal = Number(it.antal) || 1;
+      it.apris = Math.round((summa / antal) * 100) / 100;
+      next[i] = it;
+      return next;
+    });
+  }
+
   function removeItem(i: number) {
     setItems((prev) => prev.filter((_, idx) => idx !== i));
   }
@@ -515,7 +527,7 @@ const Faktura = () => {
                   </thead>
                   <tbody>
                     {items.map((it, i) => {
-                      const sum = (Number(it.antal) || 0) * (Number(it.apris) || 0);
+                      const sum = Math.round((Number(it.antal) || 0) * (Number(it.apris) || 0) * 100) / 100;
                       return (
                         <tr key={i} className="border-b last:border-0">
                           <td className="py-1 pr-2">
@@ -543,7 +555,15 @@ const Faktura = () => {
                               onChange={(e) => updateItem(i, "apris", e.target.value)}
                             />
                           </td>
-                          <td className="py-1 pr-2 text-right tabular-nums">{fmt(sum)}</td>
+                          <td className="py-1 pr-2">
+                            <Input
+                              className="h-8 w-24 text-right"
+                              type="number"
+                              step="0.01"
+                              value={sum}
+                              onChange={(e) => updateItemSumma(i, e.target.value)}
+                            />
+                          </td>
                           <td className="py-1">
                             <Button variant="ghost" size="sm" onClick={() => removeItem(i)}>
                               ✕
