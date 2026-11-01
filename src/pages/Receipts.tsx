@@ -90,6 +90,32 @@ function formatPhone(ref: string): string {
   return parts.length ? parts[parts.length - 1] : ref.trim();
 }
 
+/**
+ * Read an amount in the Swedish bank-export format as a number.
+ * The bank uses a space or a non-breaking space as the thousands separator
+ * and a comma as the decimal separator.
+ * Example: "2 000,00" → 2000, "-237,80" → -237.8, "500" → 500.
+ */
+function parseSwedishAmount(rawAmount: string): number {
+  const normalizedAmount = rawAmount.replace(/[\s ]/g, "").replace(",", ".");
+  return parseFloat(normalizedAmount) || 0;
+}
+
+/**
+ * Get the customer phone number for a bank-export row.
+ * For a Swish payment the bank puts the phone in the transaction type and the
+ * merchant Swish number in the reference, so the transaction type wins.
+ * Example: ("Swish +46700628010", "1236530646") → "+46700628010";
+ *          ("Bankgiro inbetalning", "58719832") → "58719832".
+ */
+function getCustomerPhone(transactionType: string, reference: string): string {
+  const swishMatch = transactionType.trim().match(/^Swish\s+(\+?\d+)/);
+  // Swish payment: the phone number follows the word "Swish".
+  if (swishMatch) return swishMatch[1];
+  // Any other row type: keep the old behaviour and read the reference.
+  return formatPhone(reference);
+}
+
 function computeMoms(row: Row, serviceConfig: ServiceConfig) {
   const cfg = serviceConfig[row.service] || { spec: row.service, rate: 25 };
   const rateFrac = (cfg.rate || 0) / 100;
@@ -215,6 +241,7 @@ const Receipts = () => {
     const headers = table[0].map((h) => h.trim());
     const idx = (name: string) => headers.indexOf(name);
     const iDate = idx("Bokföringsdatum");
+    const transactionTypeIndex = idx("Transaktionstyp");
     const iRef = idx("Referens");
     const iBelopp = idx("Belopp");
     const iName = idx("имя");
@@ -224,12 +251,20 @@ const Receipts = () => {
     const newRows: Row[] = [];
     const addedServices: string[] = [];
     const nextConfig = { ...serviceConfig };
+    let skippedRowCount = 0;
 
     for (let r = 1; r < table.length; r++) {
       const line = table[r];
       if (!line || line.every((f) => f.trim() === "")) continue;
       const rawName = iName !== -1 ? line[iName] : "";
-      const rawService = iService !== -1 ? line[iService].trim() : "";
+      const rawService = iService !== -1 ? (line[iService] ?? "").trim() : "";
+      // A raw bank export also holds expenses, fees and unlabelled payments.
+      // Only rows with a service filled in are customer payments that need a receipt.
+      if (iService !== -1 && !rawService) {
+        skippedRowCount++;
+        continue;
+      }
+      const rawTransactionType = transactionTypeIndex !== -1 ? line[transactionTypeIndex] ?? "" : "";
       const rawRef = iRef !== -1 ? line[iRef] : "";
       const rawBelopp = iBelopp !== -1 ? line[iBelopp] : "0";
       const rawDate = iDate !== -1 ? line[iDate].trim() : "";
@@ -243,9 +278,9 @@ const Receipts = () => {
         id: rowIdRef.current++,
         nummer: nummer++,
         name: formatName(rawName || ""),
-        phone: formatPhone(rawRef || ""),
+        phone: getCustomerPhone(rawTransactionType, rawRef || ""),
         service: rawService || Object.keys(nextConfig)[0],
-        belopp: parseFloat(rawBelopp) || 0,
+        belopp: parseSwedishAmount(rawBelopp),
         datum: rawDate,
       });
     }
@@ -254,6 +289,7 @@ const Receipts = () => {
     setRows(newRows);
     setStatus(
       `Загружено строк: ${newRows.length}.` +
+        (skippedRowCount ? ` Пропущено строк без услуги: ${skippedRowCount}.` : "") +
         (addedServices.length
           ? ` Обнаружены новые услуги (установлен НДС 25%): ${addedServices.join(", ")} — при необходимости измените.`
           : "")
