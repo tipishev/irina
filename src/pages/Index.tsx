@@ -40,7 +40,8 @@ const autumn2026 = {
     term: "Осенний термин: до 1 декабря 2026",
     holidays: "Каникулы: 24 октября — 2 ноября",
     contact: "Запись: 073-517-3330",
-    materials: "Базовые материалы (бумага, краски) ученики приносят с собой. Специальные материалы предоставляет студия."
+    materials: "Базовые материалы (бумага, краски) ученики приносят с собой. Специальные материалы предоставляет студия.",
+    materialsLink: "Материалы на учебный год"
   },
   en: {
     title: "Autumn 2026 enrollment for the art studio in Bromma is now open!",
@@ -72,7 +73,8 @@ const autumn2026 = {
     term: "Autumn term: until 1 December 2026",
     holidays: "Holidays: 24 October — 2 November",
     contact: "Registration: 073-517-3330",
-    materials: "Students bring basic materials (paper, paints) with them. Special materials are provided by the studio."
+    materials: "Students bring basic materials (paper, paints) with them. Special materials are provided by the studio.",
+    materialsLink: "Materials for the school year"
   },
   sv: {
     title: "Höstterminen 2026 — anmälan till konststudion i Bromma är nu öppen!",
@@ -104,7 +106,8 @@ const autumn2026 = {
     term: "Hösttermin: till 1 december 2026",
     holidays: "Lov: 24 oktober — 2 november",
     contact: "Anmälan: 073-517-3330",
-    materials: "Eleverna tar med sig basmaterial (papper, färg). Specialmaterial tillhandahålls av studion."
+    materials: "Eleverna tar med sig basmaterial (papper, färg). Specialmaterial tillhandahålls av studion.",
+    materialsLink: "Material för läsåret"
   }
 };
 
@@ -233,35 +236,6 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
       <Hero currentLang={currentLang} onLanguageChange={onLanguageChange} />
       <div className="container mx-auto px-4 py-12 space-y-16">
 
-        {/* Materials page banner */}
-        <a
-          href={`/materials?lang=${currentLang}`}
-          className="block bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-lg p-4 md:p-5 hover:shadow-md transition-shadow"
-        >
-          <div className="flex items-center gap-3 md:gap-4">
-            <span className="text-2xl md:text-3xl" aria-hidden>📦</span>
-            <div className="flex-1">
-              <p className="font-semibold text-secondary text-base md:text-lg">
-                {currentLang === "ru"
-                  ? "Материалы на учебный год"
-                  : currentLang === "sv"
-                  ? "Material för läsåret"
-                  : "Materials for the school year"}
-              </p>
-              <p className="text-sm text-secondary/70">
-                {currentLang === "ru"
-                  ? "Что купить, какие марки и где найти — полный список и рекомендации."
-                  : currentLang === "sv"
-                  ? "Vad du ska köpa, vilka märken och var du hittar dem — full lista och rekommendationer."
-                  : "What to buy, which brands and where to find them — full list and recommendations."}
-              </p>
-            </div>
-            <span className="text-primary font-medium text-sm md:text-base whitespace-nowrap">
-              {currentLang === "ru" ? "Открыть →" : currentLang === "sv" ? "Öppna →" : "Open →"}
-            </span>
-          </div>
-        </a>
-
         {/* Children's Art Market Announcement */}
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
@@ -357,6 +331,14 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
                 <p className="font-medium text-secondary">{autumn2026[currentLang].contact}</p>
                 <p className="text-sm italic mt-2">{autumn2026[currentLang].materials}</p>
               </div>
+              <a
+                href={`/materials?lang=${currentLang}`}
+                className="inline-flex items-center gap-2 font-medium text-primary hover:underline"
+              >
+                <span aria-hidden>📦</span>
+                {autumn2026[currentLang].materialsLink}
+                <span aria-hidden>→</span>
+              </a>
             </div>
           </div>
         </div>
