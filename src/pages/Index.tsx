@@ -108,6 +108,84 @@ const autumn2026 = {
   }
 };
 
+const artMarket = {
+  ru: {
+    title: "🎨 Children's Art Market — праздник творчества и рождественская ярмарка!",
+    intro: "Дорогие друзья, ученики и родители! В рамках JulKultur Bromma #julkultur приглашаем вас 12 декабря с 11:00 до 16:00 в Irina Zay Studio на праздничный Children's Art Market!",
+    lead: "Это прекрасная возможность познакомиться с творчеством юных художников, поддержать их первые творческие шаги и приобрести настоящие детские шедевры.",
+    sections: [
+      {
+        icon: "🖼",
+        heading: "Детский вернисаж-продажа",
+        body: "На выставке будут представлены художественные работы наших юных авторов. Все средства от продажи картин полностью передаются детям-художникам. Приходите познакомиться с авторами, послушать истории их работ и, возможно, найти картину, которую захочется забрать домой!"
+      },
+      {
+        icon: "🎁",
+        heading: "Рождественская ярмарка подарков ручной работы",
+        body: "Приглашаем взрослых мастеров представить свои изделия на нашей праздничной ярмарке. Здесь вы сможете найти оригинальные подарки к Рождеству, созданные с душой и любовью. Участие мастеров организовано на условиях комиссии: 10% от продаж в фонд студии, остальные 90% получает автор."
+      },
+      {
+        icon: "🧸",
+        heading: "Loppis: игрушки и книги",
+        body: ""
+      }
+    ],
+    closing: "❤️ Приходите за подарками, вдохновением и хорошим настроением! Покупая работы юных художников и взрослых мастеров, вы поддерживаете творчество и помогаете развивать наши студийные проекты.",
+    details: ["📍 Irina Zay Studio, Stopvägen 38", "📅 12 декабря", "⏰ 11:00–16:00"],
+    outro: "Будем рады видеть вас, ваших друзей и близких! #300kg_konst"
+  },
+  en: {
+    title: "🎨 Children's Art Market — a celebration of creativity and a Christmas fair!",
+    intro: "Dear friends, students and parents! As part of JulKultur Bromma (#julkultur), we invite you on 12 December from 11:00 to 16:00 to Irina Zay Studio for a festive Children's Art Market!",
+    lead: "This is a wonderful opportunity to discover the work of our young artists, support their first creative steps, and pick up a genuine child-made masterpiece.",
+    sections: [
+      {
+        icon: "🖼",
+        heading: "Children's sale exhibition",
+        body: "The exhibition will feature artwork by our young authors. All proceeds from the sale of paintings go directly to the child artists. Come and meet the artists, hear the stories behind their work, and perhaps find a painting you would like to take home!"
+      },
+      {
+        icon: "🎁",
+        heading: "Christmas fair of handmade gifts",
+        body: "We invite adult makers to present their crafts at our festive fair. Here you can find original Christmas gifts made with heart and love. Makers take part on a commission basis: 10% of sales goes to the studio fund, the remaining 90% goes to the artist."
+      },
+      {
+        icon: "🧸",
+        heading: "Loppis: toys and books",
+        body: ""
+      }
+    ],
+    closing: "❤️ Come for gifts, inspiration and good spirits! By buying the work of young artists and adult makers, you support creativity and help our studio projects grow.",
+    details: ["📍 Irina Zay Studio, Stopvägen 38", "📅 12 December", "⏰ 11:00–16:00"],
+    outro: "We would be glad to see you, your friends and your family! #300kg_konst"
+  },
+  sv: {
+    title: "🎨 Children's Art Market — en kreativitetens fest och julmarknad!",
+    intro: "Kära vänner, elever och föräldrar! Som en del av JulKultur Bromma (#julkultur) bjuder vi in dig den 12 december mellan 11:00 och 16:00 till Irina Zay Studio för en högtidlig Children's Art Market!",
+    lead: "Det här är en fin möjlighet att upptäcka de unga konstnärernas skapande, stödja deras första kreativa steg och köpa riktiga barnmästerverk.",
+    sections: [
+      {
+        icon: "🖼",
+        heading: "Barnkonst med försäljning",
+        body: "På utställningen visas konstverk av våra unga konstnärer. Hela försäljningen av målerier går oavkortat till barnkonstnärerna. Kom och träffa konstnärerna, lyssna på historierna bakom verken och kanske hitta en målning du vill ta med hem!"
+      },
+      {
+        icon: "🎁",
+        heading: "Julmarknad med handgjorda presenter",
+        body: "Vi bjuder in vuxna hantverkare att visa sina alster på vår högtidliga marknad. Här kan du hitta originella julklappar skapade med hjärta och kärlek. Hantverkarna deltar på kommissionsbasis: 10 % av försäljningen går till studiofonden, de övriga 90 % går till konstnären."
+      },
+      {
+        icon: "🧸",
+        heading: "Loppis: leksaker och böcker",
+        body: ""
+      }
+    ],
+    closing: "❤️ Kom för presenter, inspiration och bra humör! Genom att köpa unga konstnärers och vuxna hantverkares verk stödjer du skapandet och hjälper våra studioprojekt att växa.",
+    details: ["📍 Irina Zay Studio, Stopvägen 38", "📅 12 december", "⏰ 11:00–16:00"],
+    outro: "Vi ser fram emot att träffa dig, dina vänner och din familj! #300kg_konst"
+  }
+};
+
 const aboutMe = {
   ru: {
     title: "Обо Мне",
@@ -184,22 +262,55 @@ const Index = ({ currentLang, onLanguageChange }: IndexProps) => {
           </div>
         </a>
 
+        {/* Children's Art Market Announcement */}
         <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-2/5">
               <img
-                src="/lovable-uploads/autumn-2026-announcement.jpg"
-                alt={autumn2026[currentLang].title}
+                src="/lovable-uploads/childrens-art-market.jpg"
+                alt={artMarket[currentLang].title}
                 className="w-full h-auto rounded-lg"
               />
             </div>
-            <div className="w-full lg:w-1/2 space-y-5 text-secondary/90">
+            <div className="w-full lg:w-3/5 space-y-5 text-secondary/90">
               <h2 className="text-2xl md:text-3xl font-bold text-secondary leading-tight">
-                {autumn2026[currentLang].title}
+                {artMarket[currentLang].title}
               </h2>
               <p className="leading-relaxed">
-                {autumn2026[currentLang].intro}
+                {artMarket[currentLang].intro}
               </p>
+              <p className="leading-relaxed">
+                {artMarket[currentLang].lead}
+              </p>
+              <div className="space-y-4">
+                {artMarket[currentLang].sections.map((section, index) => (
+                  <div key={index}>
+                    <h3 className="font-semibold text-secondary mb-1">
+                      {section.icon} {section.heading}
+                    </h3>
+                    {section.body ? (
+                      <p className="leading-relaxed">{section.body}</p>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+              <p className="leading-relaxed">
+                {artMarket[currentLang].closing}
+              </p>
+              <div className="space-y-1 font-medium text-secondary pt-2 border-t border-secondary/10">
+                {artMarket[currentLang].details.map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </div>
+              <p className="text-sm italic">{artMarket[currentLang].outro}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Autumn 2026 schedule */}
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-8">
+          <div className="flex flex-col">
+            <div className="w-full space-y-5 text-secondary/90">
               <div>
                 <h3 className="font-semibold text-secondary mb-1">
                   {autumn2026[currentLang].scheduleTitle}
